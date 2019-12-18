@@ -1,0 +1,360 @@
+-- --------------------------------------------------------
+-- Hôte :                        127.0.0.1
+-- Version du serveur:           5.7.24 - MySQL Community Server (GPL)
+-- SE du serveur:                Win64
+-- HeidiSQL Version:             9.5.0.5196
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Export de la structure de la base pour oose
+CREATE DATABASE IF NOT EXISTS `oose` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+USE `oose`;
+
+-- Export de la structure de la table oose. admin
+CREATE TABLE IF NOT EXISTS `admin` (
+  `idAdmin` int(11) NOT NULL AUTO_INCREMENT,
+  `AdminDate` date DEFAULT NULL,
+  PRIMARY KEY (`idAdmin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.admin : ~0 rows (environ)
+DELETE FROM `admin`;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. battery
+CREATE TABLE IF NOT EXISTS `battery` (
+  `idBattery` int(11) NOT NULL AUTO_INCREMENT,
+  `wording` varchar(20) NOT NULL,
+  `power` int(11) NOT NULL,
+  `lastRefillDate` date NOT NULL,
+  `idCompany` int(11) NOT NULL,
+  PRIMARY KEY (`idBattery`),
+  KEY `FK_battery_company` (`idCompany`),
+  CONSTRAINT `FK_battery_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.battery : ~0 rows (environ)
+DELETE FROM `battery`;
+/*!40000 ALTER TABLE `battery` DISABLE KEYS */;
+/*!40000 ALTER TABLE `battery` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. booking
+CREATE TABLE IF NOT EXISTS `booking` (
+  `idBooking` int(11) NOT NULL AUTO_INCREMENT,
+  `startDate` date NOT NULL,
+  `endDate` int(11) NOT NULL,
+  `glider` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `launcher` int(11) NOT NULL,
+  `launchman` int(11) NOT NULL,
+  `customer` int(11) NOT NULL,
+  `flightManager` int(11) NOT NULL,
+  `diploma` int(11) DEFAULT NULL,
+  `idGlider` varchar(50) COLLATE utf8_bin NOT NULL,
+  `company` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `state` enum('todo','done','canceled') CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`idBooking`),
+  KEY `diploma` (`diploma`),
+  KEY `FK_booking_glider` (`idGlider`),
+  CONSTRAINT `FK_booking_glider` FOREIGN KEY (`idGlider`) REFERENCES `glider` (`registrationGlider`),
+  CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`diploma`) REFERENCES `diploma` (`idDiploma`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.booking : ~0 rows (environ)
+DELETE FROM `booking`;
+/*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. company
+CREATE TABLE IF NOT EXISTS `company` (
+  `idCompany` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.company : ~0 rows (environ)
+DELETE FROM `company`;
+/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. companymember
+CREATE TABLE IF NOT EXISTS `companymember` (
+  `idCompanyMember` int(11) NOT NULL AUTO_INCREMENT,
+  `position` int(11) NOT NULL,
+  `idCompany` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCompanyMember`),
+  KEY `FK_companymember_company` (`idCompany`),
+  CONSTRAINT `FK_companymember_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.companymember : ~0 rows (environ)
+DELETE FROM `companymember`;
+/*!40000 ALTER TABLE `companymember` DISABLE KEYS */;
+/*!40000 ALTER TABLE `companymember` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. diploma
+CREATE TABLE IF NOT EXISTS `diploma` (
+  `idDiploma` int(11) NOT NULL AUTO_INCREMENT,
+  `acquisitionDate` date NOT NULL,
+  `renewalDate` date NOT NULL,
+  `diplomaType` int(11) NOT NULL,
+  `deliveredBy` int(11) NOT NULL,
+  `owner` int(11) NOT NULL,
+  `state` varchar(20) NOT NULL,
+  `hoursNeeded` int(11) NOT NULL,
+  `hoursDid` int(11) NOT NULL,
+  `holder` int(11) NOT NULL,
+  PRIMARY KEY (`idDiploma`),
+  KEY `diplomaType` (`diplomaType`),
+  KEY `FK_diploma_monitor` (`deliveredBy`),
+  KEY `FK_diploma_user` (`owner`),
+  CONSTRAINT `FK_diploma_monitor` FOREIGN KEY (`deliveredBy`) REFERENCES `monitor` (`idMonitor`),
+  CONSTRAINT `FK_diploma_user` FOREIGN KEY (`owner`) REFERENCES `user` (`idUser`),
+  CONSTRAINT `diploma_ibfk_1` FOREIGN KEY (`diplomaType`) REFERENCES `diplomatype` (`id DiplomaType`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.diploma : ~0 rows (environ)
+DELETE FROM `diploma`;
+/*!40000 ALTER TABLE `diploma` DISABLE KEYS */;
+/*!40000 ALTER TABLE `diploma` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. diplomatype
+CREATE TABLE IF NOT EXISTS `diplomatype` (
+  `id DiplomaType` int(11) NOT NULL AUTO_INCREMENT,
+  `wording` varchar(50) NOT NULL,
+  PRIMARY KEY (`id DiplomaType`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.diplomatype : ~0 rows (environ)
+DELETE FROM `diplomatype`;
+/*!40000 ALTER TABLE `diplomatype` DISABLE KEYS */;
+/*!40000 ALTER TABLE `diplomatype` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. estcompatible
+CREATE TABLE IF NOT EXISTS `estcompatible` (
+  `idBattery` int(11) NOT NULL,
+  `idGlider` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`idBattery`,`idGlider`),
+  KEY `FK__glider` (`idGlider`),
+  CONSTRAINT `FK__battery` FOREIGN KEY (`idBattery`) REFERENCES `battery` (`idBattery`),
+  CONSTRAINT `FK__glider` FOREIGN KEY (`idGlider`) REFERENCES `glider` (`registrationGlider`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.estcompatible : ~0 rows (environ)
+DELETE FROM `estcompatible`;
+/*!40000 ALTER TABLE `estcompatible` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estcompatible` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. etreadmin
+CREATE TABLE IF NOT EXISTS `etreadmin` (
+  `idAdmin` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`idAdmin`,`idUser`),
+  KEY `FK_etreadmin_user` (`idUser`),
+  CONSTRAINT `FK_etreadmin_admin` FOREIGN KEY (`idAdmin`) REFERENCES `admin` (`idAdmin`),
+  CONSTRAINT `FK_etreadmin_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.etreadmin : ~0 rows (environ)
+DELETE FROM `etreadmin`;
+/*!40000 ALTER TABLE `etreadmin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etreadmin` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. etrecompanymember
+CREATE TABLE IF NOT EXISTS `etrecompanymember` (
+  `idUser` int(11) NOT NULL,
+  `idCompanyMember` int(11) NOT NULL,
+  PRIMARY KEY (`idUser`,`idCompanyMember`),
+  KEY `FK_etrecompanymember_companymember` (`idCompanyMember`),
+  CONSTRAINT `FK_etrecompanymember_companymember` FOREIGN KEY (`idCompanyMember`) REFERENCES `companymember` (`idCompanyMember`),
+  CONSTRAINT `FK_etrecompanymember_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.etrecompanymember : ~0 rows (environ)
+DELETE FROM `etrecompanymember`;
+/*!40000 ALTER TABLE `etrecompanymember` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etrecompanymember` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. etrelicensier
+CREATE TABLE IF NOT EXISTS `etrelicensier` (
+  `idUser` int(11) NOT NULL,
+  `idLicensied` int(11) NOT NULL,
+  PRIMARY KEY (`idUser`,`idLicensied`),
+  KEY `Index 2` (`idUser`),
+  KEY `Index 3` (`idLicensied`),
+  CONSTRAINT `FK_etrelicensier_licensed` FOREIGN KEY (`idLicensied`) REFERENCES `licensed` (`idLicensed`),
+  CONSTRAINT `FK_etrelicensier_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.etrelicensier : ~1 rows (environ)
+DELETE FROM `etrelicensier`;
+/*!40000 ALTER TABLE `etrelicensier` DISABLE KEYS */;
+INSERT INTO `etrelicensier` (`idUser`, `idLicensied`) VALUES
+	(2, 1);
+/*!40000 ALTER TABLE `etrelicensier` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. etremonitor
+CREATE TABLE IF NOT EXISTS `etremonitor` (
+  `idMonitor` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`idMonitor`,`idUser`),
+  KEY `FK__user` (`idUser`),
+  CONSTRAINT `FK__monitor` FOREIGN KEY (`idMonitor`) REFERENCES `monitor` (`idMonitor`),
+  CONSTRAINT `FK__user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.etremonitor : ~0 rows (environ)
+DELETE FROM `etremonitor`;
+/*!40000 ALTER TABLE `etremonitor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etremonitor` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. glider
+CREATE TABLE IF NOT EXISTS `glider` (
+  `registrationGlider` varchar(50) COLLATE utf8_bin NOT NULL,
+  `span` float NOT NULL,
+  `maxWeight` float NOT NULL,
+  `idCompany` int(11) NOT NULL,
+  `acquisitionDate` date NOT NULL,
+  `reviewDate` date NOT NULL,
+  PRIMARY KEY (`registrationGlider`),
+  KEY `FK_glider_company` (`idCompany`),
+  CONSTRAINT `FK_glider_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.glider : ~0 rows (environ)
+DELETE FROM `glider`;
+/*!40000 ALTER TABLE `glider` DISABLE KEYS */;
+/*!40000 ALTER TABLE `glider` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. gps
+CREATE TABLE IF NOT EXISTS `gps` (
+  `idGPS` int(11) NOT NULL AUTO_INCREMENT,
+  `installedVersion` varchar(50) NOT NULL,
+  `wording` varchar(50) NOT NULL,
+  `idCompany` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idGPS`),
+  KEY `FK_gps_gps` (`idCompany`),
+  CONSTRAINT `FK_gps_gps` FOREIGN KEY (`idCompany`) REFERENCES `gps` (`idGPS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.gps : ~0 rows (environ)
+DELETE FROM `gps`;
+/*!40000 ALTER TABLE `gps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gps` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. licensed
+CREATE TABLE IF NOT EXISTS `licensed` (
+  `idLicensed` int(11) NOT NULL AUTO_INCREMENT,
+  `flightHour` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idLicensed`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.licensed : ~2 rows (environ)
+DELETE FROM `licensed`;
+/*!40000 ALTER TABLE `licensed` DISABLE KEYS */;
+INSERT INTO `licensed` (`idLicensed`, `flightHour`) VALUES
+	(1, 125),
+	(2, 325);
+/*!40000 ALTER TABLE `licensed` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. monitor
+CREATE TABLE IF NOT EXISTS `monitor` (
+  `idMonitor` int(11) NOT NULL AUTO_INCREMENT,
+  `idCompany` int(11) NOT NULL DEFAULT '0',
+  `monitorFlightHour` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idMonitor`),
+  KEY `FK_monitor_company` (`idCompany`),
+  CONSTRAINT `FK_monitor_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.monitor : ~0 rows (environ)
+DELETE FROM `monitor`;
+/*!40000 ALTER TABLE `monitor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `monitor` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. parachute
+CREATE TABLE IF NOT EXISTS `parachute` (
+  `idParachute` int(11) NOT NULL AUTO_INCREMENT,
+  `wording` varchar(20) NOT NULL,
+  `renewalDate` date NOT NULL,
+  `packageDate` date NOT NULL,
+  `idCompany` int(11) NOT NULL,
+  PRIMARY KEY (`idParachute`),
+  KEY `FK_parachute_company` (`idCompany`),
+  CONSTRAINT `FK_parachute_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.parachute : ~0 rows (environ)
+DELETE FROM `parachute`;
+/*!40000 ALTER TABLE `parachute` DISABLE KEYS */;
+/*!40000 ALTER TABLE `parachute` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. plane
+CREATE TABLE IF NOT EXISTS `plane` (
+  `registrationPlane` varchar(20) NOT NULL,
+  `maxLaunchWeight` int(11) NOT NULL,
+  `idCompany` int(11) NOT NULL,
+  `acquisitionDate` date NOT NULL,
+  `renewalDate` date NOT NULL,
+  `span` int(11) NOT NULL,
+  `maxWeight` int(11) NOT NULL,
+  PRIMARY KEY (`registrationPlane`),
+  KEY `FK_plane_company` (`idCompany`),
+  CONSTRAINT `FK_plane_company` FOREIGN KEY (`idCompany`) REFERENCES `company` (`idCompany`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.plane : ~0 rows (environ)
+DELETE FROM `plane`;
+/*!40000 ALTER TABLE `plane` DISABLE KEYS */;
+/*!40000 ALTER TABLE `plane` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. user
+CREATE TABLE IF NOT EXISTS `user` (
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(50) COLLATE utf8_bin NOT NULL,
+  `lastName` varchar(50) COLLATE utf8_bin NOT NULL,
+  `birthDate` date NOT NULL,
+  `adress` varchar(50) COLLATE utf8_bin NOT NULL,
+  `postalCode` varchar(50) COLLATE utf8_bin NOT NULL,
+  `mail` varchar(50) COLLATE utf8_bin NOT NULL,
+  `tel` varchar(50) COLLATE utf8_bin NOT NULL,
+  `login` varchar(50) COLLATE utf8_bin NOT NULL,
+  `password` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`idUser`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Export de données de la table oose.user : ~2 rows (environ)
+DELETE FROM `user`;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`idUser`, `firstName`, `lastName`, `birthDate`, `adress`, `postalCode`, `mail`, `tel`, `login`, `password`) VALUES
+	(1, 'toto', 'toto', '2019-12-18', 'avenue', '25645', 'lknzfl', '0231564', 'azerty', 'azerty'),
+	(2, 'tata', 'tata', '2019-12-18', 'kjbkjn', 'kjnkjn', 'kj', 'kjn', 'kjn', 'kjn');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+-- Export de la structure de la table oose. winch
+CREATE TABLE IF NOT EXISTS `winch` (
+  `registrationWinch` varchar(20) NOT NULL,
+  `acquisitionDate` date NOT NULL,
+  `renewalDate` date NOT NULL,
+  `maxLaunchWeight` int(11) NOT NULL,
+  `ropeRenewal` date NOT NULL,
+  `parachuteRenewal` date NOT NULL,
+  `maxWeight` int(11) NOT NULL,
+  PRIMARY KEY (`registrationWinch`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Export de données de la table oose.winch : ~0 rows (environ)
+DELETE FROM `winch`;
+/*!40000 ALTER TABLE `winch` DISABLE KEYS */;
+/*!40000 ALTER TABLE `winch` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
