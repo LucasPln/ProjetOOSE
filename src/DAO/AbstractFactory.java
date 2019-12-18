@@ -58,4 +58,20 @@ public abstract class AbstractFactory {
     public UserDAO getUserDAO() {
         return userDAO;
     }
+
+    public AdminDAO getAdminDAO() {
+        return adminDAO;
+    }
+
+    public CompanyMemberDAO getCompanyMemberDAO() {
+        return companyMemberDAO;
+    }
+
+    public LicensedDAO getLicensedDAO() {
+        return licensedDAO;
+    }
+
+    public MonitorDAO getMonitorDAO() {
+        return monitorDAO;
+    }
 }

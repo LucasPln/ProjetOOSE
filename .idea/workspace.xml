@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Je commit avec intelliJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/AbstractFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/AbstractFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/FactoryDAOSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/FactoryDAOSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAOSQL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Facade/LoginFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Controller/HomeUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/UI/HomeUI.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +60,7 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -77,6 +71,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1UmauXdSY0fFRBGLz052vQ6Ut2e" />
@@ -246,8 +241,16 @@
       <workItem from="1576573146412" duration="2098000" />
       <workItem from="1576662812358" duration="844000" />
       <workItem from="1576665298680" duration="45000" />
-      <workItem from="1576666560640" duration="766000" />
+      <workItem from="1576666560640" duration="1376000" />
     </task>
+    <task id="LOCAL-00001" summary="Je commit avec intelliJ">
+      <created>1576667541700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576667541700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,20 +259,26 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Je commit avec intelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Je commit avec intelliJ" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#SQL_Dialects" timestamp="1575974168103">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1575974168103" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1576667223495">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1576667704194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576667223495" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576667704194" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576667033125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576667033125" />
+    <state x="415" y="11" key="CommitChangelistDialog2" timestamp="1576667540053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="415" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576667540053" />
     <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1576665341028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -314,6 +323,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="447" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1576149268150" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576667558625">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1576667558625" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1576068283964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
