@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/AbstractFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/AbstractFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/FactoryDAOSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/FactoryDAOSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAOSQL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Facade/LoginFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Controller/HomeUIController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/UI/HomeUI.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,8 +75,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1UmauXdSY0fFRBGLz052vQ6Ut2e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -87,19 +103,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/View/Controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.22068965" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Cours Polytech\IG4\OOSE\ProjetOOSE\src\View\Controller" />
+      <recent name="D:\Documents\Cours Polytech\IG4\OOSE\ProjetOOSE\src\Model" />
+      <recent name="D:\Documents\Cours Polytech\IG4\OOSE\ProjetOOSE\src\Facade" />
+      <recent name="D:\Documents\Cours Polytech\IG4\OOSE\ProjetOOSE\src\DAO" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="DAO" />
+      <recent name="Model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Cours Polytech\IG4\OOSE\Login\src\View\UI" />
       <recent name="D:\Documents\Cours Polytech\IG4\OOSE\Login\src\View" />
@@ -163,53 +189,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="ProjetOOSE" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="ProjetOOSE" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -260,7 +239,14 @@
       <workItem from="1576066718830" duration="1859000" />
       <workItem from="1576073204724" duration="2138000" />
       <workItem from="1576147002494" duration="3144000" />
-      <workItem from="1576150213572" duration="96000" />
+      <workItem from="1576150213572" duration="1335000" />
+      <workItem from="1576448836774" duration="44000" />
+      <workItem from="1576499592453" duration="603000" />
+      <workItem from="1576504951838" duration="17000" />
+      <workItem from="1576573146412" duration="2098000" />
+      <workItem from="1576662812358" duration="844000" />
+      <workItem from="1576665298680" duration="45000" />
+      <workItem from="1576666560640" duration="766000" />
     </task>
     <servers />
   </component>
@@ -276,30 +262,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1575974168103" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1576067907198">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1576667223495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576067907198" />
-    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1575974699242">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576667223495" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576667033125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575974699242" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1576150322114">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576667033125" />
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1576665341028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576150322114" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1576150322114">
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576665341028" />
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1576667365219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576150322114" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1576150322113">
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576667365219" />
+    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1576667365219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576150322113" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1576150322114">
+    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576667365219" />
+    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1576667365219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576150322114" />
+    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576667365219" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1576667365219">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576667365219" />
     <state width="1491" height="260" key="GridCell.Tab.1.bottom" timestamp="1576075352813">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -316,10 +306,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1491" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1576075352813" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1576150308774">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1576151666787">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576150308774" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576151666787" />
     <state width="498" height="447" key="SwitcherDM" timestamp="1576149268150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

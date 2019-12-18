@@ -6,24 +6,12 @@ import java.sql.*;
 
 public class UserDAOSQL implements UserDAO {
 
-    public Connection connexion(){
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightmanager?autoReconnect=true&useSSL=false","root","");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        return con;
-
-    }
 
     @Override
     public User login(String login, String password) {
         User user = null;
         try {
-            Connection con = this.connexion();
+            Connection con = FactoryDAOSQL.connection;
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from user where login='"+login+"' and password='"+password+"';");
 
