@@ -21,8 +21,6 @@ public class UserDAOSQL implements UserDAO {
                 System.out.println("User créé");
             }
 
-            con.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
