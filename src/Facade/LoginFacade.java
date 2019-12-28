@@ -5,17 +5,23 @@ import Model.User;
 
 public class LoginFacade {
 
+    private static LoginFacade instance = null;
+
     private AbstractFactory abstractFactory;
     private User userConnected;
 
-    public LoginFacade() {
+    private LoginFacade() {
         this.abstractFactory = AbstractFactory.getInstance();
         this.abstractFactory.createUserDAO();
         System.out.println("UserDAO créé");
     }
 
-    public boolean login(String login, String password){
+    public static LoginFacade getInstance(){
+        if(instance == null) instance = new LoginFacade();
+        return instance;
+    }
 
+    public boolean login(String login, String password){
 
         User user = this.abstractFactory.getUserDAO().login(login, password);
         return user != null;

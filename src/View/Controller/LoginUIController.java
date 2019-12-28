@@ -1,12 +1,13 @@
 package View.Controller;
 
 import Facade.LoginFacade;
-import Model.User;
+import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 public class LoginUIController {
 
@@ -19,7 +20,7 @@ public class LoginUIController {
     private LoginFacade loginFacade;
 
     public LoginUIController(){
-        this.loginFacade = new LoginFacade();
+        this.loginFacade = LoginFacade.getInstance();
     }
 
     @FXML
@@ -27,12 +28,18 @@ public class LoginUIController {
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
-
         boolean estConnecte = this.loginFacade.login(this.loginField.getText(), this.passwordField.getText());
         System.out.println(estConnecte);
 
-
+        if(estConnecte){
+            try {
+                Main.homeView(Main.getPrimaryStage());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 
     }
+
 }

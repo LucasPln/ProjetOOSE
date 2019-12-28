@@ -17,7 +17,18 @@ public class UserDAOSQL implements UserDAO {
 
 
             while(rs.next()){
-                user = new User(rs.getInt(1),rs.getString(2), rs.getString(3));
+                user = new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10)
+                );
                 System.out.println("User créé");
             }
 
