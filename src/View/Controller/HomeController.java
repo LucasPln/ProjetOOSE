@@ -10,6 +10,7 @@ public class HomeController {
     private Label labelUser;
 
     public HomeController(){
+        labelUser = new Label(); //sans cette ligne le code plante
         labelUser.setText("Hello " + LoginFacade.getInstance().getConnectedUserName()+"!");
     }
 }

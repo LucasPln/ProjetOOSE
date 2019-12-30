@@ -23,8 +23,8 @@ public class LoginFacade {
 
     public boolean login(String login, String password){
 
-        User user = this.abstractFactory.getUserDAO().login(login, password);
-        return user != null;
+        userConnected = this.abstractFactory.getUserDAO().login(login, password);
+        return userConnected != null;
     }
 
     public String getConnectedUserName(){
