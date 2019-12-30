@@ -9,8 +9,10 @@ public class HomeController {
     @FXML
     private Label labelUser;
 
-    public HomeController(){
-        labelUser = new Label(); //sans cette ligne le code plante
-        labelUser.setText("Hello " + LoginFacade.getInstance().getConnectedUserName()+"!");
+    @FXML
+    public void initialize(){
+        labelUser.setText("Welcome "+ LoginFacade.getInstance().getConnectedUserName()+" !");
     }
+
+
 }
