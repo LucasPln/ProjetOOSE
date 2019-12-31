@@ -2,70 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Je commit avec intelliJ">
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/AbstractFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/AdminDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/AdminDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/BookingDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/BookingDAOMySQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/CompanyDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/CompanyDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/CompanyMemberDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/CompanyMemberDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/ConfigBDD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAODiploma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOEquipement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOGlider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOSqlDiploma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOSqlEquipement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOSqlGlider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/DAOSqlLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/FactoryDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/LicensedDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/LicensedDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/MonitorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/MonitorDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/DAO/UserDAOSQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/AllInfoCompanyFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/BookingFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/LoginFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/NameCompanyFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/ReadUserFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/RegisterFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Facade/UpdateUserFacade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/META-INF/ProjetOOSE.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/AbstractRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Battery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Booking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Diploma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Equipment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/GPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Glider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Licensed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Monitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Parachute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Plane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/TypeOfDiploma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/Model/Wincher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/BookingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/BookingUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/CompanyMemberUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/EquipmentUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/GliderUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/LauncherUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/LoginUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/MonitorUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/ReadUserUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/RegisterUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/Controller/UpdateUserUIController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetOOSE/View/UI/loginUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Company.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,6 +242,7 @@
       <workItem from="1576662812358" duration="844000" />
       <workItem from="1576665298680" duration="45000" />
       <workItem from="1576666560640" duration="2728000" />
+      <workItem from="1577799666444" duration="320000" />
     </task>
     <task id="LOCAL-00001" summary="Je commit avec intelliJ">
       <created>1576667541700</created>
@@ -329,10 +268,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1575974168103" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1576667704194">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1577799972768">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576667704194" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1577799972768" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576669031662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -345,22 +284,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576665341028" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1576669606494">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1576670462593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576669606494" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1576669606494">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576670462593" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1576670462593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576669606494" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1576669606494">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576670462593" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1576670462593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576669606494" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1576669606494">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576670462593" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1576670462593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576669606494" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576670462593" />
     <state width="1491" height="260" key="GridCell.Tab.1.bottom" timestamp="1576075352813">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -385,10 +324,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="447" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1576149268150" />
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576667558625">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1577799669180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1576667558625" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1577799669180" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577799695709">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1577799695709" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1576068283964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

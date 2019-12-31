@@ -65,5 +65,72 @@ public class Company {
     public void reviewLauncher() {
     }
 
+    public Company(String idCompany, String name) {
+        this.idCompany = idCompany;
+        this.name = name;
+    }
 
+    public String getIdCompany() {
+        return idCompany;
+    }
+
+    public void setIdCompany(String idCompany) {
+        this.idCompany = idCompany;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(ArrayList<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public ArrayList<User> getMonitors() {
+        return monitors;
+    }
+
+    public void setMonitors(ArrayList<User> monitors) {
+        this.monitors = monitors;
+    }
+
+    public ArrayList<User> getCompanyMembers() {
+        return companyMembers;
+    }
+
+    public void setCompanyMembers(ArrayList<User> companyMembers) {
+        this.companyMembers = companyMembers;
+    }
+
+    public ArrayList<Glider> getGliders() {
+        return gliders;
+    }
+
+    public void setGliders(ArrayList<Glider> gliders) {
+        this.gliders = gliders;
+    }
+
+    public ArrayList<Launcher> getLaunchers() {
+        return launchers;
+    }
+
+    public void setLaunchers(ArrayList<Launcher> launchers) {
+        this.launchers = launchers;
+    }
+
+    public ArrayList<Equipment> getEquipments() {
+        return equipments;
+    }
+
+    public void setEquipments(ArrayList<Equipment> equipments) {
+        this.equipments = equipments;
+    }
 }
