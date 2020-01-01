@@ -16,5 +16,4 @@ public class AllInfoCompanyFacade {
         Company company = this.abstractFactory.getCompanyDAO().infos(id);
         return company != null;
     }
-
 }

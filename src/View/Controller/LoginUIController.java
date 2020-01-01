@@ -38,8 +38,5 @@ public class LoginUIController {
                 e.printStackTrace();
             }
         }
-
-
     }
-
 }

@@ -23,6 +23,9 @@ public class FactoryDAOSQL extends AbstractFactory {
     }
 
     @Override
+    public void createGliderDAO() { this.daoGlider = new DAOSqlGlider(); }
+
+    @Override
     public void initialize() {
         Connection con = null;
         try {

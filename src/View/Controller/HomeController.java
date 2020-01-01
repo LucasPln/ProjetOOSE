@@ -28,8 +28,6 @@ public class HomeController {
     }
 
     public void getGliders(ActionEvent actionEvent) {
-        System.out.println(this.gliderFacade.getGlidersFromCompany(1).get(0).getReviewDate());
-
         try {
             Main.glidersView(Main.getPrimaryStage());
         } catch (IOException e) {

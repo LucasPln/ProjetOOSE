@@ -15,6 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         Main.loginView(primaryStage);
         Main.primaryStage = primaryStage;
     }
@@ -29,6 +30,10 @@ public class Main extends Application {
 
     public static void homeView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/Home.fxml");
+    }
+
+    public static void glidersView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/gliders.fxml");
     }
 
     private static void uploadView(Stage stage, String title, String path) throws IOException {

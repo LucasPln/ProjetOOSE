@@ -31,6 +31,8 @@ public abstract class AbstractFactory {
 
     public abstract void createCompanyDAO();
 
+    public abstract void createGliderDAO();
+
     public CompanyDAO getCompanyDAO() {
         return companyDAO;
     }
