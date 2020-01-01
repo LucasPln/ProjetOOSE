@@ -13,6 +13,7 @@ public class Glider {
 
     // liste des batteries compatibles
     private ArrayList<Battery> batteries =new ArrayList();
+
     public void getDisponibilite(){}
     public void updateDisponibilite(){}
 
@@ -60,5 +61,13 @@ public class Glider {
     public void deleteGlider(){}
     public void updateGlider(){}
     public void readGlider(){}
+
+    public Glider(String registrationGlider, int span, int maxWeight, Date acquisitionDate, Date reviewDate) {
+        this.registrationGlider = registrationGlider;
+        this.span = span;
+        this.maxWeight = maxWeight;
+        this.acquisitionDate = acquisitionDate;
+        this.reviewDate = reviewDate;
+    }
 }
 

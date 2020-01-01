@@ -1,12 +1,14 @@
 package View.Controller;
 
+import Facade.GliderFacade;
 import Facade.NameCompanyFacade;
 
 public class GliderUIController {
-    private NameCompanyFacade nameCompanyFacade;
+    private GliderFacade gliderFacade;
 
     public GliderUIController(){
-        this.nameCompanyFacade = new NameCompanyFacade();
+        this.gliderFacade = new GliderFacade();
     }
+
 
 }
