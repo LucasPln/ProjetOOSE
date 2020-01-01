@@ -36,6 +36,10 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/gliders.fxml");
     }
 
+    public static void gliderCreationView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/gliderCreation.fxml");
+    }
+
     private static void uploadView(Stage stage, String title, String path) throws IOException {
         loader = new FXMLLoader(Main.class.getResource(path));
         Parent root = loader.load();

@@ -2,18 +2,21 @@ package View.Controller;
 
 import Facade.GliderFacade;
 import Model.Glider;
+import View.Main.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class GliderUIController {
+public class GlidersUIController {
     public GridPane gridGliders;
     private GliderFacade gliderFacade;
 
-    public GliderUIController(){
+    public GlidersUIController(){
         this.gliderFacade = new GliderFacade();
     }
 
@@ -48,5 +51,11 @@ public class GliderUIController {
 
     }
 
-
+    public void createGlider(ActionEvent actionEvent) {
+        try {
+            Main.gliderCreationView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
