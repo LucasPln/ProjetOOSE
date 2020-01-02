@@ -1,13 +1,10 @@
 package DAO;
 
 import Model.Glider;
-import Model.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DAOSqlGlider implements DAOGlider {
 
@@ -39,5 +36,18 @@ public class DAOSqlGlider implements DAOGlider {
         }
 
         return gliders;
+    }
+
+    @Override
+    public void createGlider(String registrationID, float span, float maxWeight, java.sql.Date acquisitionDate,  java.sql.Date reviewDate, int companyID) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("INSERT INTO glider (registrationGlider, span, maxWeight, idCompany, acquisitionDate, reviewDate) VALUES (?, ?, ?, ?, ?, ?)");
+        stmt.setString(1, registrationID);
+        stmt.setFloat(2, span);
+        stmt.setFloat(3, maxWeight);
+        stmt.setInt(4, companyID);
+        stmt.setDate(5, acquisitionDate);
+        stmt.setDate(6, reviewDate);
+        stmt.executeUpdate();
     }
 }

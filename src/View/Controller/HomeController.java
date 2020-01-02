@@ -12,20 +12,16 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 
 public class HomeController {
-    private GliderFacade gliderFacade;
     public Button glidersBtn;
     @FXML
     private Label labelUser;
-    private LoginFacade loginFacade;
 
     @FXML
     public void initialize(){
         labelUser.setText("Welcome "+ LoginFacade.getInstance().getConnectedUserName()+" !");
     }
 
-    public HomeController() {
-        this.gliderFacade = new GliderFacade();
-    }
+    public HomeController() {}
 
     public void getGliders(ActionEvent actionEvent) {
         try {
