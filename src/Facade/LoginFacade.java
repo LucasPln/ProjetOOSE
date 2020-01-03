@@ -30,4 +30,7 @@ public class LoginFacade {
     public String getConnectedUserName(){
         return this.userConnected.getLogin();
     }
+    public User getConnectedUser(){
+        return this.userConnected.getUser();
+    }
 }

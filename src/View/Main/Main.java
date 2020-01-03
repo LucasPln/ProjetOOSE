@@ -32,6 +32,9 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/Home.fxml");
     }
 
+    public static void myProfileView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/myProfile.fxml");
+    }
     public static void glidersView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/gliders.fxml");
     }

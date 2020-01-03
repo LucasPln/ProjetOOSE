@@ -26,6 +26,7 @@ public class User {
         this.password = password;
     }
 
+    public User getUser(){return this;}
     public int getId() {
         return id;
     }
