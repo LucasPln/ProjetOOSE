@@ -21,10 +21,10 @@ public class LoginFacade {
         return instance;
     }
 
-    public boolean login(String login, String password){
+    public boolean login(String login, String password,String role){
 
-        userConnected = this.abstractFactory.getUserDAO().login(login, password);
-        return userConnected != null;
+        userConnected = this.abstractFactory.getUserDAO().login(login, password,role);
+        return (userConnected != null) && (userConnected.getAbstractRole() != null);
     }
 
     public String getConnectedUserName(){

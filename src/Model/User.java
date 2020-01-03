@@ -13,6 +13,8 @@ public class User {
     private String login;
     private String password;
 
+    private AbstractRole abstractRole;
+
     public User(int id, String firstName, String lastName, String birthDate, String adress, String postalCode, String mail, String tel, String login, String password) {
         this.id = id;
         this.firstName = firstName;
@@ -105,6 +107,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public AbstractRole getAbstractRole() {
+        return abstractRole;
+    }
+
+    public void setAbstractRole(AbstractRole abstractRole) {
+        this.abstractRole = abstractRole;
     }
 
     @Override
