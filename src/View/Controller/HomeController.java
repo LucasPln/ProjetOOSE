@@ -14,8 +14,12 @@ import java.io.IOException;
 
 public class HomeController {
     private GliderFacade gliderFacade;
+    @FXML
     public Button glidersBtn;
+    @FXML
     public Button myProfileBtn;
+    @FXML
+    public Button logoutBtn;
     @FXML
     private Label labelUser;
     private LoginFacade loginFacade;
@@ -42,5 +46,14 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void logout(ActionEvent actionEvent) {
+        try {
+            Main.myProfileView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //deconnexion ????
+        loginFacade.logout();
     }
 }

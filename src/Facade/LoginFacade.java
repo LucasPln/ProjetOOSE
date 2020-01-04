@@ -33,4 +33,8 @@ public class LoginFacade {
     public User getConnectedUser(){
         return this.userConnected.getUser();
     }
+    public void logout(){
+        userConnected=null;
+    }
+
 }
