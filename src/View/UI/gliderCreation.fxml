@@ -73,6 +73,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
+            <Label fx:id="errorLabel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
