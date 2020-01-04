@@ -27,11 +27,17 @@ public class Main extends Application {
     public static void loginView(Stage stage) throws IOException {
         uploadView(stage, "Login", "../UI/loginUI.fxml");
     }
+    public static void logoutView(Stage stage) throws IOException {
+        uploadView(stage, "Login", "../UI/loginUI.fxml");
+    }
 
     public static void homeView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/Home.fxml");
     }
 
+    public static void myProfileView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/myProfile.fxml");
+    }
     public static void glidersView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/gliders.fxml");
     }

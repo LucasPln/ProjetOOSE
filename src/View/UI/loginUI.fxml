@@ -10,6 +10,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane prefHeight="300" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller.LoginUIController">
 
 <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1">
@@ -22,8 +25,18 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" text="Login" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <GridPane>
+       <ChoiceBox  fx:id="choiceBox" value="Monitor" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="2">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Monitor" />
+                   <String fx:value="Licensed" />
+                   <String fx:value="Admin" />
+               </FXCollections>
+           </items>
+       </ChoiceBox>
+       <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" text="Login" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+
+       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -65,6 +78,7 @@
                </PasswordField>
          </children>
       </GridPane>
+
    </children>
 </GridPane>
 </AnchorPane>

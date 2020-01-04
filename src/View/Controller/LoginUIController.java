@@ -5,6 +5,8 @@ import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -17,6 +19,9 @@ public class LoginUIController {
     @FXML
     private TextField passwordField ;
 
+    @FXML
+    private ChoiceBox choiceBox ;
+
     private LoginFacade loginFacade;
 
     public LoginUIController(){
@@ -27,8 +32,7 @@ public class LoginUIController {
     private void login(ActionEvent event) {
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        boolean estConnecte = this.loginFacade.login(this.loginField.getText(), this.passwordField.getText());
+        boolean estConnecte = this.loginFacade.login(this.loginField.getText(), this.passwordField.getText(),this.choiceBox.getValue().toString());
         System.out.println(estConnecte);
 
         if(estConnecte){
@@ -37,6 +41,14 @@ public class LoginUIController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+
+            alert.setTitle("Error alert");
+            alert.setHeaderText("Can not connect");
+            alert.setContentText("Try again !");
+
+            alert.showAndWait();
         }
     }
 }
