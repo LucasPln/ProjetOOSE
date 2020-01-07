@@ -49,11 +49,12 @@ public class HomeController {
     }
     public void logout(ActionEvent actionEvent) {
         try {
-            Main.myProfileView(Main.getPrimaryStage());
+            //deconnexion ????
+            loginFacade.logout();
+            Main.logoutView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //deconnexion ????
-        loginFacade.logout();
+
     }
 }
