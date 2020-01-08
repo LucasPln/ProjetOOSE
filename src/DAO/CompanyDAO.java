@@ -7,5 +7,5 @@ import java.sql.Connection;
 public interface CompanyDAO {
     Connection connexion();
 
-    Company infos(String id);
+    Company infos(int id);
 }
