@@ -1,7 +1,6 @@
 package DAO;
 
 import Model.*;
-
 import java.sql.*;
 
 public class UserDAOSQL implements UserDAO {
@@ -61,10 +60,6 @@ public class UserDAOSQL implements UserDAO {
         return user;
     }
 
-    @Override
-    public boolean addUser() {
-        return false;
-    }
 
 
 }

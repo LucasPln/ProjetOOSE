@@ -1,9 +1,7 @@
 package View.Controller;
 
-import DAO.UserDAO;
 import Facade.GliderFacade;
 import Facade.LoginFacade;
-import Facade.ReadUserFacade;
 import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +20,9 @@ public class HomeController {
     public Button logoutBtn;
     @FXML
     private Label labelUser;
+    @FXML
+    private Button viewBookingButton;
+
     private LoginFacade loginFacade;
 
     @FXML
@@ -41,6 +42,7 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+
     public void getMyProfile(ActionEvent actionEvent) {
         try {
             Main.myProfileView(Main.getPrimaryStage());
@@ -48,6 +50,7 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+
     public void logout(ActionEvent actionEvent) {
         try {
             //deconnexion ????
@@ -57,5 +60,13 @@ public class HomeController {
             e.printStackTrace();
         }
 
+    }
+
+    public void getBooking(ActionEvent actionEvent){
+        try {
+            Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
