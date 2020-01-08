@@ -31,6 +31,7 @@ public class HomeController {
 
     public HomeController() {
         this.gliderFacade = new GliderFacade();
+        this.loginFacade = LoginFacade.getInstance();
     }
 
     public void getGliders(ActionEvent actionEvent) {
