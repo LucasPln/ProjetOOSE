@@ -23,6 +23,9 @@ public class HomeController {
     @FXML
     private Button viewBookingButton;
 
+    @FXML
+    public Button addUserButton;
+
     private LoginFacade loginFacade;
 
     @FXML
@@ -53,7 +56,6 @@ public class HomeController {
 
     public void logout(ActionEvent actionEvent) {
         try {
-            //deconnexion ????
             loginFacade.logout();
             Main.logoutView(Main.getPrimaryStage());
         } catch (IOException e) {
@@ -65,6 +67,14 @@ public class HomeController {
     public void getBooking(ActionEvent actionEvent){
         try {
             Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addUser(ActionEvent actionEvent){
+        try {
+            Main.addUserView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

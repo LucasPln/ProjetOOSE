@@ -60,6 +60,10 @@ public class UserDAOSQL implements UserDAO {
         return user;
     }
 
+    @Override
+    public boolean addUser() {
+        return false;
+    }
 
 
 }

@@ -15,6 +15,7 @@
             <Button fx:id="myProfileBtn" mnemonicParsing="false" onAction="#getMyProfile" text="My Profile" />
             <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logout" text="Log out" />
             <Button fx:id="viewBookingButton" mnemonicParsing="false" onAction="#getBooking" text="Booking" />
+            <Button fx:id="addUserButton" mnemonicParsing="false"  onAction="#addUser" text="addUser" />
         </buttons>
       </ButtonBar>
    </children>
