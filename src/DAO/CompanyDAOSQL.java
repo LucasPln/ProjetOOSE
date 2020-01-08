@@ -19,7 +19,7 @@ public class CompanyDAOSQL implements CompanyDAO {
     }
 
     @Override
-    public Company infos(String id) {
+    public Company infos(int id) {
         Company company = null;
         try {
             Connection con = this.connexion();
@@ -41,4 +41,5 @@ public class CompanyDAOSQL implements CompanyDAO {
 
         return company;
     }
-}
+
+    }
