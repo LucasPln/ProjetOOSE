@@ -12,7 +12,7 @@ public class NameCompanyFacade {
         System.out.println("CompanyDAO créé");
     }
 
-    public boolean infos(String id){
+    public boolean infos(int id){
         Company company = this.abstractFactory.getCompanyDAO().infos(id);
         return company != null;
     }
