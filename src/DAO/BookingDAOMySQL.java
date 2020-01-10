@@ -23,8 +23,8 @@ public class BookingDAOMySQL implements BookingDAO {
             while(rs.next()){
                 Booking booking = new Booking(
                         rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
+                        rs.getDate(2),
+                        rs.getDate(3),
                         rs.getDouble(4),
                         rs.getString(5),
                         rs.getInt(6),
