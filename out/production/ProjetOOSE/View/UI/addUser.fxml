@@ -3,6 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller.RegisterUIController">
    <children>
       <GridPane prefHeight="319.0" prefWidth="600.0">
@@ -115,6 +117,16 @@
                   <DatePicker fx:id="dateField" GridPane.rowIndex="2" />
 
               </GridPane>
+              <ChoiceBox  fx:id="choiceBox" value="Monitor" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                  <items>
+                      <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Monitor" />
+                          <String fx:value="Licensed" />
+                          <String fx:value="Admin" />
+                          <String fx:value="Company Member" />
+                      </FXCollections>
+                  </items>
+              </ChoiceBox>
               <Button  text="ADD" onAction="#addUser" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="CENTER"/>
 
           </children>
