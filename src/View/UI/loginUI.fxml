@@ -31,6 +31,7 @@
                    <String fx:value="Monitor" />
                    <String fx:value="Licensed" />
                    <String fx:value="Admin" />
+                   <String fx:value="Company Member" />
                </FXCollections>
            </items>
        </ChoiceBox>

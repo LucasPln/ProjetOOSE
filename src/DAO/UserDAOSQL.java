@@ -47,7 +47,12 @@ public class UserDAOSQL implements UserDAO {
                     abstractRole = new Licensed(rs2.getInt(1),rs2.getInt(2));
                 }
 
-            }else{ //role.equals("Admin")
+            }else if(role.equals("Company Member")){
+                rs2=stmt2.executeQuery("select * from companymember where idUser='"+user.getId()+"' ;");
+                while (rs2.next()){
+                    abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
+                }
+            }else{//role.equals("Admin")
                 rs2=stmt2.executeQuery("select * from admin where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
                     abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
