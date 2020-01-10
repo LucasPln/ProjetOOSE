@@ -22,7 +22,7 @@ public class GlidersUIController {
 
     @FXML
     public void initialize() {
-        ArrayList<Glider> gliders = this.gliderFacade.getGlidersFromCompany(1);
+        ArrayList<Glider> gliders = this.gliderFacade.getGlidersFromCompany();
 
         for(int i = 0; i < gliders.size(); i++) {
             gridGliders.addRow(0);

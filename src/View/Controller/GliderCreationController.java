@@ -27,8 +27,7 @@ public class GliderCreationController {
                     registrationIDInput.getText(),
                     Float.parseFloat(spanInput.getText()),
                     Float.parseFloat(maxWidthInput.getText()),
-                    java.sql.Date.valueOf(reviewDateInput.getValue()),
-                    1
+                    java.sql.Date.valueOf(reviewDateInput.getValue())
             );
             if(!done) {
                 errorLabel.setText("Creation Error");
