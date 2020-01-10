@@ -7,7 +7,7 @@ public class Company {
     public Company() {
     }
 
-    private String idCompany;
+    private int idCompany;
     private String name;
     private ArrayList<Booking> bookings;
     private ArrayList<User> monitors;
@@ -65,16 +65,16 @@ public class Company {
     public void reviewLauncher() {
     }
 
-    public Company(String idCompany, String name) {
+    public Company(int idCompany, String name) {
         this.idCompany = idCompany;
         this.name = name;
     }
 
-    public String getIdCompany() {
+    public int getIdCompany() {
         return idCompany;
     }
 
-    public void setIdCompany(String idCompany) {
+    public void setIdCompany(int idCompany) {
         this.idCompany = idCompany;
     }
 

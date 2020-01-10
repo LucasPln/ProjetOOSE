@@ -6,35 +6,19 @@ import java.sql.*;
 
 public class CompanyDAOSQL implements CompanyDAO {
     @Override
-    public Connection connexion() {
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightmanager?autoReconnect=true&useSSL=false","root","");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        return con;
-    }
-
-    @Override
     public Company infos(int id) {
         Company company = null;
         try {
-            Connection con = this.connexion();
+            Connection con = FactoryDAOSQL.connection;
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from company where id='"+id+"';");
+            ResultSet rs=stmt.executeQuery("select * from company where idCompany='"+id+"';");
 
 
             while(rs.next()){
-                /// ajouter infos rs.getString(3)
-                company = new Company();
-                System.out.println("Company créée");
+                company = new Company(
+                rs.getInt(1),
+                rs.getString(2));
             }
-
-            con.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -10,16 +10,6 @@ public class CompanyUIController {
 
         @FXML
         private Label nomCompany;
-        @FXML
-        private Label labelBirthDate;
-        @FXML
-        private Label labelAdress;
-        @FXML
-        private Label labelPostalCode;
-        @FXML
-        private Label labelMail;
-        @FXML
-        private Label labelTel;
 
         public CompanyUIController(){
                 companyFacade = new CompanyFacade();}
@@ -27,17 +17,11 @@ public class CompanyUIController {
 
         @FXML
         public void initialize() {
-                Company companyC = AffichageCompany();
-                //System.out.println(CompanyC.getNom());
-
-            nomCompany.setText("Welcome ");
+                int id = LoginFacade.getInstance().getConnectedUser().getCompanyId();
+                System.out.println(id);
+                Company c =companyFacade.getInfos(id);
+                System.out.println(c);
+                nomCompany.setText(c.getName());
         }
-
-        public Company AffichageCompany(){
-                //int id =LoginFacade.getInstance().getConnectedUser().getIdCompany();
-                //Company CompanyC =companyFacade.getInfos(id);
-                //return CompanyC;
-                return null;
-        };
     }
 

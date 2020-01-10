@@ -18,6 +18,8 @@ public class HomeController {
     @FXML
     public Button logoutBtn;
     @FXML
+    public Button myCompanyBtn;
+    @FXML
     private Label labelUser;
 
     @FXML
@@ -49,6 +51,14 @@ public class HomeController {
     public void getMyProfile(ActionEvent actionEvent) {
         try {
             Main.myProfileView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getCompany(ActionEvent actionEvent) {
+        try {
+            Main.myCompanyView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

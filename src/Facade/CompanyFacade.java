@@ -12,12 +12,12 @@ public class CompanyFacade {
 
         public CompanyFacade() {
             this.abstractFactory = AbstractFactory.getInstance();
-            this.abstractFactory.createCompanyMemberDAO();
-            System.out.println("UserDAO créé");
+            this.abstractFactory.createCompanyDAO();
+            System.out.println("Company créé");
         }
 
         public Company getInfos(int idC){
-            return getInfos(idC);
+            return abstractFactory.getCompanyDAO().infos(idC);
         }
 
     }
