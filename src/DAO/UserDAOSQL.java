@@ -1,7 +1,6 @@
 package DAO;
 
 import Model.*;
-
 import java.sql.*;
 
 public class UserDAOSQL implements UserDAO {
@@ -54,13 +53,16 @@ public class UserDAOSQL implements UserDAO {
                     abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
                 }
             }
-            System.out.println(abstractRole.getIdRole());
             user.setAbstractRole(abstractRole);
         } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         return user;
+    }
+
+    @Override
+    public boolean addUser() {
+        return false;
     }
 
 

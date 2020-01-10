@@ -23,7 +23,17 @@ public class FactoryDAOSQL extends AbstractFactory {
     }
 
     @Override
+    public void createCompanyMemberDAO() {
+        this.companyMemberDAO= new CompanyMemberDAOSQL();
+    }
+
+    @Override
     public void createGliderDAO() { this.daoGlider = new DAOSqlGlider(); }
+
+    @Override
+    public void createBookingDAO() {
+        this.bookingDAO = new BookingDAOMySQL();
+    }
 
     @Override
     public void initialize() {

@@ -125,4 +125,17 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+    public int getCompanyId(){
+        int id=0;
+        if (abstractRole instanceof Monitor){
+            id = ((Monitor) abstractRole).getIdCompany();
+        }
+        else if(abstractRole instanceof CompanyMember){
+            id = ((CompanyMember) abstractRole).getIdCompany();
+        }
+
+        return id;
+    }
+
 }

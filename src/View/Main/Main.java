@@ -20,6 +20,14 @@ public class Main extends Application {
         Main.primaryStage = primaryStage;
     }
 
+    private static void uploadView(Stage stage, String title, String path) throws IOException {
+        loader = new FXMLLoader(Main.class.getResource(path));
+        Parent root = loader.load();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -46,12 +54,12 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/gliderCreation.fxml");
     }
 
-    private static void uploadView(Stage stage, String title, String path) throws IOException {
-        loader = new FXMLLoader(Main.class.getResource(path));
-        Parent root = loader.load();
-        stage.setTitle(title);
-        stage.setScene(new Scene(root));
-        stage.show();
+    public static void bookingView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/booking.fxml");
+    }
+
+    public static void addUserView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/addUser.fxml");
     }
 
     public static Stage getPrimaryStage(){

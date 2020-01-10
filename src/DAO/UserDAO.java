@@ -9,4 +9,5 @@ import java.util.ArrayList;
 public interface UserDAO {
 
     User login(String login, String password,String role);
+    boolean addUser();
 }
