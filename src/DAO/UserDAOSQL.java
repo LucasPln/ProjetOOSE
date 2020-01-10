@@ -71,6 +71,7 @@ public class UserDAOSQL implements UserDAO {
             if(rs == 1) {
                 ResultSet rs2;
                 rs2 = stmt.executeQuery("select idUser from user where firstName='"+firstname+"' and lastName='"+lastname+"' and birthDate='"+dateBirth+"' and adress='"+adress+"' and postalCode="+postalCode+" and mail='"+email+"' and tel='"+phoneNumber+"'");
+
                 int id=-1;
                 while(rs2.next()){
                     id = rs2.getInt(1);
@@ -78,14 +79,21 @@ public class UserDAOSQL implements UserDAO {
 
                 switch (role) {
                     case "Monitor":
-                        rs = stmt.executeUpdate("INSERT INTO `monitor`(`idUser`) VALUES ("+id+")");
+                        rs = stmt.executeUpdate("INSERT INTO `monitor`(`idUser`,`idCompany`) VALUES ("+id+",NULL)");
                     case "Licensed":
                         rs = stmt.executeUpdate("INSERT INTO `licensed`(`idUser`) VALUES ("+id+")");
                     case "Admin":
                         rs = stmt.executeUpdate("INSERT INTO `admin`(`idUser`) VALUES ("+id+")");
                     case "Company Member":
-                        rs = stmt.executeUpdate("INSERT INTO `companymember`(`idUser`) VALUES ("+id+")");
+                        rs = stmt.executeUpdate("INSERT INTO `companymember`(`idUser`,`idCompany`) VALUES ("+id+",NULL)");
                     default:
+                }
+                if (rs == 1){
+                    System.out.println("user ajouté");
+                    return true;
+                }else{
+                    System.out.println("user pas ajouté");
+                    return false;
                 }
             }else{
                 return false;
