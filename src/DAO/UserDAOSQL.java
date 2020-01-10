@@ -61,8 +61,40 @@ public class UserDAOSQL implements UserDAO {
     }
 
     @Override
-    public boolean addUser() {
+    public boolean addUser(String firstname,String lastname,String phoneNumber,String email,String adress,String country,String postalCode,String dateBirth,String role) {
+        int rs = 26;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            rs = stmt.executeUpdate("INSERT INTO `user`(`firstName`, `lastName`, `birthDate`, `adress`, `postalCode`, `mail`, `tel`) VALUES ('"+firstname+"','"+lastname+"','"+dateBirth+"','"+adress+"',"+postalCode+",'"+email+"','"+phoneNumber+"')");
+
+            if(rs == 1) {
+                ResultSet rs2;
+                rs2 = stmt.executeQuery("select idUser from user where firstName='"+firstname+"' and lastName='"+lastname+"' and birthDate='"+dateBirth+"' and adress='"+adress+"' and postalCode="+postalCode+" and mail='"+email+"' and tel='"+phoneNumber+"'");
+                int id=-1;
+                while(rs2.next()){
+                    id = rs2.getInt(1);
+                }
+
+                switch (role) {
+                    case "Monitor":
+                        rs = stmt.executeUpdate("INSERT INTO `monitor`(`idUser`) VALUES ("+id+")");
+                    case "Licensed":
+                        rs = stmt.executeUpdate("INSERT INTO `licensed`(`idUser`) VALUES ("+id+")");
+                    case "Admin":
+                        rs = stmt.executeUpdate("INSERT INTO `admin`(`idUser`) VALUES ("+id+")");
+                    case "Company Member":
+                        rs = stmt.executeUpdate("INSERT INTO `companymember`(`idUser`) VALUES ("+id+")");
+                    default:
+                }
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
         return false;
+
     }
 
 
