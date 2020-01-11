@@ -35,6 +35,10 @@ public class FactoryDAOSQL extends AbstractFactory {
         this.bookingDAO = new BookingDAOMySQL();
     }
 
+    public void createEquipmentDAO(){
+        this.daoEquipement = new DAOSqlEquipement();
+    }
+
     @Override
     public void initialize() {
         Connection con = null;
