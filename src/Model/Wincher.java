@@ -5,11 +5,13 @@ import java.util.Date;
 public class Wincher extends Launcher {
     private Date ropeRenewal;
     private Date parachuteRenewal;
+    private int maxWeight;
 
-    public Wincher(String registrationLauncher, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, int idCompany, Date ropeRenewal, Date parachuteRenewal) {
+    public Wincher(String registrationLauncher, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, int idCompany, Date ropeRenewal, Date parachuteRenewal, int maxWeight) {
         super(registrationLauncher, acquisitionDate, renewalDate, maxLaunchWeight, idCompany);
         this.ropeRenewal = ropeRenewal;
         this.parachuteRenewal = parachuteRenewal;
+        this.maxWeight = maxWeight;
     }
 
     public Date getRopeRenewal() {
