@@ -1,11 +1,16 @@
 package Model;
 
+import java.util.Date;
+
 public class Plane extends Launcher {
     private int span;
     private int maxWeight;
-    @Override
-    public void createLauncher() {
 
+
+    public Plane(String registrationLauncher, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, int idCompany, int span, int maxWeight) {
+        super(registrationLauncher, acquisitionDate, renewalDate, maxLaunchWeight, idCompany);
+        this.span = span;
+        this.maxWeight = maxWeight;
     }
 
     public int getSpan() {

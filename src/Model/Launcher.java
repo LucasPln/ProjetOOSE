@@ -7,14 +7,23 @@ public abstract class Launcher {
     Date acquisitionDate;
     Date renewalDate;
     int maxLaunchWeight;
+    int idCompany;
     // Liste des dispos;
+
+
+    public Launcher(String registrationLauncher, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, int idCompany) {
+        this.registrationLauncher = registrationLauncher;
+        this.acquisitionDate = acquisitionDate;
+        this.renewalDate = renewalDate;
+        this.maxLaunchWeight = maxLaunchWeight;
+        this.idCompany = idCompany;
+    }
 
     public void getDisponibilite(){};
     public void updateDisponibilite(){};
     public abstract void updateLauncher();
     public abstract void deleteLauncher();
     public abstract void readLauncher();
-    public abstract void createLauncher();
 
 
     public String getRegistrationLauncher() {

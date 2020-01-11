@@ -5,9 +5,11 @@ import java.util.Date;
 public class Wincher extends Launcher {
     private Date ropeRenewal;
     private Date parachuteRenewal;
-    @Override
-    public void createLauncher() {
 
+    public Wincher(String registrationLauncher, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, int idCompany, Date ropeRenewal, Date parachuteRenewal) {
+        super(registrationLauncher, acquisitionDate, renewalDate, maxLaunchWeight, idCompany);
+        this.ropeRenewal = ropeRenewal;
+        this.parachuteRenewal = parachuteRenewal;
     }
 
     public Date getRopeRenewal() {
