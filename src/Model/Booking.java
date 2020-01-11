@@ -38,7 +38,7 @@ public class Booking {
         this.company = company;
     }
 
-    public Booking(Date startDate, Date endDate, double price, String state, int battery, int gps, String launcherPlane, String launcherWinch, int launchman, int customer, int flightManager, int diploma, String glider, int company) {
+    public Booking(Date startDate, Date endDate, double price, String state, int battery, int gps, String launcherPlane, String launcherWinch, int launchman, int customer, int flightManager, int diploma, String glider) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
@@ -52,7 +52,6 @@ public class Booking {
         this.flightManager = flightManager;
         this.diploma = diploma;
         this.glider = glider;
-        this.company = company;
     }
 
     public int getIdBooking() {
