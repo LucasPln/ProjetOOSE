@@ -3,36 +3,28 @@ package Model;
 import java.util.Date;
 
 public class Diploma {
-    private TypeOfDiploma type;
     private int idDiploma;
     private Date acquisitionDate;
     private Date renewalDate;
-    private User moitor;
-    private User deliveredBy;
+    private int idType;
+    private int idDeliveredBy;
+    private int idOwner;
     private String state;
     private int hourNeeded;
     private float hourDid;
-    private User holder;
+    private int holder;
 
-    public Diploma(TypeOfDiploma type, int idDiploma, Date acquisitionDate, Date renewalDate, User moitor, User deliveredBy, String state, int hourNeeded, float hourDid, User holder) {
-        this.type = type;
+    public Diploma(int idDiploma, Date acquisitionDate, Date renewalDate, int idType, int idDeliveredBy, int idOwner, String state, int hourNeeded, float hourDid, int holder) {
         this.idDiploma = idDiploma;
         this.acquisitionDate = acquisitionDate;
         this.renewalDate = renewalDate;
-        this.moitor = moitor;
-        this.deliveredBy = deliveredBy;
+        this.idType = idType;
+        this.idDeliveredBy = idDeliveredBy;
+        this.idOwner = idOwner;
         this.state = state;
         this.hourNeeded = hourNeeded;
         this.hourDid = hourDid;
         this.holder = holder;
-    }
-
-    public TypeOfDiploma getType() {
-        return type;
-    }
-
-    public void setType(TypeOfDiploma type) {
-        this.type = type;
     }
 
     public int getIdDiploma() {
@@ -59,6 +51,30 @@ public class Diploma {
         this.renewalDate = renewalDate;
     }
 
+    public int getIdType() {
+        return idType;
+    }
+
+    public void setIdType(int idType) {
+        this.idType = idType;
+    }
+
+    public int getIdDeliveredBy() {
+        return idDeliveredBy;
+    }
+
+    public void setIdDeliveredBy(int idDeliveredBy) {
+        this.idDeliveredBy = idDeliveredBy;
+    }
+
+    public int getIdOwner() {
+        return idOwner;
+    }
+
+    public void setIdOwner(int idOwner) {
+        this.idOwner = idOwner;
+    }
+
     public String getState() {
         return state;
     }
@@ -83,5 +99,11 @@ public class Diploma {
         this.hourDid = hourDid;
     }
 
+    public int getHolder() {
+        return holder;
+    }
 
+    public void setHolder(int holder) {
+        this.holder = holder;
+    }
 }
