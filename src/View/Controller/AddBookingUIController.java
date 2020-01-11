@@ -2,14 +2,17 @@ package View.Controller;
 
 import Facade.*;
 import Model.*;
+import View.Main.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class AddBookingUIController {
@@ -135,6 +138,20 @@ public class AddBookingUIController {
         Booking newBooking = new Booking(startDate,endDate,price,state,idBattery,idGPS,registerLauncherPlane,registerLauncherWinch,idLaunchman,idCustomer,idFlightManager,idDiploma,idGlider);
 
         boolean result = this.bookingFacade.createBooking(newBooking);
+
+        if (result){
+            try {
+                Main.bookingView(Main.getPrimaryStage());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("ERREUR");
+            alert.setContentText("Booking non créé");
+            alert.showAndWait();
+        }
 
 
     }

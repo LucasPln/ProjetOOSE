@@ -54,6 +54,28 @@ public class BookingDAOMySQL implements BookingDAO {
 
     @Override
     public boolean createBooking(Booking booking) {
+        int rs = -1;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            if(booking.getDiploma() == -1){
+                rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"','"+booking.getLauncherPlane()+"','" +booking.getLauncherWinch() +"', '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',null, '"+ booking.getGlider()+"', 1)");
+
+            } else {
+                rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"','"+booking.getLauncherPlane()+"','" +booking.getLauncherWinch() +"', '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"','"+booking.getDiploma() +"', '"+ booking.getGlider()+"', 1)");
+
+            }
+
+            if(rs == 1) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
         return false;
     }
 }
