@@ -5,6 +5,14 @@ import java.util.Date;
 public class Parachute extends Equipment {
     private Date renewalDate;
     private Date packageDate;
+    private int idCompany;
+
+    public Parachute(int idEquipement, String wording, Date renewalDate, Date packageDate, int idCompany) {
+        super(idEquipement, wording);
+        this.renewalDate = renewalDate;
+        this.packageDate = packageDate;
+        this.idCompany = idCompany;
+    }
 
     public Date getRenewalDate() {
         return renewalDate;

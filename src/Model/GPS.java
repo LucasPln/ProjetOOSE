@@ -2,6 +2,13 @@ package Model;
 
 public class GPS extends Equipment {
     private String installedVersion;
+    private int idCompany;
+
+    public GPS(int idEquipement, String wording, String installedVersion, int idCompany) {
+        super(idEquipement, wording);
+        this.installedVersion = installedVersion;
+        this.idCompany = idCompany;
+    }
 
     public String getInstalledVersion() {
         return installedVersion;
