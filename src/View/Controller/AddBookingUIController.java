@@ -12,9 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
-import java.util.ArrayList;
-import java.util.Observable;
-
 public class AddBookingUIController {
 
     private BookingFacade bookingFacade;
@@ -87,6 +84,13 @@ public class AddBookingUIController {
         }
         diplomaField.setItems(listIdDiploma);
 
+        /*
+        ObservableList<Integer> listIdGlider = FXCollections.observableArrayList();
+        for (Diploma diploma : this.diplomaFacade.getAllDiploma()){
+            listIdGlider.add(diploma.getIdDiploma());
+        }
+        diplomaField.setItems(listIdGlider);
+        */
 
     }
 
@@ -94,5 +98,6 @@ public class AddBookingUIController {
         this.bookingFacade = new BookingFacade();
         this.equipmentFacade = new EquipmentFacade();
         this.launcherFacade = new LauncherFacade();
+        this.diplomaFacade = new DiplomaFacade();
     }
 }
