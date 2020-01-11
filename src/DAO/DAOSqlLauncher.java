@@ -46,6 +46,35 @@ public class DAOSqlLauncher implements DAOLauncher {
 
     @Override
     public ArrayList<Wincher> getAllWincher() {
-        return null;
+        ArrayList<Wincher> listWincher = new ArrayList<>();
+
+        Connection con = FactoryDAOSQL.connection;
+        Statement stmt= null;
+
+        try {
+            stmt = con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from winch;");
+
+            while(rs.next()){
+                Wincher wincher = new Wincher(
+                        rs.getString(1),
+                        rs.getDate(3),
+                        rs.getDate(4),
+                        rs.getInt(5),
+                        rs.getInt(2),
+                        rs.getDate(6),
+                        rs.getDate(7),
+                        rs.getInt(8)
+                );
+                System.out.println("Wincher créé");
+                listWincher.add(wincher);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listWincher;
     }
 }

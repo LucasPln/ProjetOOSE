@@ -80,7 +80,7 @@ public class AddBookingUIController {
         for (Wincher wincher : this.launcherFacade.getAllWincher()){
             listRegistrationLauncherWinch.add(wincher.getRegistrationLauncher());
         }
-        launcherPlaneField.setItems(listRegistrationLauncherWinch);
+        launcherWinchField.setItems(listRegistrationLauncherWinch);
 
 
     }
