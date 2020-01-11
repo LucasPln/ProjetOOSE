@@ -40,6 +40,11 @@ public class FactoryDAOSQL extends AbstractFactory {
     }
 
     @Override
+    public void createLauncherDAO() {
+        this.daoLauncher = new DAOSqlLauncher();
+    }
+
+    @Override
     public void initialize() {
         Connection con = null;
         try {
