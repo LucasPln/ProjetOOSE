@@ -12,8 +12,7 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0"  vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+
         </rowConstraints>
           <Label fx:id="labelUser"  GridPane.columnIndex="0" GridPane.rowIndex="0"  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
           <Label fx:id="labelBirthDate"  GridPane.columnIndex="0" GridPane.rowIndex="1"  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
@@ -21,7 +20,13 @@
           <Label fx:id="labelPostalCode"  GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
           <Label fx:id="labelMail"  GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
           <Label fx:id="labelTel"  GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-          <Button mnemonicParsing="false" text="PayWhatMustIPay" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+          <Label fx:id="labelPosition"  GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+          <Label fx:id="labelCompany"  GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+        <Label fx:id="labelFlightHour"  GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+        <Label fx:id="labelAdminDate"  GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+
+        <Button mnemonicParsing="false" text="PayWhatMustIPay" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+          <Button mnemonicParsing="false" text="Modify my profile" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
 
       </GridPane>
 
