@@ -8,9 +8,8 @@ import java.util.Date;
 
 public class DAOSqlGlider implements DAOGlider {
 
-
     @Override
-    public ArrayList<Glider> getAllGlider() {
+    public ArrayList<Glider> getAllGliders() {
         return null;
     }
 
