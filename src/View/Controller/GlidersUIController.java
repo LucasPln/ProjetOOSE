@@ -6,6 +6,7 @@ import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
@@ -46,9 +47,26 @@ public class GlidersUIController {
             Label l5 = new Label(gliders.get(i).getReviewDate().toString());
             gridGliders.add(l5,4, i + 1);
             GridPane.setHalignment(l5, javafx.geometry.HPos.CENTER);
+
+            Button b1 = new Button("X");
+            int finalI = i;
+            b1.setOnAction(event -> {
+                deleteGlider(gliders.get(finalI).getRegistrationGlider());
+            });
+            gridGliders.add(b1,5,i + 1);
+            GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
         }
 
 
+    }
+
+    public void deleteGlider(String id) {
+        gliderFacade.deleteGlider(id);
+        try {
+            Main.glidersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void createGlider(ActionEvent actionEvent) {

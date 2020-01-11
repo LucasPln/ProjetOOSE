@@ -50,4 +50,15 @@ public class DAOSqlGlider implements DAOGlider {
         stmt.setDate(6, reviewDate);
         stmt.executeUpdate();
     }
+
+    @Override
+    public void deleteGlider(String id) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM glider WHERE registrationGlider='" + id + "'");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
