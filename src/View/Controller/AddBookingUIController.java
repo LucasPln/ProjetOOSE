@@ -1,11 +1,16 @@
 package View.Controller;
 
+import Facade.BookingFacade;
+import Facade.EquipmentFacade;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
 public class AddBookingUIController {
+
+    private BookingFacade bookingFacade;
+    private EquipmentFacade equipmentFacade;
 
     @FXML
     private DatePicker startDateField;
@@ -42,7 +47,11 @@ public class AddBookingUIController {
 
     @FXML
     public void initialize() {
-
+        System.out.println(this.equipmentFacade.getAllBattery());
     }
 
+    public AddBookingUIController() {
+        this.bookingFacade = new BookingFacade();
+        this.equipmentFacade = new EquipmentFacade();
+    }
 }
