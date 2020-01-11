@@ -1,21 +1,30 @@
 package Model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Glider {
     private String registrationGlider;
     private int span;
     private int maxWeight;
+    private int idCompany;
     private Date acquisitionDate;
     private Date reviewDate;
-    // liste dispo pas encore codée car besoind de tout le diagramme
 
-    // liste des batteries compatibles
-    private ArrayList<Battery> batteries =new ArrayList();
+    public Glider(String registrationGlider, int span, int maxWeight, int idCompany, Date acquisitionDate, Date reviewDate) {
+        this.registrationGlider = registrationGlider;
+        this.span = span;
+        this.maxWeight = maxWeight;
+        this.idCompany = idCompany;
+        this.acquisitionDate = acquisitionDate;
+        this.reviewDate = reviewDate;
+    }
 
     public void getDisponibilite(){}
     public void updateDisponibilite(){}
+
+    public void deleteGlider(){}
+    public void updateGlider(){}
+    public void readGlider(){}
 
     public String getRegistrationGlider() {
         return registrationGlider;
@@ -57,17 +66,12 @@ public class Glider {
         this.reviewDate = reviewDate;
     }
 
-    public void createGlider(){}
-    public void deleteGlider(){}
-    public void updateGlider(){}
-    public void readGlider(){}
+    public int getIdCompany() {
+        return idCompany;
+    }
 
-    public Glider(String registrationGlider, int span, int maxWeight, Date acquisitionDate, Date reviewDate) {
-        this.registrationGlider = registrationGlider;
-        this.span = span;
-        this.maxWeight = maxWeight;
-        this.acquisitionDate = acquisitionDate;
-        this.reviewDate = reviewDate;
+    public void setIdCompany(int idCompany) {
+        this.idCompany = idCompany;
     }
 }
 
