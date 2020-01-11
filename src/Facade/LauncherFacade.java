@@ -2,6 +2,7 @@ package Facade;
 
 import DAO.AbstractFactory;
 import Model.Plane;
+import Model.Wincher;
 
 import java.util.ArrayList;
 
@@ -17,5 +18,8 @@ public class LauncherFacade {
         return this.abstractFactory.getDaoLauncher().getAllPlane();
     }
 
+    public ArrayList<Wincher> getAllWincher(){
+        return this.abstractFactory.getDaoLauncher().getAllWincher();
+    }
 
 }

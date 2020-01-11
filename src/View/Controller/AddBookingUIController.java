@@ -6,6 +6,7 @@ import Facade.LauncherFacade;
 import Model.Battery;
 import Model.GPS;
 import Model.Plane;
+import Model.Wincher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -74,6 +75,12 @@ public class AddBookingUIController {
             listRegistrationLauncherPlane.add(plane.getRegistrationLauncher());
         }
         launcherPlaneField.setItems(listRegistrationLauncherPlane);
+
+        ObservableList<String> listRegistrationLauncherWinch = FXCollections.observableArrayList();
+        for (Wincher wincher : this.launcherFacade.getAllWincher()){
+            listRegistrationLauncherWinch.add(wincher.getRegistrationLauncher());
+        }
+        launcherPlaneField.setItems(listRegistrationLauncherWinch);
 
 
     }

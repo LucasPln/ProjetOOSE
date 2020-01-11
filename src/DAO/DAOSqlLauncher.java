@@ -2,6 +2,7 @@ package DAO;
 
 import Model.GPS;
 import Model.Plane;
+import Model.Wincher;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -41,5 +42,10 @@ public class DAOSqlLauncher implements DAOLauncher {
         }
 
         return listPlane;
+    }
+
+    @Override
+    public ArrayList<Wincher> getAllWincher() {
+        return null;
     }
 }
