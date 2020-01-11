@@ -127,9 +127,9 @@ public class UpdateUserUIController {
             if (r instanceof Admin){
                     res2 = this.updateUserFacade.updateAdmin(user.getId(),adminDateField.getValue().toString());
             }else if (r instanceof CompanyMember){
-                    res2 = this.updateUserFacade.updateCompanyMember(user.getId(),companyField.getText(),positionField.getText());
+                    res2 = this.updateUserFacade.updateCompanyMember(user.getId(),positionField.getText());
             }else if (r instanceof Monitor){
-                    res2 = this.updateUserFacade.updateMonitor(user.getId(),companyField.getText(),flightHourField.getText());
+                    res2 = this.updateUserFacade.updateMonitor(user.getId(),flightHourField.getText());
             }else if (r instanceof Licensed){
                     res2 = this.updateUserFacade.updateLicensed(user.getId(),flightHourField.getText());
             }

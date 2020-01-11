@@ -112,6 +112,20 @@ public class UserDAOSQL implements UserDAO {
 
     @Override
     public boolean update(int id,String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth){
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            int r = stmt.executeUpdate("UPDATE `user` SET `firstName`='"+firstname+"',`lastName`='"+lastname+"',`birthDate`='"+dateBirth+"',`adress`='"+adress+"',`postalCode`='"+postalCode+"',`mail`='"+email+"',`tel`='"+phoneNumber+"' WHERE `idUser`="+id+";");
+            if (r == 1){
+                System.out.println("user modifié");
+                return true;
+            }else{
+                System.out.println("user PAS modifié");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
         return false;
     }
 
