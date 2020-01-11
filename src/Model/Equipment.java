@@ -1,9 +1,13 @@
 package Model;
 
 public abstract class Equipment {
-    int idEquipement;
-    String wording;
-    // liste dispo
+    protected int idEquipement;
+    protected String wording;
+
+    public Equipment(int idEquipement, String wording) {
+        this.idEquipement = idEquipement;
+        this.wording = wording;
+    }
 
     public abstract void updateEquipement();
     public abstract void deleteEquipement();
