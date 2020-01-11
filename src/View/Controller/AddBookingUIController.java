@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
+import java.util.Date;
+
 public class AddBookingUIController {
 
     private BookingFacade bookingFacade;
@@ -111,6 +113,29 @@ public class AddBookingUIController {
     }
 
     public void createBooking(ActionEvent event){
+        Date startDate = java.sql.Date.valueOf(startDateField.getValue());
+        Date endDate = java.sql.Date.valueOf(endDateField.getValue());
+        double price = 0;
+        String state = "todo";
+        int idBattery = (Integer) batteryField.getValue();
+        int idGPS = (Integer) GPSField.getValue();
+        String registerLauncherPlane = (String) launcherPlaneField.getValue();
+        String registerLauncherWinch = (String) launcherWinchField.getValue();
+        int idLaunchman = (Integer) launchmanField.getValue();
+        int idCustomer = LoginFacade.getInstance().getConnectedUser().getId();
+        int idFlightManager = (Integer) flightManagerField.getValue();
+
+        int idDiploma = -1;
+        if(diplomaField.getValue() != null){
+            idDiploma = (Integer) diplomaField.getValue();
+        }
+
+        String idGlider = (String) gliderField.getValue();
+
+        Booking newBooking = new Booking(startDate,endDate,price,state,idBattery,idGPS,registerLauncherPlane,registerLauncherWinch,idLaunchman,idCustomer,idFlightManager,idDiploma,idGlider);
+
+        boolean result = this.bookingFacade.createBooking(newBooking);
+
 
     }
 }

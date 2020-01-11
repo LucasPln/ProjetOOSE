@@ -51,4 +51,9 @@ public class BookingDAOMySQL implements BookingDAO {
 
 
     }
+
+    @Override
+    public boolean createBooking(Booking booking) {
+        return false;
+    }
 }
