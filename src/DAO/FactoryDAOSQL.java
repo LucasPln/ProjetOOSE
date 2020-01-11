@@ -45,6 +45,11 @@ public class FactoryDAOSQL extends AbstractFactory {
     }
 
     @Override
+    public void createDiplomaDAO() {
+        this.daoDiploma = new DAOSqlDiploma();
+    }
+
+    @Override
     public void initialize() {
         Connection con = null;
         try {

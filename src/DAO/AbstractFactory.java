@@ -41,6 +41,8 @@ public abstract class AbstractFactory {
 
     public abstract void createLauncherDAO();
 
+    public abstract void createDiplomaDAO();
+
     public CompanyDAO getCompanyDAO() {
         return companyDAO;
     }

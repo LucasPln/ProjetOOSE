@@ -1,12 +1,10 @@
 package View.Controller;
 
 import Facade.BookingFacade;
+import Facade.DiplomaFacade;
 import Facade.EquipmentFacade;
 import Facade.LauncherFacade;
-import Model.Battery;
-import Model.GPS;
-import Model.Plane;
-import Model.Wincher;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,6 +20,7 @@ public class AddBookingUIController {
     private BookingFacade bookingFacade;
     private EquipmentFacade equipmentFacade;
     private LauncherFacade launcherFacade;
+    private DiplomaFacade diplomaFacade;
 
     @FXML
     private DatePicker startDateField;
@@ -81,6 +80,12 @@ public class AddBookingUIController {
             listRegistrationLauncherWinch.add(wincher.getRegistrationLauncher());
         }
         launcherWinchField.setItems(listRegistrationLauncherWinch);
+
+        ObservableList<Integer> listIdDiploma = FXCollections.observableArrayList();
+        for (Diploma diploma : this.diplomaFacade.getAllDiploma()){
+            listIdDiploma.add(diploma.getIdDiploma());
+        }
+        diplomaField.setItems(listIdDiploma);
 
 
     }
