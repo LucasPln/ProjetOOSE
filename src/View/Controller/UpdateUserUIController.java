@@ -4,6 +4,7 @@ import Facade.CompanyFacade;
 import Facade.LoginFacade;
 import Facade.UpdateUserFacade;
 import Model.*;
+import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,6 +12,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class UpdateUserUIController {
@@ -165,5 +167,13 @@ public class UpdateUserUIController {
         alert.setHeaderText("champ invalide");
         alert.setContentText("remplir tous les champs");
         alert.showAndWait();
+    }
+
+    public void returnView(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
