@@ -48,16 +48,31 @@ public class GlidersUIController {
             gridGliders.add(l5,4, i + 1);
             GridPane.setHalignment(l5, javafx.geometry.HPos.CENTER);
 
-            Button b1 = new Button("X");
+            Button b2 = new Button("Update");
             int finalI = i;
+            b2.setOnAction(event -> {
+                updateGlider(gliders.get(finalI).getRegistrationGlider());
+            });
+            gridGliders.add(b2,6,i + 1);
+            GridPane.setHalignment(b2, javafx.geometry.HPos.CENTER);
+
+            Button b1 = new Button("X");
             b1.setOnAction(event -> {
                 deleteGlider(gliders.get(finalI).getRegistrationGlider());
             });
-            gridGliders.add(b1,5,i + 1);
+            gridGliders.add(b1,7,i + 1);
             GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
         }
 
 
+    }
+
+    private void updateGlider(String registrationGlider) {
+        try {
+            Main.gliderUpdate(Main.getPrimaryStage(), registrationGlider);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void deleteGlider(String id) {

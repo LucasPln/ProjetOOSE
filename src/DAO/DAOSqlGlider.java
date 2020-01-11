@@ -5,7 +5,6 @@ import Model.Glider;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class DAOSqlGlider implements DAOGlider {
 
@@ -97,5 +96,42 @@ public class DAOSqlGlider implements DAOGlider {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Glider getGlider(String registrationGlider) {
+        Glider glider = null;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM glider WHERE registrationGlider='" + registrationGlider + "'");
+
+            while(rs.next()){
+                glider = new Glider(
+                        rs.getString(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getDate(5),
+                        rs.getDate(6)
+                );
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return glider;
+    }
+
+    @Override
+    public void updateGlider(String id, String newRegistrationID, float span, float maxWeight, java.sql.Date reviewDate) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE glider SET registrationGlider = ?, span = ?, maxWeight = ?, reviewDate = ? WHERE registrationGlider = '" + id +"'");
+        stmt.setString(1, newRegistrationID);
+        stmt.setFloat(2, span);
+        stmt.setFloat(3, maxWeight);
+        stmt.setDate(4, reviewDate);
+        stmt.executeUpdate();
     }
 }

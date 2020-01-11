@@ -5,6 +5,7 @@ import Model.Glider;
 import Model.Monitor;
 import Model.User;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -43,5 +44,19 @@ public class GliderFacade {
 
     public void deleteGlider(String id) {
         this.abstractFactory.getDaoGlider().deleteGlider(id);
+    }
+
+    public Glider getGlider(String registrationGlider) {
+        return this.abstractFactory.getDaoGlider().getGlider(registrationGlider);
+    }
+
+    public boolean updateGlider(String idGlider, String registrationID, float span, float maxWeight, Date reviewDate) {
+        try {
+            this.abstractFactory.getDaoGlider().updateGlider(idGlider,registrationID, span, maxWeight,reviewDate);
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
     }
 }

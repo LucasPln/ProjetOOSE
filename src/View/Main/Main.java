@@ -1,5 +1,6 @@
 package View.Main;
 
+import View.Controller.GliderUpdateController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -71,6 +72,18 @@ public class Main extends Application {
     }
     public static void updateUserView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/updateUser.fxml");
+    }
+
+    public static void gliderUpdate(Stage stage, String registrationGlider) throws IOException {
+        loader = new FXMLLoader(Main.class.getResource("../UI/gliderUpdate.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        GliderUpdateController controller = loader.<GliderUpdateController>getController();
+        controller.setInfos(registrationGlider);
+
+        stage.show();
     }
 
     public static Stage getPrimaryStage(){
