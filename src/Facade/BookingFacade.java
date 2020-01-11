@@ -24,4 +24,8 @@ public class BookingFacade {
         return this.af.getBookingDAO().getBookingByUser(idUser);
 
     }
+
+    public boolean createBooking(Booking booking){
+        return this.af.getBookingDAO().createBooking(booking);
+    }
 }

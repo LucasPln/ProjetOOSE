@@ -2,12 +2,18 @@ package View.Controller;
 
 import Facade.*;
 import Model.*;
+import View.Main.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+
+import java.io.IOException;
+import java.util.Date;
 
 public class AddBookingUIController {
 
@@ -16,6 +22,7 @@ public class AddBookingUIController {
     private LauncherFacade launcherFacade;
     private DiplomaFacade diplomaFacade;
     private GliderFacade gliderFacade;
+    private ReadUserFacade readUserFacade;
 
     @FXML
     private DatePicker startDateField;
@@ -76,6 +83,13 @@ public class AddBookingUIController {
         }
         launcherWinchField.setItems(listRegistrationLauncherWinch);
 
+        ObservableList<Integer> listIdMonitor = FXCollections.observableArrayList();
+        for (User user : this.readUserFacade.getAllMonitor()){
+            listIdMonitor.add(user.getId());
+        }
+        launchmanField.setItems(listIdMonitor);
+        flightManagerField.setItems(listIdMonitor);
+
         ObservableList<Integer> listIdDiploma = FXCollections.observableArrayList();
         for (Diploma diploma : this.diplomaFacade.getAllDiploma()){
             listIdDiploma.add(diploma.getIdDiploma());
@@ -98,5 +112,47 @@ public class AddBookingUIController {
         this.launcherFacade = new LauncherFacade();
         this.diplomaFacade = new DiplomaFacade();
         this.gliderFacade = new GliderFacade();
+        this.readUserFacade = new ReadUserFacade();
+    }
+
+    public void createBooking(ActionEvent event){
+        Date startDate = java.sql.Date.valueOf(startDateField.getValue());
+        Date endDate = java.sql.Date.valueOf(endDateField.getValue());
+        double price = 0;
+        String state = "todo";
+        int idBattery = (Integer) batteryField.getValue();
+        int idGPS = (Integer) GPSField.getValue();
+        String registerLauncherPlane = (String) launcherPlaneField.getValue();
+        String registerLauncherWinch = (String) launcherWinchField.getValue();
+        int idLaunchman = (Integer) launchmanField.getValue();
+        int idCustomer = LoginFacade.getInstance().getConnectedUser().getId();
+        int idFlightManager = (Integer) flightManagerField.getValue();
+
+        int idDiploma = -1;
+        if(diplomaField.getValue() != null){
+            idDiploma = (Integer) diplomaField.getValue();
+        }
+
+        String idGlider = (String) gliderField.getValue();
+
+        Booking newBooking = new Booking(startDate,endDate,price,state,idBattery,idGPS,registerLauncherPlane,registerLauncherWinch,idLaunchman,idCustomer,idFlightManager,idDiploma,idGlider);
+
+        boolean result = this.bookingFacade.createBooking(newBooking);
+
+        if (result){
+            try {
+                Main.bookingView(Main.getPrimaryStage());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("ERREUR");
+            alert.setContentText("Booking non créé");
+            alert.showAndWait();
+        }
+
+
     }
 }

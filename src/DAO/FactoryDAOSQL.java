@@ -50,6 +50,21 @@ public class FactoryDAOSQL extends AbstractFactory {
     }
 
     @Override
+    public void createMonitorDAO() {
+        this.monitorDAO = new MonitorDAOSQL();
+    }
+
+    @Override
+    public void createLicensedDAO() {
+        this.licensedDAO = new LicensedDAOSQL();
+    }
+
+    @Override
+    public void createAdminDAO() {
+        this.adminDAO = new AdminDAOSQL();
+    }
+
+    @Override
     public void initialize() {
         Connection con = null;
         try {

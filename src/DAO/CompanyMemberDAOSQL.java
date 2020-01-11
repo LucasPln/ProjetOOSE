@@ -42,5 +42,24 @@ public class CompanyMemberDAOSQL implements CompanyMemberDAO {
 
             return companyId;
         }
+
+    @Override
+    public boolean update(int idUser, String position) {
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            int r = stmt.executeUpdate("UPDATE `companymember` SET `position`=`"+position+"` WHERE `idUser`="+idUser);
+            if (r == 1){
+                System.out.println("companyMember modifié");
+                return true;
+            }else{
+                System.out.println("companyMember PAS modifié");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
     }
+}
 
