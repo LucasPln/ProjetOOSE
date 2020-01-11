@@ -87,7 +87,7 @@ public class AddBookingUIController {
         for (Glider glider : this.gliderFacade.getAllGliders()){
             listRegistrationGlider.add(glider.getRegistrationGlider());
         }
-        diplomaField.setItems(listRegistrationGlider);
+        gliderField.setItems(listRegistrationGlider);
 
 
     }
@@ -97,5 +97,6 @@ public class AddBookingUIController {
         this.equipmentFacade = new EquipmentFacade();
         this.launcherFacade = new LauncherFacade();
         this.diplomaFacade = new DiplomaFacade();
+        this.gliderFacade = new GliderFacade();
     }
 }

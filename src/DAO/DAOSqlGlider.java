@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Diploma;
 import Model.Glider;
 
 import java.sql.*;
@@ -10,8 +11,39 @@ public class DAOSqlGlider implements DAOGlider {
 
 
     @Override
-    public ArrayList<Glider> getAllGlider() {
-        return null;
+    public ArrayList<Glider> getAllGliders() {
+        ArrayList<Glider> listGlider = new ArrayList<>();
+
+        Connection con = FactoryDAOSQL.connection;
+        Statement stmt= null;
+
+        try {
+            stmt = con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from glider;");
+
+            while(rs.next()){
+
+                Glider glider = new Glider(
+                        rs.getString(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getDate(5),
+                        rs.getDate(6)
+
+                );
+
+
+                System.out.println("Glider créé");
+                listGlider.add(glider);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listGlider;
     }
 
     @Override
@@ -29,6 +61,7 @@ public class DAOSqlGlider implements DAOGlider {
                         rs.getString(1),
                         rs.getInt(2),
                         rs.getInt(3),
+                        rs.getInt(4),
                         rs.getDate(5),
                         rs.getDate(6)
                 );
