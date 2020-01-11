@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.Battery;
+import Model.GPS;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -38,5 +39,35 @@ public class DAOSqlEquipement implements DAOEquipement {
         }
 
         return listBattery;
+    }
+
+    @Override
+    public ArrayList<GPS> getAllGPS() {
+        ArrayList<GPS> listGPS = new ArrayList<>();
+
+        Connection con = FactoryDAOSQL.connection;
+        Statement stmt= null;
+
+        try {
+            stmt = con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from gps;");
+
+            while(rs.next()){
+                GPS gps = new GPS(
+                        rs.getInt(1),
+                        rs.getString(3),
+                        rs.getString(2),
+                        rs.getInt(4)
+                );
+                System.out.println("GPS créé");
+                listGPS.add(gps);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listGPS;
     }
 }

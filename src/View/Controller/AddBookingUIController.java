@@ -2,10 +2,17 @@ package View.Controller;
 
 import Facade.BookingFacade;
 import Facade.EquipmentFacade;
+import Model.Battery;
+import Model.GPS;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+
+import java.util.ArrayList;
+import java.util.Observable;
 
 public class AddBookingUIController {
 
@@ -47,7 +54,19 @@ public class AddBookingUIController {
 
     @FXML
     public void initialize() {
-        System.out.println(this.equipmentFacade.getAllBattery());
+        ObservableList<Integer> listIdBattery = FXCollections.observableArrayList();
+        for (Battery battery : this.equipmentFacade.getAllBattery()){
+            listIdBattery.add(battery.getIdEquipement());
+        }
+        batteryField.setItems(listIdBattery);
+
+        ObservableList<Integer> listIdGPS = FXCollections.observableArrayList();
+        for (GPS gps : this.equipmentFacade.getAllGPS()){
+            listIdGPS.add(gps.getIdEquipement());
+        }
+        GPSField.setItems(listIdGPS);
+
+
     }
 
     public AddBookingUIController() {
