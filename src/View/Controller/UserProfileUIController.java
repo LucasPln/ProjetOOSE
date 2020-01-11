@@ -90,4 +90,11 @@ public class UserProfileUIController {
             e.printStackTrace();
         }
     }
+    public void returnView(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -74,6 +74,7 @@
                 </GridPane>
 
                 <Button  text="update" onAction="#updateUser" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.halignment="CENTER"/>
+                <Button mnemonicParsing="false"  text="return" onAction="#returnView" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
 
             </children>
         </GridPane>
