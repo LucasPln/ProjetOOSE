@@ -18,6 +18,10 @@ public class GliderFacade {
         System.out.println("GliderDAO créé");
     }
 
+    public ArrayList<Glider> getAllGliders(){
+        return this.abstractFactory.getDaoGlider().getAllGliders();
+    }
+
     public ArrayList<Glider> getGlidersFromCompany() {
         User u = LoginFacade.getInstance().getConnectedUser();
         int idCompany = u.getCompanyId();

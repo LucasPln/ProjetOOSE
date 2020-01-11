@@ -10,6 +10,11 @@ public class DAOSqlGlider implements DAOGlider {
 
 
     @Override
+    public ArrayList<Glider> getAllGlider() {
+        return null;
+    }
+
+    @Override
     public ArrayList<Glider> getGlidersFromCompany(int idCompany) {
         Glider glider;
         ArrayList<Glider> gliders = new ArrayList<Glider>();
