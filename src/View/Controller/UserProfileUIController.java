@@ -1,6 +1,7 @@
 package View.Controller;
 
 
+import Facade.CompanyFacade;
 import Facade.LoginFacade;
 import Model.*;
 import View.Main.Main;
@@ -39,6 +40,7 @@ public class UserProfileUIController {
     @FXML
     public void initialize() {
         User user = LoginFacade.getInstance().getConnectedUser();
+        CompanyFacade cf = new CompanyFacade();
 
         labelUser.setText("Welcome "+user.getLastName()+" "+user.getFirstName());
         labelBirthDate.setText("Birth Date : "+user.getBirthDate());
@@ -48,7 +50,7 @@ public class UserProfileUIController {
         labelTel.setText("Tel : "+user.getTel());
 
         AbstractRole r = user.getAbstractRole();
-
+        Company c = cf.getInfos(user.getCompanyId());
         if (r instanceof Admin){
             labelPosition.setVisible(false);
             labelFlightHour.setVisible(false);
@@ -59,7 +61,7 @@ public class UserProfileUIController {
         }else if (r instanceof CompanyMember){
             labelFlightHour.setVisible(false);
             labelAdminDate.setVisible(false);
-            labelCompany.setText("id company " +((CompanyMember) r).getIdCompany());
+            labelCompany.setText("id company " +c.getName());
             labelPosition.setText("Position : "+((CompanyMember) r).getPosition());
             labelCompany.setVisible(true);
             labelPosition.setVisible(true);

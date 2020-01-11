@@ -1,5 +1,6 @@
 package View.Controller;
 
+import Facade.CompanyFacade;
 import Facade.LoginFacade;
 import Facade.UpdateUserFacade;
 import Model.*;
@@ -52,13 +53,18 @@ public class UpdateUserUIController {
     private Label adminDateLabel;
 
     private UpdateUserFacade updateUserFacade;
+    private CompanyFacade companyFacade;
 
-    public UpdateUserUIController(){updateUserFacade = new UpdateUserFacade();}
+    public UpdateUserUIController(){
+        updateUserFacade = new UpdateUserFacade();
+        companyFacade = new CompanyFacade();
+    }
 
     @FXML
     public void initialize() {
         User user = LoginFacade.getInstance().getConnectedUser();
         AbstractRole r = user.getAbstractRole();
+        Company c = companyFacade.getInfos(user.getCompanyId());
         firstnameField.setText(user.getFirstName());
         lastnameField.setText(user.getLastName());
         phoneNumberField.setText(user.getTel());
@@ -79,13 +85,15 @@ public class UpdateUserUIController {
             adminDateField.setVisible(true);
 
         }else if (r instanceof CompanyMember){
+
+
             positionLabel.setVisible(true);
             companyLabel.setVisible(true);
             flightHourLabel.setVisible(false);
             adminDateLabel.setVisible(false);
             flightHourField.setVisible(false);
             adminDateField.setVisible(false);
-            companyField.setText(String.valueOf(((CompanyMember) r).getIdCompany()));
+            companyField.setText(c.getName());
             positionField.setText(String.valueOf(((CompanyMember) r).getPosition()));
             companyField.setVisible(true);
             positionField.setVisible(true);
@@ -97,7 +105,7 @@ public class UpdateUserUIController {
             adminDateLabel.setVisible(false);
             positionField.setVisible(false);
             adminDateField.setVisible(false);
-            companyField.setText(String.valueOf(((Monitor) r).getIdCompany()));
+            companyField.setText(c.getName());
             flightHourField.setText(String.valueOf(((Monitor) r).getMonitorFlightHour()));
             companyField.setVisible(true);
             flightHourField.setVisible(true);
