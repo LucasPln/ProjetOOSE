@@ -2,8 +2,10 @@ package View.Controller;
 
 import Facade.BookingFacade;
 import Facade.EquipmentFacade;
+import Facade.LauncherFacade;
 import Model.Battery;
 import Model.GPS;
+import Model.Plane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,6 +20,7 @@ public class AddBookingUIController {
 
     private BookingFacade bookingFacade;
     private EquipmentFacade equipmentFacade;
+    private LauncherFacade launcherFacade;
 
     @FXML
     private DatePicker startDateField;
@@ -66,11 +69,18 @@ public class AddBookingUIController {
         }
         GPSField.setItems(listIdGPS);
 
+        ObservableList<String> listRegistrationLauncherPlane = FXCollections.observableArrayList();
+        for (Plane plane : this.launcherFacade.getAllPlane()){
+            listRegistrationLauncherPlane.add(plane.getRegistrationLauncher());
+        }
+        launcherPlaneField.setItems(listRegistrationLauncherPlane);
+
 
     }
 
     public AddBookingUIController() {
         this.bookingFacade = new BookingFacade();
         this.equipmentFacade = new EquipmentFacade();
+        this.launcherFacade = new LauncherFacade();
     }
 }
