@@ -37,6 +37,8 @@ public abstract class AbstractFactory {
 
     public abstract void createBookingDAO();
 
+    public abstract void createEquipmentDAO();
+
     public CompanyDAO getCompanyDAO() {
         return companyDAO;
     }
