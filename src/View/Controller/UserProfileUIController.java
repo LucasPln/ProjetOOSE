@@ -3,8 +3,14 @@ package View.Controller;
 
 import Facade.LoginFacade;
 import Model.*;
+import View.Main.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Label;
+
+import java.io.IOException;
+
 
 public class UserProfileUIController {
     @FXML
@@ -46,13 +52,11 @@ public class UserProfileUIController {
         if (r instanceof Admin){
             labelPosition.setVisible(false);
             labelFlightHour.setVisible(false);
-            labelAdminDate.setVisible(false);
             labelCompany.setVisible(false);
             labelAdminDate.setText("Admin Date : "+((Admin) r).getAdminDate());
             labelAdminDate.setVisible(true);
 
         }else if (r instanceof CompanyMember){
-            labelAdminDate.setVisible(false);
             labelFlightHour.setVisible(false);
             labelAdminDate.setVisible(false);
             labelCompany.setText("id company " +((CompanyMember) r).getIdCompany());
@@ -63,20 +67,25 @@ public class UserProfileUIController {
         }else if (r instanceof Monitor){
             labelPosition.setVisible(false);
             labelAdminDate.setVisible(false);
-            labelAdminDate.setVisible(false);
             labelCompany.setText("id company " +((Monitor) r).getIdCompany());
-            labelCompany.setText("flight Hour" +((Monitor) r).getMonitorFlightHour());
+            labelFlightHour.setText("flight Hour" +((Monitor) r).getMonitorFlightHour());
             labelCompany.setVisible(true);
             labelFlightHour.setVisible(true);
 
         }else if (r instanceof Licensed){
             labelPosition.setVisible(false);
             labelAdminDate.setVisible(false);
-            labelAdminDate.setVisible(false);
             labelCompany.setVisible(false);
-            labelCompany.setText("flight Hour" +((Licensed) r).getFlightHour());
+            labelFlightHour.setText("flight Hour" +((Licensed) r).getFlightHour());
             labelFlightHour.setVisible(true);
         }
 
+    }
+    public void modifyMyProfile(ActionEvent actionEvent) {
+        try {
+            Main.updateUserView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

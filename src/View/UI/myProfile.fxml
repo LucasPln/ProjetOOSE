@@ -26,7 +26,7 @@
         <Label fx:id="labelAdminDate"  GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
 
         <Button mnemonicParsing="false" text="PayWhatMustIPay" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-          <Button mnemonicParsing="false" text="Modify my profile" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+          <Button mnemonicParsing="false" text="Modify my profile" onAction="#modifyMyProfile" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
 
       </GridPane>
 

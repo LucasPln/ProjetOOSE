@@ -66,7 +66,7 @@ public class UserDAOSQL implements UserDAO {
     }
 
     @Override
-    public boolean addUser(String firstname,String lastname,String phoneNumber,String email,String adress,String country,String postalCode,String dateBirth,String role) {
+    public boolean addUser(String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth,String role) {
         int rs = 26;
         try {
             Connection con = FactoryDAOSQL.connection;
@@ -108,6 +108,11 @@ public class UserDAOSQL implements UserDAO {
         }
         return false;
 
+    }
+
+    @Override
+    public boolean update(int id,String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth){
+        return false;
     }
 
 

@@ -22,8 +22,7 @@ public class RegisterUIController {
 
     @FXML
     private TextField adressField;
-    @FXML
-    private TextField countryField;
+
     @FXML
     private TextField postalCodeField;
 
@@ -44,9 +43,9 @@ public class RegisterUIController {
     private void addUser(ActionEvent event) {
 
         if ((firstnameField.getText() != null) && (lastnameField.getText() != null) && (phoneNumberField.getText() != null) &&
-                (emailField.getText() != null) && (adressField.getText() != null) && (countryField.getText() != null) &&
+                (emailField.getText() != null) && (adressField.getText() != null) &&
                 (postalCodeField.getText() != null) && (dateField.getValue() != null)){
-            boolean res =this.registerFacade.addUser(firstnameField.getText(),lastnameField.getText(),phoneNumberField.getText(),emailField.getText(),adressField.getText(),countryField.getText(),postalCodeField.getText(),dateField.getValue().toString(),this.choiceBox.getValue().toString());
+            boolean res =this.registerFacade.addUser(firstnameField.getText(),lastnameField.getText(),phoneNumberField.getText(),emailField.getText(),adressField.getText(),postalCodeField.getText(),dateField.getValue().toString(),this.choiceBox.getValue().toString());
             if (res){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 

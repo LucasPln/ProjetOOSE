@@ -69,6 +69,9 @@ public class Main extends Application {
     public static void bookingCreationView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/addBooking.fxml");
     }
+    public static void updateUserView(Stage stage) throws IOException{
+        uploadView(stage, "Flight Manager", "../UI/updateUser.fxml");
+    }
 
     public static Stage getPrimaryStage(){
         return primaryStage;
