@@ -3,8 +3,29 @@ package Model;
 import java.util.Date;
 
 public class Diploma {
-    TypeOfDiploma type;
+    private TypeOfDiploma type;
     private int idDiploma;
+    private Date acquisitionDate;
+    private Date renewalDate;
+    private User moitor;
+    private User deliveredBy;
+    private String state;
+    private int hourNeeded;
+    private float hourDid;
+    private User holder;
+
+    public Diploma(TypeOfDiploma type, int idDiploma, Date acquisitionDate, Date renewalDate, User moitor, User deliveredBy, String state, int hourNeeded, float hourDid, User holder) {
+        this.type = type;
+        this.idDiploma = idDiploma;
+        this.acquisitionDate = acquisitionDate;
+        this.renewalDate = renewalDate;
+        this.moitor = moitor;
+        this.deliveredBy = deliveredBy;
+        this.state = state;
+        this.hourNeeded = hourNeeded;
+        this.hourDid = hourDid;
+        this.holder = holder;
+    }
 
     public TypeOfDiploma getType() {
         return type;
@@ -39,11 +60,11 @@ public class Diploma {
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public int getHourNeeded() {
@@ -62,11 +83,5 @@ public class Diploma {
         this.hourDid = hourDid;
     }
 
-    private Date acquisitionDate;
-    private Date renewalDate;
-    //monitor , delivredby;
-    private String State ;
-    private int hourNeeded;
-    private float hourDid;
-    //pilot holder;
+
 }
