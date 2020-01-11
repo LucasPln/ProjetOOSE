@@ -40,4 +40,8 @@ public class GliderFacade {
         }
         return true;
     }
+
+    public void deleteGlider(String id) {
+        this.abstractFactory.getDaoGlider().deleteGlider(id);
+    }
 }
