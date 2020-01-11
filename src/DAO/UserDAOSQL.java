@@ -1,7 +1,9 @@
 package DAO;
 
+import Facade.LoginFacade;
 import Model.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserDAOSQL implements UserDAO {
 
@@ -113,6 +115,52 @@ public class UserDAOSQL implements UserDAO {
     @Override
     public boolean update(int id,String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth){
         return false;
+    }
+
+    @Override
+    public ArrayList<User> getAllMonitor() {
+        ArrayList<User> listMonitor = new ArrayList<>();
+
+        Connection con = FactoryDAOSQL.connection;
+        Statement stmt= null;
+
+        try {
+            stmt = con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from user where idUser <> "+ LoginFacade.getInstance().getConnectedUser().getId() +";");
+
+            while(rs.next()){
+
+                int idUser = rs.getInt(1);
+
+                Statement stmt2 = con.createStatement();
+                ResultSet rs2 =stmt2.executeQuery("select * from monitor where idUser = "+ idUser +";");
+
+                if(rs2.next()){
+                    User user = new User(
+                            rs.getInt(1),
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            rs.getString(9),
+                            rs.getString(10)
+                    );
+
+                    System.out.println("User créé");
+                    listMonitor.add(user);
+                }
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listMonitor;
     }
 
 

@@ -4,6 +4,7 @@ import Facade.*;
 import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -16,6 +17,7 @@ public class AddBookingUIController {
     private LauncherFacade launcherFacade;
     private DiplomaFacade diplomaFacade;
     private GliderFacade gliderFacade;
+    private ReadUserFacade readUserFacade;
 
     @FXML
     private DatePicker startDateField;
@@ -76,6 +78,13 @@ public class AddBookingUIController {
         }
         launcherWinchField.setItems(listRegistrationLauncherWinch);
 
+        ObservableList<Integer> listIdMonitor = FXCollections.observableArrayList();
+        for (User user : this.readUserFacade.getAllMonitor()){
+            listIdMonitor.add(user.getId());
+        }
+        launchmanField.setItems(listIdMonitor);
+        flightManagerField.setItems(listIdMonitor);
+
         ObservableList<Integer> listIdDiploma = FXCollections.observableArrayList();
         for (Diploma diploma : this.diplomaFacade.getAllDiploma()){
             listIdDiploma.add(diploma.getIdDiploma());
@@ -98,5 +107,10 @@ public class AddBookingUIController {
         this.launcherFacade = new LauncherFacade();
         this.diplomaFacade = new DiplomaFacade();
         this.gliderFacade = new GliderFacade();
+        this.readUserFacade = new ReadUserFacade();
+    }
+
+    public void createBooking(ActionEvent event){
+
     }
 }
