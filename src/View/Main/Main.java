@@ -14,6 +14,8 @@ public class Main extends Application {
     private static Stage primaryStage;
     private static FXMLLoader loader;
 
+
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -84,6 +86,10 @@ public class Main extends Application {
         controller.setInfos(registrationGlider);
 
         stage.show();
+    }
+
+    public static void EquipmentsView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/equipments.fxml");
     }
 
     public static Stage getPrimaryStage(){

@@ -11,4 +11,5 @@ public interface DAOEquipement {
 
     ArrayList<GPS> getAllGPS();
 
+    String getNbEquipments(String item, int idCompany);
 }

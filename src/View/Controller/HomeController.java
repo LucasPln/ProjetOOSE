@@ -92,4 +92,12 @@ public class HomeController {
         LoginFacade.getInstance().logout();
 
     }
+
+    public void getEquipments(ActionEvent actionEvent) {
+        try {
+            Main.EquipmentsView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

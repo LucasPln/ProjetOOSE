@@ -70,4 +70,20 @@ public class DAOSqlEquipement implements DAOEquipement {
 
         return listGPS;
     }
+
+    @Override
+    public String getNbEquipments(String item, int idCompany) {
+        String res = "0";
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select count(*) from " + item + " where idCompany = " + idCompany);
+            while(rs.next()) {
+                res = Integer.toString(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
 }
