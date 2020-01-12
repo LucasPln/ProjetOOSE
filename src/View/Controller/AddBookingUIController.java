@@ -72,12 +72,14 @@ public class AddBookingUIController {
         GPSField.setItems(listIdGPS);
 
         ObservableList<String> listRegistrationLauncherPlane = FXCollections.observableArrayList();
+        listRegistrationLauncherPlane.add("---");
         for (Plane plane : this.launcherFacade.getAllPlane()){
             listRegistrationLauncherPlane.add(plane.getRegistrationLauncher());
         }
         launcherPlaneField.setItems(listRegistrationLauncherPlane);
 
         ObservableList<String> listRegistrationLauncherWinch = FXCollections.observableArrayList();
+        listRegistrationLauncherWinch.add("---");
         for (Wincher wincher : this.launcherFacade.getAllWincher()){
             listRegistrationLauncherWinch.add(wincher.getRegistrationLauncher());
         }
@@ -90,7 +92,8 @@ public class AddBookingUIController {
         launchmanField.setItems(listIdMonitor);
         flightManagerField.setItems(listIdMonitor);
 
-        ObservableList<Integer> listIdDiploma = FXCollections.observableArrayList();
+        ObservableList<Object> listIdDiploma = FXCollections.observableArrayList();
+        listIdDiploma.add("---");
         for (Diploma diploma : this.diplomaFacade.getAllDiploma()){
             listIdDiploma.add(diploma.getIdDiploma());
         }
@@ -122,14 +125,21 @@ public class AddBookingUIController {
         String state = "todo";
         int idBattery = (Integer) batteryField.getValue();
         int idGPS = (Integer) GPSField.getValue();
-        String registerLauncherPlane = (String) launcherPlaneField.getValue();
-        String registerLauncherWinch = (String) launcherWinchField.getValue();
+        String registerLauncherPlane = null;
+        if(launcherPlaneField.getValue() != null && launcherPlaneField.getValue() != "---"){
+            registerLauncherPlane = (String) launcherPlaneField.getValue();
+        }
+
+        String registerLauncherWinch = null;
+        if(launcherWinchField.getValue() != null && launcherWinchField.getValue() != "---"){
+            registerLauncherWinch = (String) launcherWinchField.getValue();
+        }
         int idLaunchman = (Integer) launchmanField.getValue();
         int idCustomer = LoginFacade.getInstance().getConnectedUser().getId();
         int idFlightManager = (Integer) flightManagerField.getValue();
 
         int idDiploma = -1;
-        if(diplomaField.getValue() != null){
+        if(diplomaField.getValue() != null && diplomaField.getValue() != "---"){
             idDiploma = (Integer) diplomaField.getValue();
         }
 

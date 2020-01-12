@@ -57,11 +57,11 @@ public class BookingDAOMySQL implements BookingDAO {
             Statement stmt=con.createStatement();
             if(booking.getDiploma() == -1){
                 rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
-                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"','"+booking.getLauncherPlane()+"','" +booking.getLauncherWinch() +"', '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',null, '"+ booking.getGlider()+"', 1)");
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"',"+booking.getLauncherPlane()+"," +booking.getLauncherWinch() +", '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',null, '"+ booking.getGlider()+"', 1)");
 
             } else {
                 rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
-                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"','"+booking.getLauncherPlane()+"','" +booking.getLauncherWinch() +"', '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"','"+booking.getDiploma() +"', '"+ booking.getGlider()+"', 1)");
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"',"+booking.getLauncherPlane()+"," +booking.getLauncherWinch() +", '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"','"+booking.getDiploma() +"', '"+ booking.getGlider()+"', 1)");
 
             }
 
@@ -134,7 +134,7 @@ public class BookingDAOMySQL implements BookingDAO {
             Connection con = FactoryDAOSQL.connection;
             PreparedStatement stmt=null;
             if(booking.getDiploma() == -1){
-                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = null, `idGlider` = ?, `company` = ?; ");
+                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = null, `idGlider` = ?, `company` = ? WHERE idBooking = "+ booking.getIdBooking()+"; ");
                 stmt.setDate(1, (java.sql.Date)booking.getStartDate());
                 stmt.setDate(2, (java.sql.Date)booking.getEndDate());
                 stmt.setDouble(3, booking.getPrice());
@@ -149,8 +149,9 @@ public class BookingDAOMySQL implements BookingDAO {
                 stmt.setString(12, booking.getGlider());
                 stmt.setInt(13, booking.getCompany());
 
+
             } else {
-                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = ?, `idGlider` = ?, `company` = ?; ");
+                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = ?, `idGlider` = ?, `company` = ? WHERE idBooking = "+ booking.getIdBooking()+"; ");
                 stmt.setDate(1, (java.sql.Date)booking.getStartDate());
                 stmt.setDate(2, (java.sql.Date)booking.getEndDate());
                 stmt.setDouble(3, booking.getPrice());
@@ -165,11 +166,13 @@ public class BookingDAOMySQL implements BookingDAO {
                 stmt.setInt(12, booking.getDiploma());
                 stmt.setString(13, booking.getGlider());
                 stmt.setInt(14, booking.getCompany());
+
             }
 
             rs = stmt.executeUpdate();
 
-            return rs == 1;
+            return rs != 0;
+
         } catch (SQLException e) {
             System.out.println(e);
         }
