@@ -5,7 +5,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller.CompanyUIController">
    <children>
-      <Label fx:id="nomCompany" layoutX="272.0" layoutY="28.0" />
+      <Label fx:id="Company" layoutX="198.0" layoutY="37.0" prefHeight="18.0" prefWidth="94.0" text="Company Name : " />
       <Button fx:id="returnBtn" layoutX="274.0" layoutY="337.0" mnemonicParsing="false" onAction="#ReturnView" text="Return" />
+      <ListView fx:id="listGlider" layoutX="277.0" layoutY="75.0" prefHeight="200.0" prefWidth="281.0" />
+      <Label layoutX="399.0" layoutY="46.0" text="Gliders List" />
+      <Label fx:id="nomCompany" layoutX="300.0" layoutY="38.0" text="Label" />
    </children>
 </AnchorPane>
