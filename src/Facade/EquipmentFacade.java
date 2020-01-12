@@ -2,6 +2,7 @@ package Facade;
 
 import DAO.AbstractFactory;
 import Model.Battery;
+import Model.Equipment;
 import Model.GPS;
 import Model.User;
 
@@ -29,5 +30,17 @@ public class EquipmentFacade {
         User u = LoginFacade.getInstance().getConnectedUser();
         int IDCompany = u.getCompanyId();
         return this.abstractFactory.getDaoEquipement().getNbEquipments(item, IDCompany);
+    }
+
+    public ArrayList<Equipment> getAll(String item) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        if(item.equals("gps")) {
+            return this.abstractFactory.getDaoEquipement().getAllGpsByCompanyId(IDCompany);
+        } else if(item.equals("parachute")) {
+            return this.abstractFactory.getDaoEquipement().getAllParachutesByCompanyId(IDCompany);
+        } else {
+            return this.abstractFactory.getDaoEquipement().getAllBatteriesByCompanyId(IDCompany);
+        }
     }
 }

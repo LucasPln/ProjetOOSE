@@ -1,7 +1,6 @@
 package DAO;
 
-import Model.Battery;
-import Model.GPS;
+import Model.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -85,5 +84,85 @@ public class DAOSqlEquipement implements DAOEquipement {
             e.printStackTrace();
         }
         return res;
+    }
+
+    @Override
+    public ArrayList<Equipment> getAllParachutesByCompanyId(int idCompany) {
+        Parachute parachute = null;
+        ArrayList<Equipment> parachutes = new ArrayList<Equipment>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM parachute WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                parachute = new Parachute(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getDate(3),
+                        rs.getDate(4),
+                        rs.getInt(5)
+                );
+                parachutes.add(parachute);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return parachutes;
+    }
+
+    @Override
+    public ArrayList<Equipment> getAllBatteriesByCompanyId(int idCompany) {
+        Battery battery = null;
+        ArrayList<Equipment> batteries = new ArrayList<Equipment>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM battery WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                battery = new Battery(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDate(4),
+                        rs.getInt(5)
+                );
+                batteries.add(battery);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return batteries;
+    }
+
+    @Override
+    public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
+        GPS gps = null;
+        ArrayList<Equipment> gpss = new ArrayList<Equipment>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM gps WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                gps = new GPS(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4)
+                );
+                gpss.add(gps);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return gpss;
     }
 }

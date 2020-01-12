@@ -25,12 +25,14 @@ public class EquipmentsUIController {
     }
 
     public void seeGPS(ActionEvent actionEvent) {
-
+        System.out.println(equipmentFacade.getAll("gps"));
     }
 
     public void seeBatteries(ActionEvent actionEvent) {
+        System.out.println(equipmentFacade.getAll("battery"));
     }
 
     public void seeParachutes(ActionEvent actionEvent) {
+        System.out.println(equipmentFacade.getAll("parachute"));
     }
 }
