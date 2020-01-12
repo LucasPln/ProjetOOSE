@@ -1,5 +1,6 @@
 package View.Main;
 
+import View.Controller.BookingUpdateUIController;
 import View.Controller.GliderUpdateController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -74,6 +75,18 @@ public class Main extends Application {
     }
     public static void updateUserView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/updateUser.fxml");
+    }
+
+    public static void updateBookingView(Stage stage, int idBooking) throws IOException{
+        loader = new FXMLLoader(Main.class.getResource("../UI/bookingUpdate.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        BookingUpdateUIController controller = loader.<BookingUpdateUIController>getController();
+        controller.setInfos(idBooking);
+
+        stage.show();
     }
 
     public static void gliderUpdate(Stage stage, String registrationGlider) throws IOException {

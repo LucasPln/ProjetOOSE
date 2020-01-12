@@ -51,11 +51,11 @@ public class BookingUIController {
 
             Button b2 = new Button("Update");
             int finalI = i;
-            /*
+
             b2.setOnAction(event -> {
                 updateBooking(bookings.get(finalI).getIdBooking());
             });
-            */
+
 
             gridBookings.add(b2,6,i + 1);
             GridPane.setHalignment(b2, javafx.geometry.HPos.CENTER);
@@ -83,6 +83,15 @@ public class BookingUIController {
         this.bf.deleteBooking(idBooking);
         try {
             Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateBooking(int idBooking){
+        //this.bf.updateBooking(idBooking);
+        try {
+            Main.updateBookingView(Main.getPrimaryStage(), idBooking);
         } catch (IOException e) {
             e.printStackTrace();
         }
