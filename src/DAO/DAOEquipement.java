@@ -25,4 +25,8 @@ public interface DAOEquipement {
     void deleteEquipment(String item, int id);
 
     void createBattery(String wording, int power, Date lastRefillDate, int idCompany);
+
+    void createGPS(String wording, String installedVersion, int idCompany);
+
+    void createParachute(String wording, Date renewalDate, Date packageDate, int idCompany);
 }

@@ -164,6 +164,35 @@ public class DAOSqlEquipement implements DAOEquipement {
     }
 
     @Override
+    public void createGPS(String wording, String installedVersion, int idCompany) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO gps (wording, installedVersion, idCompany) VALUES (?, ?, ?)");
+            stmt.setString(1, wording);
+            stmt.setString(2, installedVersion);
+            stmt.setInt(3, idCompany);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void createParachute(String wording, Date renewalDate, Date packageDate, int idCompany) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO parachute (wording, renewalDate, packageDate, idCompany) VALUES (?, ?, ?, ?)");
+            stmt.setString(1, wording);
+            stmt.setDate(2, renewalDate);
+            stmt.setDate(3, packageDate);
+            stmt.setInt(4, idCompany);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
         GPS gps = null;
         ArrayList<Equipment> gpss = new ArrayList<Equipment>();

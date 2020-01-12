@@ -50,4 +50,16 @@ public class EquipmentFacade {
         int IDCompany = u.getCompanyId();
         this.abstractFactory.getDaoEquipement().createBattery(wording, power, lastRefillDate, IDCompany);
     }
+
+    public void createGPS(String wording, String installedVersion) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        this.abstractFactory.getDaoEquipement().createGPS(wording, installedVersion, IDCompany);
+    }
+
+    public void createParachute(String wording, Date renewalDate, Date packageDate) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        this.abstractFactory.getDaoEquipement().createParachute(wording,renewalDate, packageDate, IDCompany);
+    }
 }

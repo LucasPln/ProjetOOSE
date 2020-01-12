@@ -40,6 +40,6 @@ public class EquipmentsUIController {
     }
 
     public void test(ActionEvent actionEvent) {
-        equipmentFacade.createBattery("foo", 2, new Date(10));
+        equipmentFacade.createParachute("foo", new Date(1000), new Date(200));
     }
 }
