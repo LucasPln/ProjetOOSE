@@ -14,6 +14,10 @@ public class BookingFacade {
         System.out.println("Booking DAO créé");
     }
 
+    public Booking getBooking(int idBooking){
+        return this.af.getBookingDAO().getBooking(idBooking);
+    }
+
     public ArrayList<Booking> getBookingUserConnected(){
         return this.getBookingByUser(LoginFacade.getInstance().getConnectedUser().getId());
     }

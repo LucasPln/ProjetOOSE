@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.Controller.BookingUpdateUIController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller.BookingUpdateUIController">
+    <children>
+        <GridPane layoutY="55.0" prefHeight="281.0" prefWidth="600.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <DatePicker fx:id="startDateField" promptText="startDate" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <DatePicker fx:id="endDateField" promptText="endDate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <ChoiceBox fx:id="batteryField" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Label text="Battery : " GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="GPS : " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <ChoiceBox fx:id="GPSField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Label text="Launcher Plane :" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <ChoiceBox fx:id="launcherPlaneField" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin></ChoiceBox>
+                <ChoiceBox fx:id="launcherWinchField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Label text="Launcher Winch :" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <ChoiceBox fx:id="launchmanField" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Label text="Launchman :" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Flight Manager :" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                </Label>
+                <Label text="Glider :" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+                <ChoiceBox fx:id="flightManagerField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="gliderField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="diplomaField" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets right="15.0" />
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Label text="Diploma :" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Label>
+            </children>
+        </GridPane>
+        <Button fx:id="updateBookingButton" layoutX="276.0" layoutY="355.0" mnemonicParsing="false" text="Update" />
+        <Label layoutX="198.0" layoutY="14.0" text="Creation Booking" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+    </children>
 
 </AnchorPane>
