@@ -17,10 +17,10 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="100.60001220703126" minHeight="10.0" prefHeight="90.20001831054688" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="150.00000610351563" minHeight="10.0" prefHeight="126.00000610351563" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="159.60001220703128" minHeight="10.0" prefHeight="129.1999938964844" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="95.60001220703123" minHeight="10.0" prefHeight="41.19998779296873" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="125.4" minHeight="10.0" prefHeight="125.4" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="150.00000610351563" minHeight="10.0" prefHeight="97.4" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="159.60001220703128" minHeight="10.0" prefHeight="117.19997558593747" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="95.60001220703123" minHeight="10.0" prefHeight="58.00002441406252" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label fx:id="batteries" GridPane.halignment="CENTER" GridPane.rowIndex="1">
