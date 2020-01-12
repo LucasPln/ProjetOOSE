@@ -46,7 +46,8 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#deleteEquipment" text="Button" GridPane.rowIndex="3" />
+             <Button mnemonicParsing="false" onAction="#test" text="test" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+
          </children>
       </GridPane>
    </children>

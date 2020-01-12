@@ -6,6 +6,7 @@ import Model.Equipment;
 import Model.GPS;
 import Model.User;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class EquipmentFacade {
@@ -44,7 +45,9 @@ public class EquipmentFacade {
         }
     }
 
-    public void deleteEquipmentById(String item, int id) {
-        this.abstractFactory.getDaoEquipement().deleteEquipment(item, id);
+    public void createBattery(String wording, int power, Date lastRefillDate) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        this.abstractFactory.getDaoEquipement().createBattery(wording, power, lastRefillDate, IDCompany);
     }
 }

@@ -149,6 +149,21 @@ public class DAOSqlEquipement implements DAOEquipement {
     }
 
     @Override
+    public void createBattery(String wording, int power, Date lastRefillDate, int idCompany) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO battery (wording, power, lastRefillDate, idCompany) VALUES (?, ?, ?, ?)");
+            stmt.setString(1, wording);
+            stmt.setInt(2, power);
+            stmt.setDate(3, lastRefillDate);
+            stmt.setInt(4, idCompany);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
         GPS gps = null;
         ArrayList<Equipment> gpss = new ArrayList<Equipment>();

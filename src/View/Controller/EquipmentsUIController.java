@@ -7,6 +7,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.sql.Date;
+
+
 public class EquipmentsUIController {
     public EquipmentFacade equipmentFacade;
     public Label batteries;
@@ -34,5 +37,9 @@ public class EquipmentsUIController {
 
     public void seeParachutes(ActionEvent actionEvent) {
         System.out.println(equipmentFacade.getAll("parachute"));
+    }
+
+    public void test(ActionEvent actionEvent) {
+        equipmentFacade.createBattery("foo", 2, new Date(10));
     }
 }

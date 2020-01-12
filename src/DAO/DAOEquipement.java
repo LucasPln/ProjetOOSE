@@ -5,6 +5,7 @@ import Model.Equipment;
 import Model.GPS;
 import Model.Parachute;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public interface DAOEquipement {
@@ -22,4 +23,6 @@ public interface DAOEquipement {
     ArrayList<Equipment> getAllBatteriesByCompanyId(int idCompany);
 
     void deleteEquipment(String item, int id);
+
+    void createBattery(String wording, int power, Date lastRefillDate, int idCompany);
 }
