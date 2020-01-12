@@ -5,10 +5,8 @@ import Model.*;
 import View.Main.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
@@ -17,46 +15,111 @@ import java.util.Date;
 
 public class AddBookingUIController {
 
+    /**
+     * The bookingFacade.
+     */
     private BookingFacade bookingFacade;
+
+    /**
+     * The equipmentFacade.
+     */
     private EquipmentFacade equipmentFacade;
+
+    /**
+     * The launherFacade.
+     */
     private LauncherFacade launcherFacade;
+
+    /**
+     * The diplomaFacade.
+     */
     private DiplomaFacade diplomaFacade;
+
+    /**
+     * The gliderFacade.
+     */
     private GliderFacade gliderFacade;
+
+    /**
+     * The readUserFacade.
+     */
     private ReadUserFacade readUserFacade;
 
+    /**
+     * A DatePicker from the view, used for the startDateField.
+     */
     @FXML
     private DatePicker startDateField;
 
+    /**
+     * A DatePicker from the view, used for the endDateField.
+     */
     @FXML
     private DatePicker endDateField;
 
+    /**
+     * A ChoiceBox from the view, used for the batteryField.
+     */
     @FXML
     private ChoiceBox batteryField;
 
+    /**
+     * A ChoiceBox from the view, used for the GPSField.
+     */
     @FXML
     private ChoiceBox GPSField;
 
+    /**
+     * A ChoiceBox from the view, used for the launcherPlaneField.
+     */
     @FXML
     private ChoiceBox launcherPlaneField;
 
+    /**
+     * A ChoiceBox from the view, used for the launcherWinchField.
+     */
     @FXML
     private ChoiceBox launcherWinchField;
 
+    /**
+     * A ChoiceBox from the view, used for the launchmanField.
+     */
     @FXML
     private ChoiceBox launchmanField;
 
+    /**
+     * A ChoiceBox from the view, used for the flightManagerField.
+     */
     @FXML
     private ChoiceBox flightManagerField;
 
+    /**
+     * A ChoiceBox from the view, used for the diplomaField.
+     */
     @FXML
     private ChoiceBox diplomaField;
 
+    /**
+     * A ChoiceBox from the view, used for the gliderField.
+     */
     @FXML
     private ChoiceBox gliderField;
 
-    @FXML
-    private Button addButton;
+    /**
+     * Controller that initialize all the Facade.
+     */
+    public AddBookingUIController() {
+        this.bookingFacade = new BookingFacade();
+        this.equipmentFacade = new EquipmentFacade();
+        this.launcherFacade = new LauncherFacade();
+        this.diplomaFacade = new DiplomaFacade();
+        this.gliderFacade = new GliderFacade();
+        this.readUserFacade = new ReadUserFacade();
+    }
 
+    /**
+     * Initialize elements from the UI.
+     */
     @FXML
     public void initialize() {
         ObservableList<Integer> listIdBattery = FXCollections.observableArrayList();
@@ -109,16 +172,11 @@ public class AddBookingUIController {
 
     }
 
-    public AddBookingUIController() {
-        this.bookingFacade = new BookingFacade();
-        this.equipmentFacade = new EquipmentFacade();
-        this.launcherFacade = new LauncherFacade();
-        this.diplomaFacade = new DiplomaFacade();
-        this.gliderFacade = new GliderFacade();
-        this.readUserFacade = new ReadUserFacade();
-    }
-
-    public void createBooking(ActionEvent event){
+    /**
+     * Create a new booking with parameters selected.
+     * Used by the "Create" button.
+     */
+    public void createBooking(){
         Date startDate = java.sql.Date.valueOf(startDateField.getValue());
         Date endDate = java.sql.Date.valueOf(endDateField.getValue());
         double price = 0;
@@ -166,6 +224,10 @@ public class AddBookingUIController {
 
     }
 
+    /**
+     * Switch UI to the Booking view.
+     * Used by the "Back" button.
+     */
     public void back(){
         try {
             Main.bookingView(Main.getPrimaryStage());

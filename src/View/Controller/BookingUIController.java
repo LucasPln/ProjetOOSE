@@ -15,17 +15,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class BookingUIController {
+    /**
+     * The gridPane from the UI that shows informations of bookings.
+     */
     @FXML
     private GridPane gridBookings;
-    @FXML
-    private Button addBooking;
 
+    /**
+     * The bookingFacade.
+     */
     private BookingFacade bf;
 
+    /**
+     * Controller that initialize the bookingFacade.
+     */
     public BookingUIController() {
         this.bf = new BookingFacade();
     }
 
+    /**
+     * Initialize elements from the UI.
+     */
     @FXML
     public void initialize(){
         ArrayList<Booking> bookings = this.bf.getBookingUserConnected();
@@ -71,7 +81,11 @@ public class BookingUIController {
         }
     }
 
-    public void createBooking(ActionEvent event){
+    /**
+     * Switch UI to addBooking view.
+     * Used by the "New" button on the UI.
+     */
+    public void createBooking(){
         try {
             Main.bookingCreationView(Main.getPrimaryStage());
         } catch (IOException e) {
@@ -79,6 +93,11 @@ public class BookingUIController {
         }
     }
 
+    /**
+     * Delete the booking selected and reload the UI.
+     * Used by the "X" buttons.
+     * @param idBooking : id of the booking selected.
+     */
     public void deleteBooking(int idBooking){
         this.bf.deleteBooking(idBooking);
         try {
@@ -88,6 +107,11 @@ public class BookingUIController {
         }
     }
 
+    /**
+     * Switch UI to the bookingUpdate view of the booking selected.
+     * Used by the "Update" buttons.
+     * @param idBooking : id of the booking selected.
+     */
     public void updateBooking(int idBooking){
         try {
             Main.updateBookingView(Main.getPrimaryStage(), idBooking);
@@ -96,6 +120,10 @@ public class BookingUIController {
         }
     }
 
+    /**
+     * Switch UI to the Home view.
+     * Used by the "Back" button.
+     */
     public void back(){
         try {
             Main.homeView(Main.getPrimaryStage());
