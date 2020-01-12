@@ -89,9 +89,16 @@ public class BookingUIController {
     }
 
     public void updateBooking(int idBooking){
-        //this.bf.updateBooking(idBooking);
         try {
             Main.updateBookingView(Main.getPrimaryStage(), idBooking);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void back(){
+        try {
+            Main.homeView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

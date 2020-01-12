@@ -200,6 +200,14 @@ public class BookingUpdateUIController {
 
     }
 
+    public void back(){
+        try {
+            Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

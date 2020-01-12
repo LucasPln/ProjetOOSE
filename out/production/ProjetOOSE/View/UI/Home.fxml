@@ -16,6 +16,7 @@
             <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#addUser" text="addUser" />
             <Button fx:id="equipmentsButton" mnemonicParsing="false" onAction="#getEquipments" text="Equipments" />
             <Button fx:id="myCompanyBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getCompany" text="my Company" />
+            <Button fx:id="usersBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getUsers" text="users" />
         </buttons>
       </ButtonBar>
 
