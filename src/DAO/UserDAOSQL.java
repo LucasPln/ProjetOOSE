@@ -181,5 +181,25 @@ public class UserDAOSQL implements UserDAO {
         return listMonitor;
     }
 
+    public boolean delete(int idUser){
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            int rs = stmt.executeUpdate("DELETE ON CASCADE FROM `user` WHERE idUser="+idUser);
+            if (rs >= 1){
+                System.out.println("user supprimé");
+                return true;
+            }else{
+                System.out.println("user PAS supprimé");
+                return false;
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }
