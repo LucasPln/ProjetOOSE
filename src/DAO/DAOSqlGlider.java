@@ -91,7 +91,7 @@ public class DAOSqlGlider implements DAOGlider {
     public void deleteGlider(String id) {
         Connection con = FactoryDAOSQL.connection;
         try {
-            PreparedStatement stmt=con.prepareStatement("DELETE ON CASCADE FROM glider WHERE registrationGlider='" + id + "'");
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM glider WHERE registrationGlider='" + id + "'");
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

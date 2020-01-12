@@ -43,4 +43,8 @@ public class EquipmentFacade {
             return this.abstractFactory.getDaoEquipement().getAllBatteriesByCompanyId(IDCompany);
         }
     }
+
+    public void deleteEquipmentById(String item, int id) {
+        this.abstractFactory.getDaoEquipement().deleteEquipment(item, id);
+    }
 }

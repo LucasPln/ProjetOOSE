@@ -2,10 +2,7 @@ package DAO;
 
 import Model.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DAOSqlEquipement implements DAOEquipement {
@@ -138,6 +135,17 @@ public class DAOSqlEquipement implements DAOEquipement {
         }
 
         return batteries;
+    }
+
+    @Override
+    public void deleteEquipment(String item, int id) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM "+ item +" WHERE id" + item +"=" + id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

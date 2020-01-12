@@ -20,4 +20,6 @@ public interface DAOEquipement {
     ArrayList<Equipment> getAllParachutesByCompanyId(int idCompany);
 
     ArrayList<Equipment> getAllBatteriesByCompanyId(int idCompany);
+
+    void deleteEquipment(String item, int id);
 }
