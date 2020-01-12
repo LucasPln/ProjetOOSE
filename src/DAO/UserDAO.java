@@ -13,5 +13,6 @@ public interface UserDAO {
     boolean addUser(String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth,String role);
     boolean update(int id,String firstname,String lastname,String phoneNumber,String email,String adress,String postalCode,String dateBirth);
     ArrayList<User> getAllMonitor();
+    boolean delete(int idUser);
 }
 

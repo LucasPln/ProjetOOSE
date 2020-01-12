@@ -2,6 +2,9 @@ package View.Controller;
 
 import Facade.GliderFacade;
 import Facade.LoginFacade;
+import Model.AbstractRole;
+import Model.Admin;
+import Model.User;
 import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +35,15 @@ public class HomeController {
 
     @FXML
     public void initialize(){
-        labelUser.setText("Welcome "+ LoginFacade.getInstance().getConnectedUserName()+" !");
+        User u = LoginFacade.getInstance().getConnectedUser();
+        AbstractRole a = u.getAbstractRole();
+        labelUser.setText("Welcome "+ u.getFirstName()+" !");
+
+        if(a instanceof Admin){
+            addUserButton.setVisible(true);
+        }else {
+            addUserButton.setVisible(false);
+        }
     }
 
 
