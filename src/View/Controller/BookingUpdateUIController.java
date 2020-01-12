@@ -112,14 +112,19 @@ public class BookingUpdateUIController {
     public void setInfos(int idbooking){
 
         Booking booking = this.bf.getBooking(idbooking);
-        System.out.println("Set infos ok");
-        /*
-        registrationIDInput.setText(g.getRegistrationGlider());
-        reviewDateInput.setValue(((Date)g.getReviewDate()).toLocalDate());
-        spanInput.setText(Integer.toString(g.getSpan()));
-        maxWidthInput.setText(Integer.toString(g.getMaxWeight()));
 
-         */
+        startDateField.setValue(((Date)booking.getStartDate()).toLocalDate());
+        endDateField.setValue(((Date)booking.getEndDate()).toLocalDate());
+        batteryField.setValue(booking.getBattery());
+        GPSField.setValue(booking.getGps());
+        launcherPlaneField.setValue(booking.getLauncherPlane());
+        launcherWinchField.setValue(booking.getLauncherWinch());
+        launchmanField.setValue(booking.getLaunchman());
+        flightManagerField.setValue(booking.getFlightManager());
+        diplomaField.setValue(booking.getDiploma());
+        gliderField.setValue(booking.getGlider());
+
+
     }
 
 
