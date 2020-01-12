@@ -50,9 +50,9 @@ public class GliderFacade {
         return this.abstractFactory.getDaoGlider().getGlider(registrationGlider);
     }
 
-    public boolean updateGlider(String idGlider, String registrationID, float span, float maxWeight, Date reviewDate) {
+    public boolean updateGlider(String idGlider, float span, float maxWeight, Date reviewDate) {
         try {
-            this.abstractFactory.getDaoGlider().updateGlider(idGlider,registrationID, span, maxWeight,reviewDate);
+            this.abstractFactory.getDaoGlider().updateGlider(idGlider, span, maxWeight,reviewDate);
         } catch (SQLException e) {
             System.out.println(e);
             return false;

@@ -35,7 +35,6 @@ public class GliderUpdateController {
         } else {
             boolean done = gliderFacade.updateGlider(
                     this.idGlider,
-                    registrationIDInput.getText(),
                     Float.parseFloat(spanInput.getText()),
                     Float.parseFloat(maxWidthInput.getText()),
                     java.sql.Date.valueOf(reviewDateInput.getValue())
