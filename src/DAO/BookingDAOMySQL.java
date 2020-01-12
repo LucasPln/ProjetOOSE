@@ -2,10 +2,7 @@ package DAO;
 
 import Model.Booking;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class BookingDAOMySQL implements BookingDAO {
@@ -77,5 +74,16 @@ public class BookingDAOMySQL implements BookingDAO {
             System.out.println(e);
         }
         return false;
+    }
+
+    @Override
+    public void deleteBooking(int idBooking) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM booking WHERE idBooking='" + idBooking + "'");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

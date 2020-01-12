@@ -28,4 +28,8 @@ public class BookingFacade {
     public boolean createBooking(Booking booking){
         return this.af.getBookingDAO().createBooking(booking);
     }
+
+    public void deleteBooking(int idBooking){
+        this.af.getBookingDAO().deleteBooking(idBooking);
+    }
 }

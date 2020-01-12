@@ -8,4 +8,5 @@ public interface BookingDAO {
 
     ArrayList<Booking> getBookingByUser(int idUser);
     boolean createBooking(Booking booking);
+    void deleteBooking(int idBooking);
 }
