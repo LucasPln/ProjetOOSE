@@ -193,6 +193,35 @@ public class DAOSqlEquipement implements DAOEquipement {
     }
 
     @Override
+    public void updateParachute(int id, String wording, Date renewalDate, Date packageDate) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE parachute SET wording = ?, renewalDate = ?, packageDate = ? WHERE idParachute = '" + id +"'");
+        stmt.setString(1, wording);
+        stmt.setDate(2, renewalDate);
+        stmt.setDate(3, packageDate);
+        stmt.executeUpdate();
+    }
+
+    @Override
+    public void updateBattery(int id, String wording, int power, Date lastRefillDate) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE battery SET wording = ?, power = ?, lastRefillDate = ? WHERE idBattery = '" + id +"'");
+        stmt.setString(1, wording);
+        stmt.setInt(2, power);
+        stmt.setDate(3, lastRefillDate);
+        stmt.executeUpdate();
+    }
+
+    @Override
+    public void updateGPS(int id, String wording, String installedVersion) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE gps SET wording = ?, installedVersion = ? WHERE idGps = '" + id +"'");
+        stmt.setString(1, wording);
+        stmt.setString(2, installedVersion);
+        stmt.executeUpdate();
+    }
+
+    @Override
     public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
         GPS gps = null;
         ArrayList<Equipment> gpss = new ArrayList<Equipment>();

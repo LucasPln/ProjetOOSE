@@ -38,8 +38,4 @@ public class EquipmentsUIController {
     public void seeParachutes(ActionEvent actionEvent) {
         System.out.println(equipmentFacade.getAll("parachute"));
     }
-
-    public void test(ActionEvent actionEvent) {
-        equipmentFacade.createParachute("foo", new Date(1000), new Date(200));
-    }
 }

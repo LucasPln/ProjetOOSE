@@ -7,6 +7,7 @@ import Model.GPS;
 import Model.User;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EquipmentFacade {
@@ -61,5 +62,33 @@ public class EquipmentFacade {
         User u = LoginFacade.getInstance().getConnectedUser();
         int IDCompany = u.getCompanyId();
         this.abstractFactory.getDaoEquipement().createParachute(wording,renewalDate, packageDate, IDCompany);
+    }
+
+    public boolean updateGPS(int id, String wording, String installedVersion) {
+        try {
+            this.abstractFactory.getDaoEquipement().updateGPS(id, wording, installedVersion);
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+    public boolean updateBattery(int id, String wording, int power, Date lastRefillDate) {
+        try {
+            this.abstractFactory.getDaoEquipement().updateBattery(id, wording, power, lastRefillDate);
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+    public boolean updateParachute(int id, String wording, Date renewalDate, Date packageDate) {
+        try {
+            this.abstractFactory.getDaoEquipement().updateParachute(id, wording, renewalDate, packageDate);
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
     }
 }

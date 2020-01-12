@@ -6,6 +6,7 @@ import Model.GPS;
 import Model.Parachute;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface DAOEquipement {
@@ -29,4 +30,10 @@ public interface DAOEquipement {
     void createGPS(String wording, String installedVersion, int idCompany);
 
     void createParachute(String wording, Date renewalDate, Date packageDate, int idCompany);
+
+    void updateParachute(int id, String wording, Date renewalDate, Date packageDate) throws SQLException;
+
+    void updateBattery(int id, String wording, int power, Date lastRefillDate) throws SQLException;
+
+    void updateGPS(int id, String wording, String installedVersion) throws SQLException;
 }
