@@ -2,9 +2,7 @@ package View.Controller;
 
 import Facade.GliderFacade;
 import Facade.LoginFacade;
-import Model.AbstractRole;
-import Model.Admin;
-import Model.User;
+import Model.*;
 import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +24,8 @@ public class HomeController {
     private Label labelUser;
 
     @FXML
+    private Button usersBtn;
+    @FXML
     private Button viewBookingButton;
 
     @FXML
@@ -41,8 +41,20 @@ public class HomeController {
 
         if(a instanceof Admin){
             addUserButton.setVisible(true);
-        }else {
+            myCompanyBtn.setVisible(false);
+            glidersBtn.setVisible(true);
+        }else if(a instanceof CompanyMember){
             addUserButton.setVisible(false);
+            glidersBtn.setVisible(true);
+            myCompanyBtn.setVisible(true);
+        }else if(a instanceof Monitor){
+            addUserButton.setVisible(false);
+            myCompanyBtn.setVisible(true);
+            glidersBtn.setVisible(true);
+        }else { // Licensed
+            addUserButton.setVisible(false);
+            myCompanyBtn.setVisible(false);
+            glidersBtn.setVisible(false);
         }
     }
 
@@ -107,6 +119,14 @@ public class HomeController {
     public void getEquipments(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getUsers(ActionEvent actionEvent) {
+        try {
+            Main.usersView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

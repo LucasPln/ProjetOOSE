@@ -108,4 +108,8 @@ public class Main extends Application {
     public static Stage getPrimaryStage(){
         return primaryStage;
     }
+    public static void usersView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/users.fxml");
+    }
+
 }
