@@ -38,6 +38,7 @@ public class UserDAOSQL implements UserDAO {
             Connection con2 = FactoryDAOSQL.connection;
             Statement stmt2=con2.createStatement();
             ResultSet rs2;
+            System.out.println(role);
             if (role.equals("Monitor")){
                 rs2=stmt2.executeQuery("select * from monitor where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
@@ -52,15 +53,18 @@ public class UserDAOSQL implements UserDAO {
             }else if(role.equals("Company Member")){
                 rs2=stmt2.executeQuery("select * from companymember where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
-                    abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
+                    abstractRole = new CompanyMember(rs2.getInt(1),rs2.getString(2),rs2.getInt(3),rs2.getInt(4));
                 }
+                System.out.println("ici");
             }else{//role.equals("Admin")
                 rs2=stmt2.executeQuery("select * from admin where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
                     abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
                 }
+                System.out.println("ici2");
             }
             user.setAbstractRole(abstractRole);
+            System.out.println(abstractRole.getClass());
         } catch (SQLException e) {
         }
 

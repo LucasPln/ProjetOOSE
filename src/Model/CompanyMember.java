@@ -2,13 +2,13 @@ package Model;
 
 public class CompanyMember extends AbstractRole{
 
-    private int position;
+    private String position;
 
-    public int getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(int position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
@@ -33,5 +33,11 @@ public class CompanyMember extends AbstractRole{
 
     public CompanyMember(int idRole) {
         super(idRole);
+    }
+    public CompanyMember(int idRole,String position,int idCompany,int idUser) {
+        super(idRole);
+        this.idUser = idUser;
+        this.position = position;
+        this.idCompany = idCompany;
     }
 }
