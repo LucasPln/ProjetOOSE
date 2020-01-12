@@ -165,4 +165,12 @@ public class AddBookingUIController {
 
 
     }
+
+    public void back(){
+        try {
+            Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

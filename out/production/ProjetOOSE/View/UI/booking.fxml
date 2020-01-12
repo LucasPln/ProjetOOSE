@@ -31,6 +31,7 @@
                 </GridPane>
             </content>
         </ScrollPane>
-        <Button fx:id="addBooking" layoutX="267.0" layoutY="348.0" mnemonicParsing="false" onAction="#createBooking" text="New" />
+        <Button fx:id="addBooking" layoutX="361.0" layoutY="348.0" mnemonicParsing="false" onAction="#createBooking" text="New" />
+      <Button fx:id="backButton" layoutX="171.0" layoutY="348.0" mnemonicParsing="false" onAction="#back" text="Back" />
     </children>
 </AnchorPane>
