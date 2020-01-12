@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class CompanyMemberDAOSQL implements CompanyMemberDAO {
 
@@ -60,6 +61,42 @@ public class CompanyMemberDAOSQL implements CompanyMemberDAO {
             System.out.println(e);
         }
         return false;
+    }
+
+    @Override
+    public ArrayList<User> getAllCompanyMember() {
+        ArrayList<User> companyMembers = new ArrayList<>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from companymember,user where companymember.idUser=user.idUser ;");
+            while(rs.next()){
+                AbstractRole r = new CompanyMember(rs.getInt(1),
+                        rs.getString(2),rs.getInt(3),rs.getInt(4));
+                User user = new User(
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14)
+
+                );
+
+                user.setAbstractRole(r);
+
+                companyMembers.add(user);
+            }
+
+            return companyMembers;
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
     }
 }
 

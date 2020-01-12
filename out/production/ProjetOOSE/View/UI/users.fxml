@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.Controller.ReadUserUIController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.Controller.ReadUserUIController" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <GridPane prefHeight="400.0" prefWidth="578.0">
+            <children>
+                <ChoiceBox  fx:id="choiceBox" onAction="#getUsers" value="Monitor" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Monitor" />
+                            <String fx:value="Licensed" />
+                            <String fx:value="Admin" />
+                            <String fx:value="Company Member" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+        <ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1" layoutY="71.0" prefHeight="257.0" prefWidth="600.0" AnchorPane.topAnchor="71.0">
+            <content>
+                <GridPane fx:id="gridUsers" gridLinesVisible="true" prefHeight="71.0" prefWidth="578.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
+                    </rowConstraints>
+                    <children>
+                        <Label  text="Firstname" GridPane.columnIndex="0" GridPane.halignment="CENTER" />
+                        <Label  text="Lastname" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Label text="Birth Date" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Label text="Adress" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                        <Label text="Postal Code" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <Label text="Mail" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
+                        <Label  text="Tel" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                    </children>
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </children>
+        </GridPane>
+    </children>
 </AnchorPane>
