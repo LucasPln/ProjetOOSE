@@ -10,4 +10,5 @@ public interface BookingDAO {
     boolean createBooking(Booking booking);
     void deleteBooking(int idBooking);
     Booking getBooking(int idBooking);
+    boolean updateBooking(Booking booking);
 }

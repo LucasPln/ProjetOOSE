@@ -36,4 +36,8 @@ public class BookingFacade {
     public void deleteBooking(int idBooking){
         this.af.getBookingDAO().deleteBooking(idBooking);
     }
+
+    public boolean updateBooking(Booking booking){
+        return this.af.getBookingDAO().updateBooking(booking);
+    }
 }

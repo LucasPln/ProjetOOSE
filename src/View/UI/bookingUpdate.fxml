@@ -109,7 +109,7 @@
                 </Label>
             </children>
         </GridPane>
-        <Button fx:id="updateBookingButton" layoutX="276.0" layoutY="355.0" mnemonicParsing="false" text="Update" />
+        <Button fx:id="updateBookingButton" layoutX="276.0" layoutY="355.0" mnemonicParsing="false" onAction="#updateBooking" text="Update" />
         <Label layoutX="198.0" layoutY="14.0" text="Creation Booking" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="25.0" />

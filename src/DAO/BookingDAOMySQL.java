@@ -126,4 +126,53 @@ public class BookingDAOMySQL implements BookingDAO {
 
         return booking;
     }
+
+    @Override
+    public boolean updateBooking(Booking booking) {
+        int rs = -1;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            PreparedStatement stmt=null;
+            if(booking.getDiploma() == -1){
+                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = null, `idGlider` = ?, `company` = ?; ");
+                stmt.setDate(1, (java.sql.Date)booking.getStartDate());
+                stmt.setDate(2, (java.sql.Date)booking.getEndDate());
+                stmt.setDouble(3, booking.getPrice());
+                stmt.setString(4, booking.getState());
+                stmt.setInt(5, booking.getBattery());
+                stmt.setInt(6, booking.getGps());
+                stmt.setString(7, booking.getLauncherPlane());
+                stmt.setString(8, booking.getLauncherWinch());
+                stmt.setInt(9, booking.getLaunchman());
+                stmt.setInt(10, booking.getCustomer());
+                stmt.setInt(11, booking.getFlightManager());
+                stmt.setString(12, booking.getGlider());
+                stmt.setInt(13, booking.getCompany());
+
+            } else {
+                stmt = con.prepareStatement("UPDATE `booking` SET `startDate` = ?, `endDate` = ?, `price` = ?, `state` = ?, `battery` = ?, `gps` = ?, `launcherPlane` = ?, `launcherWinch` = ?, `launchman` = ?, `customer` = ?, `flightManager` = ?, `diploma` = ?, `idGlider` = ?, `company` = ?; ");
+                stmt.setDate(1, (java.sql.Date)booking.getStartDate());
+                stmt.setDate(2, (java.sql.Date)booking.getEndDate());
+                stmt.setDouble(3, booking.getPrice());
+                stmt.setString(4, booking.getState());
+                stmt.setInt(5, booking.getBattery());
+                stmt.setInt(6, booking.getGps());
+                stmt.setString(7, booking.getLauncherPlane());
+                stmt.setString(8, booking.getLauncherWinch());
+                stmt.setInt(9, booking.getLaunchman());
+                stmt.setInt(10, booking.getCustomer());
+                stmt.setInt(11, booking.getFlightManager());
+                stmt.setInt(12, booking.getDiploma());
+                stmt.setString(13, booking.getGlider());
+                stmt.setInt(14, booking.getCompany());
+            }
+
+            rs = stmt.executeUpdate();
+
+            return rs == 1;
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
+    }
 }
