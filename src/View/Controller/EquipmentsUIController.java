@@ -1,8 +1,11 @@
 package View.Controller;
 
 import Facade.EquipmentFacade;
+import View.Main.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 
 /**
@@ -65,6 +68,10 @@ public class EquipmentsUIController {
      * Switch the UI to the Parachute view
      */
     public void seeParachutes() {
-        System.out.println(equipmentFacade.getAll("parachute"));
+        try {
+            Main.parachutesView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

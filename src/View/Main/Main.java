@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * The type Main.
+ *
  * @author Lucas Paulin
  */
 public class Main extends Application {
@@ -215,6 +217,17 @@ public class Main extends Application {
      */
     public static void LaunchersView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
+    }
+
+
+    /**
+     * Parachutes view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
+    public static void parachutesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/parachutes.fxml");
     }
 
     /**
