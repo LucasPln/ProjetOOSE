@@ -53,4 +53,13 @@ public class ReadUserFacade {
             return this.abstractFactory.getMonitorDAO().getAllMonitor();
         }
     }
+
+    /**
+     * delete users by id.
+     *
+     * @param id the user id
+     */
+    public void deleteUser(int id){
+        this.abstractFactory.getUserDAO().delete(id);
+    }
 }

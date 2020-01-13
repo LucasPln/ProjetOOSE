@@ -6,6 +6,7 @@ import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -70,6 +71,15 @@ public class ReadUserUIController {
             gridUsers.add(l7,6, i + 1);
             GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
+            Button b1 = new Button("X");
+            int j=i;
+            b1.setOnAction(event -> {
+                deleteUser(users.get(j).getId());
+            });
+            gridUsers.add(b1,7,i + 1);
+            GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
+
+
         }
     }
 
@@ -112,8 +122,15 @@ public class ReadUserUIController {
             gridUsers.add(l7,6, i + 1);
             GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
+            Button b1 = new Button("X");
+            int j=i;
+            b1.setOnAction(event -> {
+                deleteUser(users.get(j).getId());
+            });
+            gridUsers.add(b1,7,i + 1);
+            GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
+
         }
-        gridUsers.setStyle("-fx-background-fill: black, white; -fx-background-insets: 0,1;");
     }
 
     /**
@@ -148,6 +165,11 @@ public class ReadUserUIController {
         gridUsers.add(l7,6, 0);
         GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
+        Label l8 = new Label("Delete");
+        gridUsers.add(l8,7, 0);
+        GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
+
+
     }
     /**
      * Return view.
@@ -157,6 +179,21 @@ public class ReadUserUIController {
     public void returnView(ActionEvent actionEvent) {
         try {
             Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Delete the user selected and reload the UI.
+     * Used by the "X" buttons.
+     *
+     * @param id : id of the user selected.
+     */
+    public void deleteUser(int id){
+        readUserFacade.deleteUser(id);
+        try {
+            Main.usersView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

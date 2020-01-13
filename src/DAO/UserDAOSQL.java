@@ -184,7 +184,7 @@ public class UserDAOSQL implements UserDAO {
         try {
             Connection con = FactoryDAOSQL.connection;
             Statement stmt=con.createStatement();
-            int rs = stmt.executeUpdate("DELETE ON CASCADE FROM `user` WHERE idUser="+idUser);
+            int rs = stmt.executeUpdate("DELETE FROM `user` WHERE idUser="+idUser);
             if (rs >= 1){
                 System.out.println("user supprimé");
                 return true;
