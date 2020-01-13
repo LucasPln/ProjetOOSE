@@ -14,6 +14,7 @@ import java.io.IOException;
 
 /**
  * The type Register ui controller.
+ * @author ANDREU Paola
  */
 public class RegisterUIController {
 

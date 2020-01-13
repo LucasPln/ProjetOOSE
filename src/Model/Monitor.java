@@ -2,6 +2,7 @@ package Model;
 
 /**
  * The type Monitor.
+ * @author ANDREU Paola
  */
 public class Monitor extends AbstractRole  {
     private int idCompany;

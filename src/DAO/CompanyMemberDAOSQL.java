@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 /**
  * The type Company member daosql.
+ * @author ANDREU Paola
  */
 public class CompanyMemberDAOSQL implements CompanyMemberDAO {
 

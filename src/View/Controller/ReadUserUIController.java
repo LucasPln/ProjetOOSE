@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * The type Read user ui controller.
+ * @author ANDREU Paola
  */
 public class ReadUserUIController {
     @FXML

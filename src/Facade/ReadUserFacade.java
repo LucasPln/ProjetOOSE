@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 /**
  * The type Read user facade.
+ * @author ANDREU Paola
  */
 public class ReadUserFacade {
 

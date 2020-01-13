@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * The interface Company member dao.
+ * @author ANDREU Paola
  */
 public interface CompanyMemberDAO {
     /**

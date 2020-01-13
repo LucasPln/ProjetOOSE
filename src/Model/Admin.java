@@ -2,6 +2,7 @@ package Model;
 
 /**
  * The type Admin.
+ * @author ANDREU Paola
  */
 public class Admin extends AbstractRole {
 

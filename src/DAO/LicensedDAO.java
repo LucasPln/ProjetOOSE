@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * The interface Licensed dao.
+ * @author ANDREU Paola
  */
 public interface LicensedDAO {
     /**

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * The interface Monitor dao.
+ * @author ANDREU Paola
  */
 public interface MonitorDAO {
     /**
