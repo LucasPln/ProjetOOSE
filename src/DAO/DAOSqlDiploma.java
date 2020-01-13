@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql diploma.
+ */
 public class DAOSqlDiploma implements DAODiploma {
     @Override
     public ArrayList<Diploma> getAllDiploma() {

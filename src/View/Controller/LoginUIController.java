@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * The type Login ui controller.
+ */
 public class LoginUIController {
 
     @FXML
@@ -24,6 +27,9 @@ public class LoginUIController {
 
     private LoginFacade loginFacade;
 
+    /**
+     * Instantiates a new Login ui controller.
+     */
     public LoginUIController(){
         this.loginFacade = LoginFacade.getInstance();
     }

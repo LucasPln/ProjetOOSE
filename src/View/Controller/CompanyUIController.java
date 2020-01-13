@@ -16,6 +16,9 @@ import javafx.scene.control.ListView;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Company ui controller.
+ */
 public class CompanyUIController {
 
     /**
@@ -69,7 +72,8 @@ public class CompanyUIController {
 
     /**
      * Switch the UI to the Home view.
-     * @param actionEvent
+     *
+     * @param actionEvent the action event
      */
     public void ReturnView(ActionEvent actionEvent) {
         try {

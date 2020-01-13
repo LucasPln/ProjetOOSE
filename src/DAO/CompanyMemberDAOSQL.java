@@ -8,8 +8,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * The type Company member daosql.
+ */
 public class CompanyMemberDAOSQL implements CompanyMemberDAO {
 
+    /**
+     * Gets id company.
+     *
+     * @param idUser the id user
+     * @return the id company
+     */
     public int getIdCompany(int idUser) {
             User user = null;
             int companyId = 0;

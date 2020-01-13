@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 
+/**
+ * The type Equipments ui controller.
+ */
 public class EquipmentsUIController {
 
     /**

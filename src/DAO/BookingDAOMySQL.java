@@ -5,6 +5,11 @@ import Model.Booking;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Booking dao my sql.
+ *
+ * @author Lucas Paulin
+ */
 public class BookingDAOMySQL implements BookingDAO {
 
     /**

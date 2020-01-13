@@ -11,6 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * The type Licensed daosql.
+ */
 public class LicensedDAOSQL implements LicensedDAO {
     @Override
     public boolean update(int idUser, String flightHour) {

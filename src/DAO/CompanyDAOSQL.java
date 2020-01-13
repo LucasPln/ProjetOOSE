@@ -4,6 +4,9 @@ import Model.Company;
 
 import java.sql.*;
 
+/**
+ * The type Company daosql.
+ */
 public class CompanyDAOSQL implements CompanyDAO {
     @Override
     public Company infos(int id) {

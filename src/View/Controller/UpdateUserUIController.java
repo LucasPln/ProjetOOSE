@@ -15,6 +15,9 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * The type Update user ui controller.
+ */
 public class UpdateUserUIController {
     @FXML
     private TextField firstnameField;
@@ -57,11 +60,17 @@ public class UpdateUserUIController {
     private UpdateUserFacade updateUserFacade;
     private CompanyFacade companyFacade;
 
+    /**
+     * Instantiates a new Update user ui controller.
+     */
     public UpdateUserUIController(){
         updateUserFacade = new UpdateUserFacade();
         companyFacade = new CompanyFacade();
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         User user = LoginFacade.getInstance().getConnectedUser();
@@ -125,6 +134,12 @@ public class UpdateUserUIController {
         }
 
     }
+
+    /**
+     * Update user.
+     *
+     * @param actionEvent the action event
+     */
     public void updateUser(ActionEvent actionEvent) {
         User user = LoginFacade.getInstance().getConnectedUser();
         AbstractRole r = user.getAbstractRole();
@@ -162,6 +177,9 @@ public class UpdateUserUIController {
         }
     }
 
+    /**
+     * Remplir champs.
+     */
     public void remplirChamps(){ Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");
         alert.setHeaderText("champ invalide");
@@ -169,6 +187,11 @@ public class UpdateUserUIController {
         alert.showAndWait();
     }
 
+    /**
+     * Return view.
+     *
+     * @param actionEvent the action event
+     */
     public void returnView(ActionEvent actionEvent) {
         try {
             Main.homeView(Main.getPrimaryStage());

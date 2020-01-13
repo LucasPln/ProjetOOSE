@@ -15,6 +15,11 @@ import javafx.scene.control.DatePicker;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * The type Booking update ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class BookingUpdateUIController {
 
     /**
@@ -179,6 +184,7 @@ public class BookingUpdateUIController {
 
     /**
      * Modifies the UI to have the information of the current reservation pre-selected.
+     *
      * @param idbooking : id of the booking selected
      */
     public void setInfos(int idbooking){

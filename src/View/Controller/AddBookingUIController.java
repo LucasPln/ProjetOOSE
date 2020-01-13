@@ -13,6 +13,11 @@ import javafx.scene.control.DatePicker;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ * The type Add booking ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class AddBookingUIController {
 
     /**

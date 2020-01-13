@@ -13,6 +13,9 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Gliders ui controller.
+ */
 public class GlidersUIController {
 
     /**
@@ -97,6 +100,7 @@ public class GlidersUIController {
     /**
      * Delete the glider selected and reload the UI.
      * Used by the "X" buttons.
+     *
      * @param id : registration of the booking selected.
      */
     public void deleteGlider(String id) {

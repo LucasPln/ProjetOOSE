@@ -5,6 +5,9 @@ import Model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type User daosql.
+ */
 public class UserDAOSQL implements UserDAO {
 
 

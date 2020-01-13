@@ -6,6 +6,9 @@ import Model.Glider;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql glider.
+ */
 public class DAOSqlGlider implements DAOGlider {
 
     @Override

@@ -14,6 +14,11 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Booking ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class BookingUIController {
     /**
      * The gridPane from the UI that shows informations of bookings.
@@ -96,6 +101,7 @@ public class BookingUIController {
     /**
      * Delete the booking selected and reload the UI.
      * Used by the "X" buttons.
+     *
      * @param idBooking : id of the booking selected.
      */
     public void deleteBooking(int idBooking){
@@ -110,6 +116,7 @@ public class BookingUIController {
     /**
      * Switch UI to the bookingUpdate view of the booking selected.
      * Used by the "Update" buttons.
+     *
      * @param idBooking : id of the booking selected.
      */
     public void updateBooking(int idBooking){

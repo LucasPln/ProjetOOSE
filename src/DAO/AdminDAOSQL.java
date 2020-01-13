@@ -11,6 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * The type Admin daosql.
+ */
 public class AdminDAOSQL implements AdminDAO {
     @Override
     public boolean update(int idUser, String dateAdmin) {

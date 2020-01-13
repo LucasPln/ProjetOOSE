@@ -11,6 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * The type Monitor daosql.
+ */
 public class MonitorDAOSQL implements MonitorDAO {
     @Override
     public boolean update(int idUser, String flightHour) {

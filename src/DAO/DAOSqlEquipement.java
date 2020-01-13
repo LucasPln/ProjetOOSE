@@ -5,6 +5,9 @@ import Model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql equipement.
+ */
 public class DAOSqlEquipement implements DAOEquipement {
     @Override
     public ArrayList<Battery> getAllBattery() {

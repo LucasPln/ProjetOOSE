@@ -7,10 +7,16 @@ import Model.User;
 
 import java.util.ArrayList;
 
+/**
+ * The type Read user facade.
+ */
 public class ReadUserFacade {
 
     private AbstractFactory abstractFactory;
 
+    /**
+     * Instantiates a new Read user facade.
+     */
     public ReadUserFacade() {
         this.abstractFactory = AbstractFactory.getInstance();
         this.abstractFactory.createUserDAO();
@@ -20,9 +26,21 @@ public class ReadUserFacade {
         this.abstractFactory.createCompanyMemberDAO();
     }
 
+    /**
+     * Get all monitor array list.
+     *
+     * @return the array list
+     */
     public ArrayList<User> getAllMonitor(){
         return this.abstractFactory.getUserDAO().getAllMonitor();
     }
+
+    /**
+     * Gets users by role.
+     *
+     * @param role the role
+     * @return the users by role
+     */
     public ArrayList<User> getUsersByRole(String role) {
         if (role.equals("Admin")) {
             return this.abstractFactory.getAdminDAO().getAllAdmin();

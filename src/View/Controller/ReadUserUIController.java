@@ -11,6 +11,9 @@ import javafx.scene.layout.GridPane;
 import java.util.ArrayList;
 
 
+/**
+ * The type Read user ui controller.
+ */
 public class ReadUserUIController {
     @FXML
     private GridPane gridUsers;
@@ -19,10 +22,16 @@ public class ReadUserUIController {
     private ChoiceBox choiceBox;
     private ReadUserFacade readUserFacade;
 
+    /**
+     * Instantiates a new Read user ui controller.
+     */
     public ReadUserUIController(){
         this.readUserFacade = new ReadUserFacade();
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
 
@@ -60,6 +69,9 @@ public class ReadUserUIController {
         }
     }
 
+    /**
+     * Gets users.
+     */
     @FXML
     public void getUsers() {
         gridUsers.getChildren().clear();
@@ -100,6 +112,9 @@ public class ReadUserUIController {
         gridUsers.setStyle("-fx-background-fill: black, white; -fx-background-insets: 0,1;");
     }
 
+    /**
+     * Init labels.
+     */
     public void initLabels(){
         Label l1= new Label("Firstname");
         gridUsers.add(l1,0, 0);

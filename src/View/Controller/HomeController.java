@@ -11,15 +11,33 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
+/**
+ * The type Home controller.
+ */
 public class HomeController {
 
+    /**
+     * The Gliders btn.
+     */
     public Button glidersBtn;
+    /**
+     * The My profile btn.
+     */
     @FXML
     public Button myProfileBtn;
+    /**
+     * The Logout btn.
+     */
     @FXML
     public Button logoutBtn;
+    /**
+     * The My company btn.
+     */
     @FXML
     public Button myCompanyBtn;
+    /**
+     * The Equipments button.
+     */
     public Button equipmentsButton;
     @FXML
     private Label labelUser;
@@ -29,11 +47,17 @@ public class HomeController {
     @FXML
     private Button viewBookingButton;
 
+    /**
+     * The Add user button.
+     */
     @FXML
     public Button addUserButton;
 
     private LoginFacade loginFacade;
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize(){
         User u = LoginFacade.getInstance().getConnectedUser();
@@ -60,10 +84,18 @@ public class HomeController {
     }
 
 
+    /**
+     * Instantiates a new Home controller.
+     */
     public HomeController() {
         this.loginFacade = LoginFacade.getInstance();
     }
 
+    /**
+     * Gets gliders.
+     *
+     * @param actionEvent the action event
+     */
     public void getGliders(ActionEvent actionEvent) {
         try {
             Main.glidersView(Main.getPrimaryStage());
@@ -72,6 +104,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Gets my profile.
+     *
+     * @param actionEvent the action event
+     */
     public void getMyProfile(ActionEvent actionEvent) {
         try {
             Main.myProfileView(Main.getPrimaryStage());
@@ -80,6 +117,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Gets company.
+     *
+     * @param actionEvent the action event
+     */
     public void getCompany(ActionEvent actionEvent) {
         try {
             Main.myCompanyView(Main.getPrimaryStage());
@@ -88,6 +130,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Logout.
+     *
+     * @param actionEvent the action event
+     */
     public void logout(ActionEvent actionEvent) {
         try {
             loginFacade.logout();
@@ -98,6 +145,11 @@ public class HomeController {
 
     }
 
+    /**
+     * Get booking.
+     *
+     * @param actionEvent the action event
+     */
     public void getBooking(ActionEvent actionEvent){
         try {
             Main.bookingView(Main.getPrimaryStage());
@@ -106,6 +158,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Add user.
+     *
+     * @param actionEvent the action event
+     */
     public void addUser(ActionEvent actionEvent){
         try {
             Main.addUserView(Main.getPrimaryStage());
@@ -117,6 +174,11 @@ public class HomeController {
 
     }
 
+    /**
+     * Gets equipments.
+     *
+     * @param actionEvent the action event
+     */
     public void getEquipments(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());
@@ -125,6 +187,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Gets users.
+     *
+     * @param actionEvent the action event
+     */
     public void getUsers(ActionEvent actionEvent) {
         try {
             Main.usersView(Main.getPrimaryStage());
@@ -133,6 +200,11 @@ public class HomeController {
         }
     }
 
+    /**
+     * Gets launchers.
+     *
+     * @param actionEvent the action event
+     */
     public void getLaunchers(ActionEvent actionEvent) {
         try {
             Main.LaunchersView(Main.getPrimaryStage());

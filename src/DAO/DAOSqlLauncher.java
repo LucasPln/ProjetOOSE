@@ -5,6 +5,9 @@ import Model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql launcher.
+ */
 public class DAOSqlLauncher implements DAOLauncher {
     @Override
     public ArrayList<Plane> getAllPlane() {
