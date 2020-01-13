@@ -110,6 +110,10 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
     }
 
+    public static void parachutesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/parachutes.fxml");
+    }
+
     public static Stage getPrimaryStage(){
         return primaryStage;
     }
