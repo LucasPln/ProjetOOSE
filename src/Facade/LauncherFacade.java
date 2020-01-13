@@ -7,6 +7,7 @@ import Model.User;
 import Model.Wincher;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class LauncherFacade {
@@ -52,5 +53,13 @@ public class LauncherFacade {
         User u = LoginFacade.getInstance().getConnectedUser();
         int IDCompany = u.getCompanyId();
         this.abstractFactory.getDaoLauncher().createWinch(registrationWinch,  IDCompany, acquisitionDate, renewalDate, maxLaunchWeight, ropeRenewal, parachuteRenewal, maxWeight);
+    }
+
+    public void updateWinch(String registrationWinch, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight) {
+        try {
+            this.abstractFactory.getDaoLauncher().updateWinch(registrationWinch, acquisitionDate, renewalDate, maxLaunchWeight, ropeRenewal, parachuteRenewal, maxWeight);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

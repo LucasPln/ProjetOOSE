@@ -31,6 +31,6 @@ public class LaunchersUIController {
     }
 
     public void test(ActionEvent actionEvent) {
-        launcherFacade.createWinch("WW2WW", new Date(1), new Date(100000), 100, new Date(100000), new Date(999999), 250);
+        launcherFacade.updateWinch("WW2WW", new Date(1), new Date(100000), 1000, new Date(100000), new Date(999999), 2500);
     }
 }

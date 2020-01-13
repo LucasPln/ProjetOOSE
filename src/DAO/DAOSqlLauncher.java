@@ -184,4 +184,17 @@ public class DAOSqlLauncher implements DAOLauncher {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updateWinch(String registrationWinch, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE winch SET acquisitionDate = ?, renewalDate = ?, maxLaunchWeight = ?, ropeRenewal = ?, parachuteRenewal = ?, maxWeight = ?  WHERE registrationWinch = '" + registrationWinch +"'");
+        stmt.setDate(1, acquisitionDate);
+        stmt.setDate(2, renewalDate);
+        stmt.setInt(3, maxLaunchWeight);
+        stmt.setDate(4, ropeRenewal);
+        stmt.setDate(5, parachuteRenewal);
+        stmt.setInt(6, maxWeight);
+        stmt.executeUpdate();
+    }
 }
