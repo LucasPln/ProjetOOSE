@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.sql.Date;
+
 public class LaunchersUIController {
     public LauncherFacade launcherFacade;
     public Label winches;
@@ -26,5 +28,9 @@ public class LaunchersUIController {
 
     public void seePlanes(ActionEvent actionEvent) {
         System.out.println(launcherFacade.getAll("plane"));
+    }
+
+    public void test(ActionEvent actionEvent) {
+        launcherFacade.createPlane("PP3PP", 10, new Date(1), new Date(100000), 100, 250);
     }
 }

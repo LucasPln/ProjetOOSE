@@ -2,10 +2,7 @@ package DAO;
 
 import Model.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DAOSqlLauncher implements DAOLauncher {
@@ -149,5 +146,23 @@ public class DAOSqlLauncher implements DAOLauncher {
         }
 
         return planes;
+    }
+
+    @Override
+    public void createPlane(String registrationPlane, int maxLaunchWeight, int idCompany, Date acquisitionDate, Date renewalDate, int span, int maxWeight) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO plane (registrationPlane, maxLaunchWeight, idCompany, acquisitionDate, renewalDate, span, maxWeight) VALUES (?, ?, ?, ?, ? , ?, ?)");
+            stmt.setString(1, registrationPlane);
+            stmt.setInt(2, maxLaunchWeight);
+            stmt.setInt(3, idCompany);
+            stmt.setDate(4, acquisitionDate);
+            stmt.setDate(5, acquisitionDate);
+            stmt.setInt(6, span);
+            stmt.setInt(7, maxWeight);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

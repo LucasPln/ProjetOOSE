@@ -6,6 +6,7 @@ import Model.Plane;
 import Model.User;
 import Model.Wincher;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class LauncherFacade {
@@ -39,5 +40,11 @@ public class LauncherFacade {
             return this.abstractFactory.getDaoLauncher().getAllPlanesByCompanyId(IDCompany);
         }
         return null;
+    }
+
+    public void createPlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        this.abstractFactory.getDaoLauncher().createPlane(registrationPlane, maxLaunchWeight, IDCompany, acquisitionDate, renewalDate, span, maxWeight);
     }
 }
