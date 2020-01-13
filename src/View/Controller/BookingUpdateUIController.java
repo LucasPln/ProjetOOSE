@@ -124,6 +124,9 @@ public class BookingUpdateUIController {
         this.readUserFacade = new ReadUserFacade();
     }
 
+    /**
+     * Initializes the elements from the UI.
+     */
     @FXML
     public void initialize(){
         ObservableList<Integer> listIdBattery = FXCollections.observableArrayList();
