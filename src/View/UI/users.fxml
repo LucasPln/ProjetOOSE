@@ -35,13 +35,13 @@
                         <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="NEVER" />
                     </rowConstraints>
                     <children>
-                        <Label  text="Firstname" GridPane.columnIndex="0" GridPane.halignment="CENTER" />
-                        <Label  text="Lastname" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                        <Label text="Birth Date" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                        <Label text="Adress" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                        <Label text="Postal Code" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
-                        <Label text="Mail" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
-                        <Label  text="Tel" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                        <Label  fx:id="firstname" text="Firstname" GridPane.columnIndex="0" GridPane.halignment="CENTER" />
+                        <Label  fx:id="lastname" text="Lastname" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Label fx:id="birthDate" text="Birth Date" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Label fx:id="adress" text="Adress" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                        <Label fx:id="postalCode" text="Postal Code" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <Label fx:id="mail" text="Mail" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
+                        <Label  fx:id="tel" text="Tel" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
                     </children>
                 </GridPane>
             </content>
