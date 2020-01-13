@@ -85,4 +85,16 @@ public class RegisterUIController {
         }
 
     }
+    /**
+     * Return view.
+     *
+     * @param actionEvent the action event
+     */
+    public void returnView(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

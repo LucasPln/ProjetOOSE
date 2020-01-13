@@ -169,9 +169,6 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //deconnexion ????
-        LoginFacade.getInstance().logout();
-
     }
 
     /**

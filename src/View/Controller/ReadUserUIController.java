@@ -2,12 +2,15 @@ package View.Controller;
 
 import Facade.ReadUserFacade;
 import Model.User;
+import View.Main.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -146,5 +149,16 @@ public class ReadUserUIController {
         GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
     }
-
+    /**
+     * Return view.
+     *
+     * @param actionEvent the action event
+     */
+    public void returnView(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
