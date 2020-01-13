@@ -197,4 +197,16 @@ public class DAOSqlLauncher implements DAOLauncher {
         stmt.setInt(6, maxWeight);
         stmt.executeUpdate();
     }
+
+    @Override
+    public void updatePlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE plane SET maxLaunchWeight = ?, acquisitionDate = ?, renewalDate = ?, span = ?, maxWeight = ?  WHERE registrationPlane = '" + registrationPlane +"'");
+        stmt.setInt(1, maxLaunchWeight);
+        stmt.setDate(2, renewalDate);
+        stmt.setDate(3, renewalDate);
+        stmt.setInt(4, span);
+        stmt.setInt(5, maxWeight);
+        stmt.executeUpdate();
+    }
 }

@@ -62,4 +62,12 @@ public class LauncherFacade {
             e.printStackTrace();
         }
     }
+
+    public void updatePlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) {
+        try {
+            this.abstractFactory.getDaoLauncher().updatePlane(registrationPlane, maxLaunchWeight, acquisitionDate, renewalDate, span, maxWeight);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
