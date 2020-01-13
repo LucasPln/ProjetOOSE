@@ -60,7 +60,13 @@ public class GliderUpdateController {
         reviewDateInput.setValue(((Date)g.getReviewDate()).toLocalDate());
         spanInput.setText(Integer.toString(g.getSpan()));
         maxWidthInput.setText(Integer.toString(g.getMaxWeight()));
+    }
 
-
+    public void back(ActionEvent actionEvent) {
+        try {
+            Main.glidersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

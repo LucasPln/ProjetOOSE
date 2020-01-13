@@ -40,4 +40,12 @@ public class GliderCreationController {
             }
         }
     }
+
+    public void back(ActionEvent actionEvent) {
+        try {
+            Main.glidersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
