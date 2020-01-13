@@ -63,27 +63,4 @@ public class Plane extends Launcher {
         this.maxWeight = maxWeight;
     }
 
-    /**
-     * Update launcher.
-     */
-    @Override
-    public void updateLauncher() {
-
-    }
-
-    /**
-     * Delete launcher.
-     */
-    @Override
-    public void deleteLauncher() {
-
-    }
-
-    /**
-     * Read launcher.
-     */
-    @Override
-    public void readLauncher() {
-
-    }
 }

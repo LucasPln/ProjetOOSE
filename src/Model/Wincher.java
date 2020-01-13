@@ -64,28 +64,5 @@ public class Wincher extends Launcher {
     public void setParachuteRenewal(Date parachuteRenewal) {
         this.parachuteRenewal = parachuteRenewal;
     }
-
-    /**
-     * Update launcher.
-     */
-    @Override
-    public void updateLauncher() {
-
-    }
-
-    /**
-     * Delete launcher.
-     */
-    @Override
-    public void deleteLauncher() {
-
-    }
-
-    /**
-     * Read launcher.
-     */
-    @Override
-    public void readLauncher() {
-
-    }
+    
 }

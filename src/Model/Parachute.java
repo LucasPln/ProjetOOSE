@@ -63,35 +63,4 @@ public class Parachute extends Equipment {
     }
 
 
-    /**
-     * Update equipement.
-     */
-    @Override
-    public void updateEquipement() {
-
-    }
-
-    /**
-     * Delete equipement.
-     */
-    @Override
-    public void deleteEquipement() {
-
-    }
-
-    /**
-     * Read equipement.
-     */
-    @Override
-    public void readEquipement() {
-
-    }
-
-    /**
-     * Create equipement.
-     */
-    @Override
-    public void createEquipement() {
-
-    }
 }
