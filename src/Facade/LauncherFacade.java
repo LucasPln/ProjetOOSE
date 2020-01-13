@@ -2,6 +2,7 @@ package Facade;
 
 import DAO.AbstractFactory;
 import Model.Plane;
+import Model.User;
 import Model.Wincher;
 
 import java.util.ArrayList;
@@ -22,4 +23,9 @@ public class LauncherFacade {
         return this.abstractFactory.getDaoLauncher().getAllWincher();
     }
 
+    public String getNbLaunchers(String type) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        return this.abstractFactory.getDaoLauncher().getNbLaunchers(type, IDCompany);
+    }
 }

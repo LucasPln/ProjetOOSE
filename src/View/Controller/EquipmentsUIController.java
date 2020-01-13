@@ -1,13 +1,8 @@
 package View.Controller;
 
 import Facade.EquipmentFacade;
-import Facade.LoginFacade;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-
-import java.sql.Date;
 
 
 public class EquipmentsUIController {

@@ -77,4 +77,20 @@ public class DAOSqlLauncher implements DAOLauncher {
 
         return listWincher;
     }
+
+    @Override
+    public String getNbLaunchers(String type, int idCompany) {
+        String res = "0";
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select count(*) from " + type + " where idCompany = " + idCompany);
+            while(rs.next()) {
+                res = Integer.toString(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
 }

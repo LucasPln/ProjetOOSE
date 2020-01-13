@@ -20,6 +20,7 @@ public class HomeController {
     public Button logoutBtn;
     @FXML
     public Button myCompanyBtn;
+    public Button equipmentsButton;
     @FXML
     private Label labelUser;
 
@@ -127,6 +128,14 @@ public class HomeController {
     public void getUsers(ActionEvent actionEvent) {
         try {
             Main.usersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getLaunchers(ActionEvent actionEvent) {
+        try {
+            Main.LaunchersView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

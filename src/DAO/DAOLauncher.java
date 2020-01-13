@@ -11,4 +11,5 @@ public interface DAOLauncher {
 
     ArrayList<Wincher> getAllWincher();
 
+    String getNbLaunchers(String type, int idCompany);
 }

@@ -17,6 +17,7 @@ public class Main extends Application {
 
 
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -103,6 +104,10 @@ public class Main extends Application {
 
     public static void EquipmentsView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/equipments.fxml");
+    }
+
+    public static void LaunchersView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
     }
 
     public static Stage getPrimaryStage(){
