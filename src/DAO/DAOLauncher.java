@@ -20,4 +20,6 @@ public interface DAOLauncher {
     ArrayList<Launcher> getAllPlanesByCompanyId(int idCompany);
 
     void createPlane(String registrationPlane, int maxLaunchWeight, int idCompany, Date acquisitionDate, Date renewalDate, int span, int maxWeight);
+
+    void createWinch(String registrationWinch, int idCompany, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight);
 }

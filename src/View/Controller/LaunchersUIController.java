@@ -31,6 +31,6 @@ public class LaunchersUIController {
     }
 
     public void test(ActionEvent actionEvent) {
-        launcherFacade.createPlane("PP3PP", 10, new Date(1), new Date(100000), 100, 250);
+        launcherFacade.createWinch("WW2WW", new Date(1), new Date(100000), 100, new Date(100000), new Date(999999), 250);
     }
 }

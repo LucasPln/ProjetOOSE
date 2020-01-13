@@ -47,4 +47,10 @@ public class LauncherFacade {
         int IDCompany = u.getCompanyId();
         this.abstractFactory.getDaoLauncher().createPlane(registrationPlane, maxLaunchWeight, IDCompany, acquisitionDate, renewalDate, span, maxWeight);
     }
+
+    public void createWinch(String registrationWinch, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        this.abstractFactory.getDaoLauncher().createWinch(registrationWinch,  IDCompany, acquisitionDate, renewalDate, maxLaunchWeight, ropeRenewal, parachuteRenewal, maxWeight);
+    }
 }
