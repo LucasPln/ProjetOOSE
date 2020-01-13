@@ -21,8 +21,10 @@ public class LaunchersUIController {
     }
 
     public void seeWinches(ActionEvent actionEvent) {
+        System.out.println(launcherFacade.getAll("winch"));
     }
 
     public void seePlanes(ActionEvent actionEvent) {
+        System.out.println(launcherFacade.getAll("plane"));
     }
 }

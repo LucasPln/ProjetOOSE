@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Launcher;
 import Model.Plane;
 import Model.Wincher;
 
@@ -12,4 +13,8 @@ public interface DAOLauncher {
     ArrayList<Wincher> getAllWincher();
 
     String getNbLaunchers(String type, int idCompany);
+
+    ArrayList<Launcher> getAllWinchesByCompanyId(int idCompany);
+
+    ArrayList<Launcher> getAllPlanesByCompanyId(int idCompany);
 }

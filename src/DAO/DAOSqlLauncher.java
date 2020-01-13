@@ -1,8 +1,6 @@
 package DAO;
 
-import Model.GPS;
-import Model.Plane;
-import Model.Wincher;
+import Model.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -92,5 +90,64 @@ public class DAOSqlLauncher implements DAOLauncher {
             e.printStackTrace();
         }
         return res;
+    }
+
+    @Override
+    public ArrayList<Launcher> getAllWinchesByCompanyId(int idCompany) {
+        Wincher winch = null;
+        ArrayList<Launcher> winches = new ArrayList<Launcher>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM winch WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                winch = new Wincher(
+                        rs.getString(1),
+                        rs.getDate(3),
+                        rs.getDate(4),
+                        rs.getInt(5),
+                        rs.getInt(2),
+                        rs.getDate(6),
+                        rs.getDate(7),
+                        rs.getInt(8)
+                );
+                winches.add(winch);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return winches;
+    }
+
+    @Override
+    public ArrayList<Launcher> getAllPlanesByCompanyId(int idCompany) {
+        Plane plane = null;
+        ArrayList<Launcher> planes = new ArrayList<Launcher>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM plane WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                plane = new Plane(
+                        rs.getString(1),
+                        rs.getDate(4),
+                        rs.getDate(5),
+                        rs.getInt(3),
+                        rs.getInt(5),
+                        rs.getInt(6),
+                        rs.getInt(7)
+                );
+                planes.add(plane);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return planes;
     }
 }

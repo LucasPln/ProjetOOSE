@@ -1,6 +1,7 @@
 package Facade;
 
 import DAO.AbstractFactory;
+import Model.Launcher;
 import Model.Plane;
 import Model.User;
 import Model.Wincher;
@@ -27,5 +28,16 @@ public class LauncherFacade {
         User u = LoginFacade.getInstance().getConnectedUser();
         int IDCompany = u.getCompanyId();
         return this.abstractFactory.getDaoLauncher().getNbLaunchers(type, IDCompany);
+    }
+
+    public ArrayList<Launcher> getAll(String type) {
+        User u = LoginFacade.getInstance().getConnectedUser();
+        int IDCompany = u.getCompanyId();
+        if(type.equals("winch")) {
+            return this.abstractFactory.getDaoLauncher().getAllWinchesByCompanyId(IDCompany);
+        } else if(type.equals("plane")) {
+            return this.abstractFactory.getDaoLauncher().getAllPlanesByCompanyId(IDCompany);
+        }
+        return null;
     }
 }
