@@ -212,4 +212,15 @@ public class DAOSqlLauncher implements DAOLauncher {
         stmt.setInt(5, maxWeight);
         stmt.executeUpdate();
     }
+
+    @Override
+    public void deletePlane(String idPlane) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM plane WHERE registrationPlane='" + idPlane + "'");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

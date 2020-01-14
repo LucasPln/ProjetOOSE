@@ -150,6 +150,10 @@ public class Company {
         this.idCompany = idCompany;
         this.name = name;
     }
+    public Company(String name) {
+        this.idCompany = idCompany;
+        this.name = name;
+    }
 
     /**
      * Gets id company.

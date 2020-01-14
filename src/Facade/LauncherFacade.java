@@ -140,4 +140,8 @@ public class LauncherFacade {
             e.printStackTrace();
         }
     }
+
+    public void deletePlane(String idPlane){
+        this.abstractFactory.getDaoLauncher().deletePlane(idPlane);
+    }
 }

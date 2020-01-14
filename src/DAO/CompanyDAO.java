@@ -15,4 +15,5 @@ public interface CompanyDAO {
      * @return the company
      */
     Company infos(int id);
+    Boolean createCompany(Company cpy);
 }

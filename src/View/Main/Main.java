@@ -249,7 +249,13 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/GPS.fxml");
     }
 
+    public static void listCompanyView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/listCompanyView.fxml");
+    }
 
+    public static void addCompanyView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/addCompany.fxml");
+    }
     /**
      * Parachutes view.
      *
@@ -285,6 +291,10 @@ public class Main extends Application {
      */
     public static void usersView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/users.fxml");
+    }
+
+    public static void planesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/plane.fxml");
     }
 
 }

@@ -50,5 +50,9 @@ public class CompanyFacade {
     public ArrayList<Equipment> getAllGPSCompany(int idC){return abstractFactory.getDaoEquipement().getAllGpsByCompanyId(idC);}
     public ArrayList<Equipment> getAllBatteriesCompany(int idC){return abstractFactory.getDaoEquipement().getAllBatteriesByCompanyId(idC);}
 
+
+    public boolean createCompany(Company cpy){return this.abstractFactory.getCompanyDAO().createCompany(cpy);
+
+    }
     }
 
