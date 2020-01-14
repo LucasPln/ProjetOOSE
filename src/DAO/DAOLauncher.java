@@ -111,4 +111,6 @@ public interface DAOLauncher {
     Plane getPlane(String registPlane);
 
     void deleteWinch(String idWinch);
+
+    Wincher getWinch(String registWinch);
 }

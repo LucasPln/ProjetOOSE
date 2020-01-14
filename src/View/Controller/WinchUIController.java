@@ -102,14 +102,14 @@ public class WinchUIController {
 
 
     public void updateWinch(String idWinch){
-        /*
+
         try {
-            Main.updateWinchView(Main.getPrimaryStage(), idPlane);
+            Main.updateWinchView(Main.getPrimaryStage(), idWinch);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
 
 
     }

@@ -152,4 +152,8 @@ public class LauncherFacade {
     public void deleteWinch(String idWinch){
         this.abstractFactory.getDaoLauncher().deleteWinch(idWinch);
     }
+
+    public Wincher getWinch(String registWinch){
+        return this.abstractFactory.getDaoLauncher().getWinch(registWinch);
+    }
 }
