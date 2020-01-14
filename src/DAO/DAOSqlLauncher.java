@@ -256,5 +256,14 @@ public class DAOSqlLauncher implements DAOLauncher {
         return plane;
     }
 
-
+    @Override
+    public void deleteWinch(String idWinch) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("DELETE FROM winch WHERE registrationWinch='" + idWinch + "'");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -2,7 +2,6 @@ package View.Controller;
 
 import Facade.LauncherFacade;
 import Model.Launcher;
-import Model.Plane;
 import Model.Wincher;
 import View.Main.Main;
 import javafx.fxml.FXML;
@@ -86,23 +85,23 @@ public class WinchUIController {
     }
 
 
-    public void deleteWinch(String idPlane){
+    public void deleteWinch(String idWinch){
 
-        /*
-        this.launcherFacade.deleteWinch(idPlane);
+
+        this.launcherFacade.deleteWinch(idWinch);
         try {
             Main.winchView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
 
 
     }
 
 
-    public void updateWinch(String idPlane){
+    public void updateWinch(String idWinch){
         /*
         try {
             Main.updateWinchView(Main.getPrimaryStage(), idPlane);

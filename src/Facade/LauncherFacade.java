@@ -148,4 +148,8 @@ public class LauncherFacade {
     public Plane getPlane(String registPlane){
         return this.abstractFactory.getDaoLauncher().getPlane(registPlane);
     }
+
+    public void deleteWinch(String idWinch){
+        this.abstractFactory.getDaoLauncher().deleteWinch(idWinch);
+    }
 }
