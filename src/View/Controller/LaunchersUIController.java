@@ -48,7 +48,11 @@ public class LaunchersUIController {
      * @param actionEvent the action event
      */
     public void seeWinches(ActionEvent actionEvent) {
-        System.out.println(launcherFacade.getAll("winch"));
+        try {
+            Main.winchView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -196,7 +196,7 @@ public class AddBookingUIController {
             alert.setHeaderText("ERREUR");
             alert.setContentText("Veuillez remplir tous les champs obligatoire !");
             alert.showAndWait();
-            
+
         } else {
             Date startDate = java.sql.Date.valueOf(startDateField.getValue());
             Date endDate = java.sql.Date.valueOf(endDateField.getValue());

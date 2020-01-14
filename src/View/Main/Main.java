@@ -330,4 +330,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    public static void winchView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/winch.fxml");
+    }
+
 }
