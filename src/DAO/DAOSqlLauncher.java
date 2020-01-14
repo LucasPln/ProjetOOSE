@@ -223,4 +223,38 @@ public class DAOSqlLauncher implements DAOLauncher {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public Plane getPlane(String registPlane) {
+        Plane plane = null;
+
+        Connection con = FactoryDAOSQL.connection;
+        Statement stmt= null;
+
+        try {
+            stmt = con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from plane where registrationPlane = '"+registPlane+"';");
+
+            if(rs.next()){
+                plane = new Plane(
+                        rs.getString(1),
+                        rs.getDate(4),
+                        rs.getDate(5),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getInt(6),
+                        rs.getInt(7)
+                );
+                System.out.println("Plane créé");
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return plane;
+    }
+
+
 }

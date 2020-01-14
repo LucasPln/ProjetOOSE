@@ -144,4 +144,8 @@ public class LauncherFacade {
     public void deletePlane(String idPlane){
         this.abstractFactory.getDaoLauncher().deletePlane(idPlane);
     }
+
+    public Plane getPlane(String registPlane){
+        return this.abstractFactory.getDaoLauncher().getPlane(registPlane);
+    }
 }
