@@ -51,7 +51,7 @@ public class AddCompanyUIController {
 
         if (result) {
             try {
-                Main.bookingView(Main.getPrimaryStage());
+                Main.homeView(Main.getPrimaryStage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
