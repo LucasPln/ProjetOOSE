@@ -5,6 +5,9 @@ import Model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type User daosql.
+ */
 public class UserDAOSQL implements UserDAO {
 
 
@@ -38,7 +41,6 @@ public class UserDAOSQL implements UserDAO {
             Connection con2 = FactoryDAOSQL.connection;
             Statement stmt2=con2.createStatement();
             ResultSet rs2;
-            System.out.println(role);
             if (role.equals("Monitor")){
                 rs2=stmt2.executeQuery("select * from monitor where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
@@ -55,16 +57,13 @@ public class UserDAOSQL implements UserDAO {
                 while (rs2.next()){
                     abstractRole = new CompanyMember(rs2.getInt(1),rs2.getString(2),rs2.getInt(3),rs2.getInt(4));
                 }
-                System.out.println("ici");
             }else{//role.equals("Admin")
                 rs2=stmt2.executeQuery("select * from admin where idUser='"+user.getId()+"' ;");
                 while (rs2.next()){
                     abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
                 }
-                System.out.println("ici2");
             }
             user.setAbstractRole(abstractRole);
-            System.out.println(abstractRole.getClass());
         } catch (SQLException e) {
         }
 
@@ -185,7 +184,7 @@ public class UserDAOSQL implements UserDAO {
         try {
             Connection con = FactoryDAOSQL.connection;
             Statement stmt=con.createStatement();
-            int rs = stmt.executeUpdate("DELETE ON CASCADE FROM `user` WHERE idUser="+idUser);
+            int rs = stmt.executeUpdate("DELETE FROM `user` WHERE idUser="+idUser);
             if (rs >= 1){
                 System.out.println("user supprimé");
                 return true;

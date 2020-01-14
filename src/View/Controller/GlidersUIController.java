@@ -13,14 +13,31 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Gliders ui controller.
+ */
 public class GlidersUIController {
+
+    /**
+     * The GridPane from the UI, that display the list of gliders
+     */
     public GridPane gridGliders;
+
+    /**
+     * The GliderFacade
+     */
     private GliderFacade gliderFacade;
 
+    /**
+     * Constructor that instatiates the GliderFacade
+     */
     public GlidersUIController(){
         this.gliderFacade = new GliderFacade();
     }
 
+    /**
+     * Initializes the elements from the UI.
+     */
     @FXML
     public void initialize() {
         ArrayList<Glider> gliders = this.gliderFacade.getGlidersFromCompany();
@@ -67,6 +84,11 @@ public class GlidersUIController {
 
     }
 
+    /**
+     * Switch UI to the gliderUpdate view of the glider selected.
+     * Used by the "Update" buttons.
+     * @param registrationGlider : registration of the glider selected.
+     */
     private void updateGlider(String registrationGlider) {
         try {
             Main.gliderUpdate(Main.getPrimaryStage(), registrationGlider);
@@ -75,6 +97,12 @@ public class GlidersUIController {
         }
     }
 
+    /**
+     * Delete the glider selected and reload the UI.
+     * Used by the "X" buttons.
+     *
+     * @param id : registration of the booking selected.
+     */
     public void deleteGlider(String id) {
         gliderFacade.deleteGlider(id);
         try {
@@ -84,7 +112,11 @@ public class GlidersUIController {
         }
     }
 
-    public void createGlider(ActionEvent actionEvent) {
+    /**
+     * Switch UI to gliderCreationView view.
+     * Used by the "New" button on the UI.
+     */
+    public void createGlider() {
         try {
             Main.gliderCreationView(Main.getPrimaryStage());
         } catch (IOException e) {

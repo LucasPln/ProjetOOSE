@@ -10,13 +10,23 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * The type Main.
+ *
+ * @author Lucas Paulin
+ */
 public class Main extends Application {
 
     private static Stage primaryStage;
     private static FXMLLoader loader;
 
 
-
+    /**
+     * Start.
+     *
+     * @param primaryStage the primary stage
+     * @throws Exception the exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -32,51 +42,132 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * Login view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void loginView(Stage stage) throws IOException {
         uploadView(stage, "Login", "../UI/loginUI.fxml");
     }
+
+    /**
+     * Logout view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void logoutView(Stage stage) throws IOException {
         uploadView(stage, "Login", "../UI/loginUI.fxml");
     }
 
+    /**
+     * Home view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void homeView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/Home.fxml");
     }
 
+    /**
+     * My profile view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void myProfileView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/myProfile.fxml");
     }
+
+    /**
+     * Gliders view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void glidersView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/gliders.fxml");
     }
 
+    /**
+     * Glider creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void gliderCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/gliderCreation.fxml");
     }
 
+    /**
+     * Booking view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void bookingView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/booking.fxml");
     }
 
+    /**
+     * My company view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void myCompanyView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/company.fxml");
     }
 
+    /**
+     * Add user view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void addUserView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/addUser.fxml");
     }
 
+    /**
+     * Booking creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void bookingCreationView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/addBooking.fxml");
     }
+
+    /**
+     * Update user view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void updateUserView(Stage stage) throws IOException{
         uploadView(stage, "Flight Manager", "../UI/updateUser.fxml");
     }
 
+    /**
+     * Update booking view.
+     *
+     * @param stage     the stage
+     * @param idBooking the id booking
+     * @throws IOException the io exception
+     */
     public static void updateBookingView(Stage stage, int idBooking) throws IOException{
         loader = new FXMLLoader(Main.class.getResource("../UI/bookingUpdate.fxml"));
         Parent root = loader.load();
@@ -89,6 +180,13 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Glider update.
+     *
+     * @param stage              the stage
+     * @param registrationGlider the registration glider
+     * @throws IOException the io exception
+     */
     public static void gliderUpdate(Stage stage, String registrationGlider) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/gliderUpdate.fxml"));
         Parent root = loader.load();
@@ -101,11 +199,54 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Equipments view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void EquipmentsView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/equipments.fxml");
     }
 
+    /**
+     * Launchers view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
+    public static void LaunchersView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
+    }
+
+
+    /**
+     * Parachutes view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
+    public static void parachutesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/parachutes.fxml");
+    }
+
+    /**
+     * Get primary stage stage.
+     *
+     * @return the stage
+     */
     public static Stage getPrimaryStage(){
         return primaryStage;
     }
+
+    /**
+     * Users view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
+    public static void usersView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/users.fxml");
+    }
+
 }

@@ -1,15 +1,13 @@
 package DAO;
 
-import Model.GPS;
-import Model.Plane;
-import Model.Wincher;
+import Model.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql launcher.
+ */
 public class DAOSqlLauncher implements DAOLauncher {
     @Override
     public ArrayList<Plane> getAllPlane() {
@@ -76,5 +74,142 @@ public class DAOSqlLauncher implements DAOLauncher {
         }
 
         return listWincher;
+    }
+
+    @Override
+    public String getNbLaunchers(String type, int idCompany) {
+        String res = "0";
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select count(*) from " + type + " where idCompany = " + idCompany);
+            while(rs.next()) {
+                res = Integer.toString(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    @Override
+    public ArrayList<Launcher> getAllWinchesByCompanyId(int idCompany) {
+        Wincher winch = null;
+        ArrayList<Launcher> winches = new ArrayList<Launcher>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM winch WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                winch = new Wincher(
+                        rs.getString(1),
+                        rs.getDate(3),
+                        rs.getDate(4),
+                        rs.getInt(5),
+                        rs.getInt(2),
+                        rs.getDate(6),
+                        rs.getDate(7),
+                        rs.getInt(8)
+                );
+                winches.add(winch);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return winches;
+    }
+
+    @Override
+    public ArrayList<Launcher> getAllPlanesByCompanyId(int idCompany) {
+        Plane plane = null;
+        ArrayList<Launcher> planes = new ArrayList<Launcher>();
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM plane WHERE IDcompany= " + idCompany);
+
+            while(rs.next()){
+                plane = new Plane(
+                        rs.getString(1),
+                        rs.getDate(4),
+                        rs.getDate(5),
+                        rs.getInt(3),
+                        rs.getInt(5),
+                        rs.getInt(6),
+                        rs.getInt(7)
+                );
+                planes.add(plane);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return planes;
+    }
+
+    @Override
+    public void createPlane(String registrationPlane, int maxLaunchWeight, int idCompany, Date acquisitionDate, Date renewalDate, int span, int maxWeight) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO plane (registrationPlane, maxLaunchWeight, idCompany, acquisitionDate, renewalDate, span, maxWeight) VALUES (?, ?, ?, ?, ? , ?, ?)");
+            stmt.setString(1, registrationPlane);
+            stmt.setInt(2, maxLaunchWeight);
+            stmt.setInt(3, idCompany);
+            stmt.setDate(4, acquisitionDate);
+            stmt.setDate(5, acquisitionDate);
+            stmt.setInt(6, span);
+            stmt.setInt(7, maxWeight);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void createWinch(String registrationWinch, int idCompany, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight) {
+        Connection con = FactoryDAOSQL.connection;
+        try {
+            PreparedStatement stmt=con.prepareStatement("INSERT INTO winch (registrationWinch, idCompany, acquisitionDate, renewalDate, maxLaunchWeight, ropeRenewal, parachuteRenewal, maxWeight) VALUES (?, ?, ?, ?, ? , ?, ?, ?)");
+            stmt.setString(1, registrationWinch);
+            stmt.setInt(2, idCompany);
+            stmt.setDate(3, acquisitionDate);
+            stmt.setDate(4, renewalDate);
+            stmt.setInt(5, maxLaunchWeight);
+            stmt.setDate(6, ropeRenewal);
+            stmt.setDate(7, parachuteRenewal);
+            stmt.setInt(8, maxWeight);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateWinch(String registrationWinch, Date acquisitionDate, Date renewalDate, int maxLaunchWeight, Date ropeRenewal, Date parachuteRenewal, int maxWeight) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE winch SET acquisitionDate = ?, renewalDate = ?, maxLaunchWeight = ?, ropeRenewal = ?, parachuteRenewal = ?, maxWeight = ?  WHERE registrationWinch = '" + registrationWinch +"'");
+        stmt.setDate(1, acquisitionDate);
+        stmt.setDate(2, renewalDate);
+        stmt.setInt(3, maxLaunchWeight);
+        stmt.setDate(4, ropeRenewal);
+        stmt.setDate(5, parachuteRenewal);
+        stmt.setInt(6, maxWeight);
+        stmt.executeUpdate();
+    }
+
+    @Override
+    public void updatePlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) throws SQLException {
+        Connection con = FactoryDAOSQL.connection;
+        PreparedStatement stmt=con.prepareStatement("UPDATE plane SET maxLaunchWeight = ?, acquisitionDate = ?, renewalDate = ?, span = ?, maxWeight = ?  WHERE registrationPlane = '" + registrationPlane +"'");
+        stmt.setInt(1, maxLaunchWeight);
+        stmt.setDate(2, renewalDate);
+        stmt.setDate(3, renewalDate);
+        stmt.setInt(4, span);
+        stmt.setInt(5, maxWeight);
+        stmt.executeUpdate();
     }
 }

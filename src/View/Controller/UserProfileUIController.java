@@ -13,6 +13,10 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 
 
+/**
+ * The type User profile ui controller.
+ * @author ANDREU Paola
+ */
 public class UserProfileUIController {
     @FXML
     private Label labelUser;
@@ -35,8 +39,14 @@ public class UserProfileUIController {
     @FXML
     private Label labelAdminDate;
 
+    /**
+     * Instantiates a new User profile ui controller.
+     */
     public UserProfileUIController(){}
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         User user = LoginFacade.getInstance().getConnectedUser();
@@ -83,6 +93,12 @@ public class UserProfileUIController {
         }
 
     }
+
+    /**
+     * Modify my profile.
+     *
+     * @param actionEvent the action event
+     */
     public void modifyMyProfile(ActionEvent actionEvent) {
         try {
             Main.updateUserView(Main.getPrimaryStage());
@@ -90,6 +106,12 @@ public class UserProfileUIController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Return view.
+     *
+     * @param actionEvent the action event
+     */
     public void returnView(ActionEvent actionEvent) {
         try {
             Main.homeView(Main.getPrimaryStage());

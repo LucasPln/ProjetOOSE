@@ -6,6 +6,9 @@ import Model.Glider;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Dao sql glider.
+ */
 public class DAOSqlGlider implements DAOGlider {
 
     @Override
@@ -125,13 +128,12 @@ public class DAOSqlGlider implements DAOGlider {
     }
 
     @Override
-    public void updateGlider(String id, String newRegistrationID, float span, float maxWeight, java.sql.Date reviewDate) throws SQLException {
+    public void updateGlider(String id, float span, float maxWeight, java.sql.Date reviewDate) throws SQLException {
         Connection con = FactoryDAOSQL.connection;
-        PreparedStatement stmt=con.prepareStatement("UPDATE glider SET registrationGlider = ?, span = ?, maxWeight = ?, reviewDate = ? WHERE registrationGlider = '" + id +"'");
-        stmt.setString(1, newRegistrationID);
-        stmt.setFloat(2, span);
-        stmt.setFloat(3, maxWeight);
-        stmt.setDate(4, reviewDate);
+        PreparedStatement stmt=con.prepareStatement("UPDATE glider SET span = ?, maxWeight = ?, reviewDate = ? WHERE registrationGlider = '" + id +"'");
+        stmt.setFloat(1, span);
+        stmt.setFloat(2, maxWeight);
+        stmt.setDate(3, reviewDate);
         stmt.executeUpdate();
     }
 }

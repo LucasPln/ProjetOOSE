@@ -4,10 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * The type Factory daosql.
+ */
 public class FactoryDAOSQL extends AbstractFactory {
 
+    /**
+     * The constant connection.
+     */
     public static Connection connection;
 
+    /**
+     * Instantiates a new Factory daosql.
+     */
     protected FactoryDAOSQL(){
         initialize();
     }

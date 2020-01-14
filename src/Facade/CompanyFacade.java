@@ -8,13 +8,19 @@ import Model.User;
 
 import java.util.ArrayList;
 
+/**
+ * The type Company facade.
+ */
 public class CompanyFacade {
 
         private static CompanyFacade instance = null;
 
         private AbstractFactory abstractFactory;
 
-        public CompanyFacade() {
+    /**
+     * Instantiates a new Company facade.
+     */
+    public CompanyFacade() {
             this.abstractFactory = AbstractFactory.getInstance();
             this.abstractFactory.createCompanyDAO();
             this.abstractFactory.createGliderDAO();
@@ -22,11 +28,23 @@ public class CompanyFacade {
             System.out.println("Company créé");
         }
 
-        public Company getInfos(int idC){
+    /**
+     * Get infos company.
+     *
+     * @param idC the id c
+     * @return the company
+     */
+    public Company getInfos(int idC){
             return abstractFactory.getCompanyDAO().infos(idC);
         }
 
-        public ArrayList<Glider> getAllGlidersCompany(int idC) {return abstractFactory.getDaoGlider().getGlidersFromCompany(idC);}
+    /**
+     * Gets all gliders company.
+     *
+     * @param idC the id c
+     * @return the all gliders company
+     */
+    public ArrayList<Glider> getAllGlidersCompany(int idC) {return abstractFactory.getDaoGlider().getGlidersFromCompany(idC);}
 
         //public ArrayList<Equipment> getAllEquipementCompany(int idC){return abstractFactory.getDaoEquipement().get}
 

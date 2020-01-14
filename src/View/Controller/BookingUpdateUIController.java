@@ -15,49 +15,111 @@ import javafx.scene.control.DatePicker;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * The type Booking update ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class BookingUpdateUIController {
 
-    private BookingFacade bf;
-    private EquipmentFacade equipmentFacade;
-    private LauncherFacade launcherFacade;
-    private DiplomaFacade diplomaFacade;
-    private GliderFacade gliderFacade;
-    private ReadUserFacade readUserFacade;
+    /**
+     * The booking selected.
+     */
     private Booking booking;
 
+    /**
+     * The bookingFacade.
+     */
+    private BookingFacade bf;
+
+    /**
+     * The equipmentFacade.
+     */
+    private EquipmentFacade equipmentFacade;
+
+    /**
+     * The launherFacade.
+     */
+    private LauncherFacade launcherFacade;
+
+    /**
+     * The diplomaFacade.
+     */
+    private DiplomaFacade diplomaFacade;
+
+    /**
+     * The gliderFacade.
+     */
+    private GliderFacade gliderFacade;
+
+    /**
+     * The readUserFacade.
+     */
+    private ReadUserFacade readUserFacade;
+
+    /**
+     * A DatePicker from the view, used for the startDateField.
+     */
     @FXML
     private DatePicker startDateField;
 
+    /**
+     * A DatePicker from the view, used for the endDateField.
+     */
     @FXML
     private DatePicker endDateField;
 
+    /**
+     * A ChoiceBox from the view, used for the batteryField.
+     */
     @FXML
     private ChoiceBox batteryField;
 
+    /**
+     * A ChoiceBox from the view, used for the GPSField.
+     */
     @FXML
     private ChoiceBox GPSField;
 
+    /**
+     * A ChoiceBox from the view, used for the launcherPlaneField.
+     */
     @FXML
     private ChoiceBox launcherPlaneField;
 
+    /**
+     * A ChoiceBox from the view, used for the launcherWinchField.
+     */
     @FXML
     private ChoiceBox launcherWinchField;
 
+    /**
+     * A ChoiceBox from the view, used for the launchmanField.
+     */
     @FXML
     private ChoiceBox launchmanField;
 
+    /**
+     * A ChoiceBox from the view, used for the flightManagerField.
+     */
     @FXML
     private ChoiceBox flightManagerField;
 
+    /**
+     * A ChoiceBox from the view, used for the diplomaField.
+     */
     @FXML
     private ChoiceBox diplomaField;
 
+    /**
+     * A ChoiceBox from the view, used for the gliderField.
+     */
     @FXML
     private ChoiceBox gliderField;
 
-    @FXML
-    private Button updateBookingButton;
-
+    /**
+     * Controller that initialize all the Facade.
+     */
     public BookingUpdateUIController() {
         this.bf = new BookingFacade();
         this.equipmentFacade = new EquipmentFacade();
@@ -67,6 +129,9 @@ public class BookingUpdateUIController {
         this.readUserFacade = new ReadUserFacade();
     }
 
+    /**
+     * Initializes the elements from the UI.
+     */
     @FXML
     public void initialize(){
         ObservableList<Integer> listIdBattery = FXCollections.observableArrayList();
@@ -117,6 +182,11 @@ public class BookingUpdateUIController {
         gliderField.setItems(listRegistrationGlider);
     }
 
+    /**
+     * Modifies the UI to have the information of the current reservation pre-selected.
+     *
+     * @param idbooking : id of the booking selected
+     */
     public void setInfos(int idbooking){
 
         this.booking = this.bf.getBooking(idbooking);
@@ -135,7 +205,11 @@ public class BookingUpdateUIController {
 
     }
 
-    public void updateBooking(ActionEvent actionEvent) {
+    /**
+     * Update the booking selected with the parameters selected.
+     * Used by the "Update" button.
+     */
+    public void updateBooking() {
         System.out.println(launcherWinchField.getValue());
 
         if(startDateField.getValue() == null ||
@@ -196,8 +270,18 @@ public class BookingUpdateUIController {
                 }
             }
         }
+    }
 
-
+    /**
+     * Switch UI to the booking view.
+     * Used by the "Back" button.
+     */
+    public void back(){
+        try {
+            Main.bookingView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

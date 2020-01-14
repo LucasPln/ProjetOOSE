@@ -12,6 +12,10 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+/**
+ * The type Register ui controller.
+ * @author ANDREU Paola
+ */
 public class RegisterUIController {
 
     @FXML
@@ -37,8 +41,14 @@ public class RegisterUIController {
 
     private RegisterFacade registerFacade;
 
+    /**
+     * Instantiates a new Register ui controller.
+     */
     public RegisterUIController(){this.registerFacade = new RegisterFacade();}
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {}
 
@@ -74,5 +84,17 @@ public class RegisterUIController {
             alert.showAndWait();
         }
 
+    }
+    /**
+     * Return view.
+     *
+     * @param actionEvent the action event
+     */
+    public void returnView(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
