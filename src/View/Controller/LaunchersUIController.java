@@ -72,4 +72,12 @@ public class LaunchersUIController {
     public void test(ActionEvent actionEvent) {
         launcherFacade.updatePlane("PP1PP", 999, new Date(100000), new Date(100000), 998, 997);
     }
+
+    public void back(){
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

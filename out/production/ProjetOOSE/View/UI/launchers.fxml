@@ -42,6 +42,7 @@
                         <Font size="30.0" />
                     </font>
                 </Label>
+            <Button mnemonicParsing="false" onAction="#back" text="Back" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             </children>
         </GridPane>
     </children>
