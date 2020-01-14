@@ -29,4 +29,25 @@ public class CompanyDAOSQL implements CompanyDAO {
         return company;
     }
 
+    @Override
+    public Boolean createCompany(Company cpy) {
+        int rs = -1;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+
+            rs = stmt.executeUpdate("INSERT INTO `company`(`name`) " + "VALUES ('"+cpy.getName()+"'");
+
+
+            if(rs == 1) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
     }
+
+}
