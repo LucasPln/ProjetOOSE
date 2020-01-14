@@ -58,13 +58,18 @@ public class EquipmentsUIController {
             Main.GPSView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
-        }    }
+        }
+    }
 
     /**
      * Switch the UI to the Battery view
      */
     public void seeBatteries() {
-        System.out.println(equipmentFacade.getAll("battery"));
+        try {
+            Main.batteriesView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

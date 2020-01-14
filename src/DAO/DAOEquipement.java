@@ -133,4 +133,6 @@ public interface DAOEquipement {
     Parachute getParachute(int idEquipment);
 
     GPS getGPS(int idEquipment);
+
+    Battery getBattery(int idEquipment);
 }

@@ -176,4 +176,8 @@ public class EquipmentFacade {
     public GPS getGPS(int idEquipment) {
         return this.abstractFactory.getDaoEquipement().getGPS(idEquipment);
     }
+
+    public Battery getBattery(int idEquipment) {
+        return this.abstractFactory.getDaoEquipement().getBattery(idEquipment);
+    }
 }

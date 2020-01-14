@@ -1,9 +1,6 @@
 package View.Main;
 
-import View.Controller.BookingUpdateUIController;
-import View.Controller.GPSUpdateController;
-import View.Controller.GliderUpdateController;
-import View.Controller.ParachuteUpdateController;
+import View.Controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -225,6 +222,18 @@ public class Main extends Application {
         stage.show();
     }
 
+    public static void batteryUpdate(Stage stage, int idEquipement) throws IOException {
+        loader = new FXMLLoader(Main.class.getResource("../UI/batteryUpdate.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        BatteryUpdateController controller = loader.<BatteryUpdateController>getController();
+        controller.setInfos(idEquipement);
+
+        stage.show();
+    }
+
     /**
      * Equipments view.
      *
@@ -233,6 +242,10 @@ public class Main extends Application {
      */
     public static void EquipmentsView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/equipments.fxml");
+    }
+
+    public static void batteriesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/batteries.fxml");
     }
 
     /**
@@ -272,6 +285,10 @@ public class Main extends Application {
 
     public static void GPSCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/GPSCreation.fxml");
+    }
+
+    public static void BatteryCreationView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/BatteryCreation.fxml");
     }
 
     /**
