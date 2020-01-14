@@ -339,7 +339,15 @@ public class Main extends Application {
     }
 
     public static void updateWinchView(Stage stage, String idWinch) throws IOException {
-        uploadView(stage, "Flight Manager", "../UI/updateWinch.fxml");
+        loader = new FXMLLoader(Main.class.getResource("../UI/updateWinch.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        UpdateWinchUIController controller = loader.<UpdateWinchUIController>getController();
+        controller.setInfos(idWinch);
+
+        stage.show();
     }
 
 }

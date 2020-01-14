@@ -64,5 +64,12 @@ public class Wincher extends Launcher {
     public void setParachuteRenewal(Date parachuteRenewal) {
         this.parachuteRenewal = parachuteRenewal;
     }
-    
+
+    public int getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(int maxWeight) {
+        this.maxWeight = maxWeight;
+    }
 }

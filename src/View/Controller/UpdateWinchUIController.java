@@ -43,39 +43,39 @@ public class UpdateWinchUIController {
     public void setInfos(String registWinch){
 
         this.wincher = this.launcherFacade.getWinch(registWinch);
-        /*
-        System.out.println(plane);
 
-        registrationField.setText(plane.getRegistrationLauncher());
-        maxLaunchWeightField.setText(plane.getMaxLaunchWeight()+"");
-        acquisitionDateField.setValue(((Date)plane.getAcquisitionDate()).toLocalDate());
-        renewalDateField.setValue(((Date)plane.getRenewalDate()).toLocalDate());
-        spanField.setText(plane.getSpan()+"");
-        maxWeightField.setText(plane.getMaxWeight()+"");
 
-         */
+        registrationField.setText(wincher.getRegistrationLauncher());
+        maxLaunchWeightField.setText(wincher.getMaxLaunchWeight()+"");
+        acquisitionDateField.setValue(((Date)wincher.getAcquisitionDate()).toLocalDate());
+        renewalDateField.setValue(((Date)wincher.getRenewalDate()).toLocalDate());
+        parachuteRenewalField.setValue(((Date)wincher.getParachuteRenewal()).toLocalDate());
+        maxWeightField.setText(wincher.getMaxWeight()+"");
+        ropeRenewalField.setValue(((Date)wincher.getRopeRenewal()).toLocalDate());
+
+
 
 
     }
 
     public void updateWinch(){
-        /*
         String registration = this.registrationField.getText();
         int maxLaunchWeight = Integer.parseInt(this.maxLaunchWeightField.getText());
         Date asquisitionDate = java.sql.Date.valueOf(this.acquisitionDateField.getValue());
         Date renewalDate = java.sql.Date.valueOf(this.renewalDateField.getValue());
-        int span = Integer.parseInt(this.spanField.getText());
+        Date parachuteRenewal = java.sql.Date.valueOf(this.parachuteRenewalField.getValue());
         int maxWeight = Integer.parseInt(this.maxWeightField.getText());
+        Date ropeRenewal = java.sql.Date.valueOf(this.ropeRenewalField.getValue());
 
-        this.launcherFacade.updatePlane(registration,maxLaunchWeight,asquisitionDate,renewalDate,span,maxWeight);
+        this.launcherFacade.updateWinch(registration,asquisitionDate,renewalDate,maxLaunchWeight,parachuteRenewal,ropeRenewal,maxWeight);
 
         try {
-            Main.planesView(Main.getPrimaryStage());
+            Main.winchView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
     }
 
     public void back(){
