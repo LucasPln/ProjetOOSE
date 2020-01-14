@@ -1,6 +1,7 @@
 package View.Main;
 
 import View.Controller.BookingUpdateUIController;
+import View.Controller.GPSUpdateController;
 import View.Controller.GliderUpdateController;
 import View.Controller.ParachuteUpdateController;
 import javafx.application.Application;
@@ -212,6 +213,18 @@ public class Main extends Application {
         stage.show();
     }
 
+    public static void GPSUpdate(Stage stage, int idEquipement) throws IOException {
+        loader = new FXMLLoader(Main.class.getResource("../UI/GPSUpdate.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        GPSUpdateController controller = loader.<GPSUpdateController>getController();
+        controller.setInfos(idEquipement);
+
+        stage.show();
+    }
+
     /**
      * Equipments view.
      *
@@ -232,6 +245,10 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
     }
 
+    public static void GPSView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/GPS.fxml");
+    }
+
 
     /**
      * Parachutes view.
@@ -245,6 +262,10 @@ public class Main extends Application {
 
     public static void parachuteCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/parachuteCreation.fxml");
+    }
+
+    public static void GPSCreationView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/GPSCreation.fxml");
     }
 
     /**

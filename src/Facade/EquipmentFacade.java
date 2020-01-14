@@ -172,4 +172,8 @@ public class EquipmentFacade {
     public Parachute getParachute(int idEquipment) {
         return this.abstractFactory.getDaoEquipement().getParachute(idEquipment);
     }
+
+    public GPS getGPS(int idEquipment) {
+        return this.abstractFactory.getDaoEquipement().getGPS(idEquipment);
+    }
 }
