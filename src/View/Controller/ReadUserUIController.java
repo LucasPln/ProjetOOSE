@@ -1,6 +1,9 @@
 package View.Controller;
 
+import Facade.LoginFacade;
 import Facade.ReadUserFacade;
+import Model.AbstractRole;
+import Model.Admin;
 import Model.User;
 import View.Main.Main;
 import javafx.event.ActionEvent;
@@ -39,7 +42,8 @@ public class ReadUserUIController {
      */
     @FXML
     public void initialize() {
-
+        User user = LoginFacade.getInstance().getConnectedUser();
+        AbstractRole r = user.getAbstractRole();
         ArrayList<User> users = this.readUserFacade.getUsersByRole("Monitor");
         for(int i = 0; i < users.size(); i++) {
 
@@ -71,13 +75,15 @@ public class ReadUserUIController {
             gridUsers.add(l7,6, i + 1);
             GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
-            Button b1 = new Button("X");
-            int j=i;
-            b1.setOnAction(event -> {
-                deleteUser(users.get(j).getId());
-            });
-            gridUsers.add(b1,7,i + 1);
-            GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
+            if (r instanceof Admin) {
+                Button b1 = new Button("X");
+                int j = i;
+                b1.setOnAction(event -> {
+                    deleteUser(users.get(j).getId());
+                });
+                gridUsers.add(b1, 7, i + 1);
+                GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
+            }
 
 
         }
@@ -88,8 +94,10 @@ public class ReadUserUIController {
      */
     @FXML
     public void getUsers() {
+        User user = LoginFacade.getInstance().getConnectedUser();
+        AbstractRole r = user.getAbstractRole();
         gridUsers.getChildren().clear();
-        initLabels();
+        initLabels(r);
         String role = choiceBox.getValue().toString();
         ArrayList<User> users = this.readUserFacade.getUsersByRole(role);
         for(int i = 0; i < users.size(); i++) {
@@ -121,22 +129,28 @@ public class ReadUserUIController {
             Label l7 = new Label(users.get(i).getTel());
             gridUsers.add(l7,6, i + 1);
             GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
+            if (r instanceof Admin) {
+                Button b1 = new Button("X");
+                int j = i;
+                b1.setOnAction(event -> {
+                    deleteUser(users.get(j).getId());
+                });
+                gridUsers.add(b1, 7, i + 1);
+                GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
+            }
 
-            Button b1 = new Button("X");
-            int j=i;
-            b1.setOnAction(event -> {
-                deleteUser(users.get(j).getId());
-            });
-            gridUsers.add(b1,7,i + 1);
-            GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
-
+        }
+        if(r instanceof Admin) {
+            Label l8 = new Label("Delete");
+            gridUsers.add(l8, 7, 0);
+            GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
         }
     }
 
     /**
      * Init labels.
      */
-    public void initLabels(){
+    public void initLabels(AbstractRole role){
         Label l1= new Label("Firstname");
         gridUsers.add(l1,0, 0);
         GridPane.setHalignment(l1, javafx.geometry.HPos.CENTER);
@@ -165,10 +179,11 @@ public class ReadUserUIController {
         gridUsers.add(l7,6, 0);
         GridPane.setHalignment(l7, javafx.geometry.HPos.CENTER);
 
-        Label l8 = new Label("Delete");
-        gridUsers.add(l8,7, 0);
-        GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
-
+        if(role instanceof Admin) {
+            Label l8 = new Label("Delete");
+            gridUsers.add(l8, 7, 0);
+            GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
+        }
 
     }
     /**

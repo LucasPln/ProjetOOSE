@@ -49,7 +49,6 @@
                                 <Label text="Postal Code" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
                                 <Label text="Mail" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
                                 <Label text="Tel" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
-                                <Label text="Delete" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
 
                             </children>
                         </GridPane>
