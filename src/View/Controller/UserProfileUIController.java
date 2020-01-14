@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * The type User profile ui controller.
+ *
  * @author ANDREU Paola
  */
 public class UserProfileUIController {

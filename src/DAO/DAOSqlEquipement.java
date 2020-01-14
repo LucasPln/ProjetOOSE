@@ -6,6 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 /**
+ * The type Dao sql equipement.
+ *
  * @author Hugo Niort
  */
 public class DAOSqlEquipement implements DAOEquipement {

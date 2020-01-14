@@ -46,14 +46,52 @@ public class CompanyFacade {
      */
     public ArrayList<Glider> getAllGlidersCompany(int idC) {return abstractFactory.getDaoGlider().getGlidersFromCompany(idC);}
 
+    /**
+     * Get all parachutes company array list.
+     *
+     * @param idC the id c
+     * @return the array list
+     */
     public ArrayList<Equipment> getAllParachutesCompany(int idC){return abstractFactory.getDaoEquipement().getAllParachutesByCompanyId(idC);}
+
+    /**
+     * Get all gps company array list.
+     *
+     * @param idC the id c
+     * @return the array list
+     */
     public ArrayList<Equipment> getAllGPSCompany(int idC){return abstractFactory.getDaoEquipement().getAllGpsByCompanyId(idC);}
+
+    /**
+     * Get all batteries company array list.
+     *
+     * @param idC the id c
+     * @return the array list
+     */
     public ArrayList<Equipment> getAllBatteriesCompany(int idC){return abstractFactory.getDaoEquipement().getAllBatteriesByCompanyId(idC);}
 
 
+    /**
+     * Create company boolean.
+     *
+     * @param cpy the cpy
+     * @return the boolean
+     */
     public boolean createCompany(Company cpy){return this.abstractFactory.getCompanyDAO().createCompany(cpy);}
 
+    /**
+     * Get all companies array list.
+     *
+     * @return the array list
+     */
     public ArrayList<Company> getAllCompanies(){return this.abstractFactory.getCompanyDAO().getAllCompanies();}
+
+    /**
+     * Delete company boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
     public boolean deleteCompany(int id){return this.abstractFactory.getCompanyDAO().deleteCompany(id);}
 
     }

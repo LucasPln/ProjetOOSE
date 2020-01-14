@@ -4,6 +4,7 @@ import DAO.AbstractFactory;
 
 /**
  * The type Register facade.
+ *
  * @author ANDREU Paola
  */
 public class RegisterFacade {

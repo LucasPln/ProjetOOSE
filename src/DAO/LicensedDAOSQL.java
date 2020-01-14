@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * The type Licensed daosql.
+ *
  * @author ANDREU Paola
  */
 public class LicensedDAOSQL implements LicensedDAO {

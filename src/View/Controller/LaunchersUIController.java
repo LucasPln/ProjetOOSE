@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.sql.Date;
 
 /**
+ * The type Launchers ui controller.
+ *
  * @author Hugo Niort
  */
 public class LaunchersUIController {
@@ -77,6 +79,9 @@ public class LaunchersUIController {
         launcherFacade.updatePlane("PP1PP", 999, new Date(100000), new Date(100000), 998, 997);
     }
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.homeView(Main.getPrimaryStage());

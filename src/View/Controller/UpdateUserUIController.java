@@ -17,6 +17,7 @@ import java.time.LocalDate;
 
 /**
  * The type Update user ui controller.
+ *
  * @author ANDREU Paola
  */
 public class UpdateUserUIController {

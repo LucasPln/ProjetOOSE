@@ -22,7 +22,8 @@ public interface BookingDAO {
     /**
      * Create a booking in the database.
      *
-     * @param booking : the booking you want to create in the database.
+     * @param booking   : the booking you want to create in the database.
+     * @param idCompany the id company
      * @return true if booking has been created, false if not.
      */
     boolean createBooking(Booking booking, int idCompany);
@@ -45,7 +46,8 @@ public interface BookingDAO {
     /**
      * Update a booking the database.
      *
-     * @param booking the booking you want yo update, with new informations.
+     * @param booking   the booking you want yo update, with new informations.
+     * @param idCompany the id company
      * @return true if booking has been updated, false if not.
      */
     boolean updateBooking(Booking booking, int idCompany);

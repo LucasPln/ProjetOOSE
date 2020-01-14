@@ -2,6 +2,7 @@ package Model;
 
 /**
  * The type Licensed.
+ *
  * @author ANDREU Paola
  */
 public class Licensed extends AbstractRole {

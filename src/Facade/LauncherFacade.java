@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * @author Hugo Niort
+ * The type Launcher facade.
+ *
+ * @author Hugo Niort & Lucas Paulin
  */
 public class LauncherFacade {
     private AbstractFactory abstractFactory;
@@ -141,18 +143,40 @@ public class LauncherFacade {
         }
     }
 
+    /**
+     * Delete plane.
+     *
+     * @param idPlane the id plane
+     */
     public void deletePlane(String idPlane){
         this.abstractFactory.getDaoLauncher().deletePlane(idPlane);
     }
 
+    /**
+     * Get plane plane.
+     *
+     * @param registPlane the regist plane
+     * @return the plane
+     */
     public Plane getPlane(String registPlane){
         return this.abstractFactory.getDaoLauncher().getPlane(registPlane);
     }
 
+    /**
+     * Delete winch.
+     *
+     * @param idWinch the id winch
+     */
     public void deleteWinch(String idWinch){
         this.abstractFactory.getDaoLauncher().deleteWinch(idWinch);
     }
 
+    /**
+     * Get winch wincher.
+     *
+     * @param registWinch the regist winch
+     * @return the wincher
+     */
     public Wincher getWinch(String registWinch){
         return this.abstractFactory.getDaoLauncher().getWinch(registWinch);
     }

@@ -4,6 +4,7 @@ import DAO.AbstractFactory;
 
 /**
  * The type Update user facade.
+ *
  * @author ANDREU Paola
  */
 public class UpdateUserFacade {

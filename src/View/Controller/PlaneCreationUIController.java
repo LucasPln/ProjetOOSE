@@ -10,31 +10,63 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * The type Plane creation ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class PlaneCreationUIController {
 
     private LauncherFacade launcherFacade;
 
+    /**
+     * The Registration field.
+     */
     public TextField registrationField;
 
+    /**
+     * The Max launch weight field.
+     */
     public TextField maxLaunchWeightField;
 
+    /**
+     * The Acquisition date field.
+     */
     public DatePicker acquisitionDateField;
 
+    /**
+     * The Renewal date field.
+     */
     public DatePicker renewalDateField;
 
+    /**
+     * The Span field.
+     */
     public TextField spanField;
 
+    /**
+     * The Max weight field.
+     */
     public TextField maxWeightField;
 
+    /**
+     * Instantiates a new Plane creation ui controller.
+     */
     public PlaneCreationUIController() {
         this.launcherFacade = new LauncherFacade();
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize(){
 
     }
 
+    /**
+     * Create booking.
+     */
     public void createBooking(){
         String registration = this.registrationField.getText();
         int maxLaunchWeight = Integer.parseInt(this.maxLaunchWeightField.getText());
@@ -52,6 +84,9 @@ public class PlaneCreationUIController {
         }
     }
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.planesView(Main.getPrimaryStage());

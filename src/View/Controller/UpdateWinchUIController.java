@@ -11,35 +11,72 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * The type Update winch ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class UpdateWinchUIController {
 
     private LauncherFacade launcherFacade;
 
     private Wincher wincher;
 
+    /**
+     * The Registration field.
+     */
     public TextField registrationField;
 
+    /**
+     * The Max launch weight field.
+     */
     public TextField maxLaunchWeightField;
 
+    /**
+     * The Acquisition date field.
+     */
     public DatePicker acquisitionDateField;
 
+    /**
+     * The Renewal date field.
+     */
     public DatePicker renewalDateField;
 
+    /**
+     * The Max weight field.
+     */
     public TextField maxWeightField;
 
+    /**
+     * The Parachute renewal field.
+     */
     public DatePicker parachuteRenewalField;
 
+    /**
+     * The Rope renewal field.
+     */
     public DatePicker ropeRenewalField;
 
+    /**
+     * Instantiates a new Update winch ui controller.
+     */
     public UpdateWinchUIController() {
         this.launcherFacade = new LauncherFacade();
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize(){
 
     }
 
+    /**
+     * Set infos.
+     *
+     * @param registWinch the regist winch
+     */
     public void setInfos(String registWinch){
 
         this.wincher = this.launcherFacade.getWinch(registWinch);
@@ -58,6 +95,9 @@ public class UpdateWinchUIController {
 
     }
 
+    /**
+     * Update winch.
+     */
     public void updateWinch(){
         String registration = this.registrationField.getText();
         int maxLaunchWeight = Integer.parseInt(this.maxLaunchWeightField.getText());
@@ -78,6 +118,9 @@ public class UpdateWinchUIController {
 
     }
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.winchView(Main.getPrimaryStage());

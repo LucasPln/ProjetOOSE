@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * The type Monitor daosql.
+ *
  * @author ANDREU Paola
  */
 public class MonitorDAOSQL implements MonitorDAO {

@@ -198,6 +198,13 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Parachute update.
+     *
+     * @param stage        the stage
+     * @param idEquipement the id equipement
+     * @throws IOException the io exception
+     */
     public static void parachuteUpdate(Stage stage, int idEquipement) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/parachuteUpdate.fxml"));
         Parent root = loader.load();
@@ -210,6 +217,13 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Gps update.
+     *
+     * @param stage        the stage
+     * @param idEquipement the id equipement
+     * @throws IOException the io exception
+     */
     public static void GPSUpdate(Stage stage, int idEquipement) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/GPSUpdate.fxml"));
         Parent root = loader.load();
@@ -222,6 +236,13 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Battery update.
+     *
+     * @param stage        the stage
+     * @param idEquipement the id equipement
+     * @throws IOException the io exception
+     */
     public static void batteryUpdate(Stage stage, int idEquipement) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/batteryUpdate.fxml"));
         Parent root = loader.load();
@@ -244,6 +265,12 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/equipments.fxml");
     }
 
+    /**
+     * Batteries view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void batteriesView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/batteries.fxml");
     }
@@ -258,17 +285,36 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
     }
 
+    /**
+     * Gps view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void GPSView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/GPS.fxml");
     }
 
+    /**
+     * List company view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void listCompanyView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/listCompanyView.fxml");
     }
 
+    /**
+     * Add company view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void addCompanyView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/addCompany.fxml");
     }
+
     /**
      * Parachutes view.
      *
@@ -279,14 +325,32 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/parachutes.fxml");
     }
 
+    /**
+     * Parachute creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void parachuteCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/parachuteCreation.fxml");
     }
 
+    /**
+     * Gps creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void GPSCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/GPSCreation.fxml");
     }
 
+    /**
+     * Battery creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void BatteryCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/BatteryCreation.fxml");
     }
@@ -310,14 +374,33 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/users.fxml");
     }
 
+    /**
+     * Planes view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void planesView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/plane.fxml");
     }
 
+    /**
+     * Plane creation view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void planeCreationView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/createPlane.fxml");
     }
 
+    /**
+     * Update plane view.
+     *
+     * @param stage       the stage
+     * @param registPlane the regist plane
+     * @throws IOException the io exception
+     */
     public static void updatePlaneView(Stage stage, String registPlane) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/updatePlane.fxml"));
         Parent root = loader.load();
@@ -330,14 +413,33 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Winch view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void winchView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/winch.fxml");
     }
 
+    /**
+     * Create winch view.
+     *
+     * @param stage the stage
+     * @throws IOException the io exception
+     */
     public static void createWinchView(Stage stage) throws IOException {
         uploadView(stage, "Flight Manager", "../UI/createWinch.fxml");
     }
 
+    /**
+     * Update winch view.
+     *
+     * @param stage   the stage
+     * @param idWinch the id winch
+     * @throws IOException the io exception
+     */
     public static void updateWinchView(Stage stage, String idWinch) throws IOException {
         loader = new FXMLLoader(Main.class.getResource("../UI/updateWinch.fxml"));
         Parent root = loader.load();

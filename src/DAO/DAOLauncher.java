@@ -9,7 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * @author Hugo Niort
+ * The interface Dao launcher.
+ *
+ * @author Hugo Niort & Lucas Paulin
  */
 public interface DAOLauncher {
 
@@ -106,11 +108,33 @@ public interface DAOLauncher {
      */
     void updatePlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) throws SQLException;
 
+    /**
+     * Delete plane.
+     *
+     * @param idPlane the id plane
+     */
     void deletePlane(String idPlane);
 
+    /**
+     * Gets plane.
+     *
+     * @param registPlane the regist plane
+     * @return the plane
+     */
     Plane getPlane(String registPlane);
 
+    /**
+     * Delete winch.
+     *
+     * @param idWinch the id winch
+     */
     void deleteWinch(String idWinch);
 
+    /**
+     * Gets winch.
+     *
+     * @param registWinch the regist winch
+     * @return the winch
+     */
     Wincher getWinch(String registWinch);
 }

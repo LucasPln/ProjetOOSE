@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * The type Parachutes ui controller.
+ *
  * @author Hugo Niort
  */
 public class ParachutesUIController {
@@ -94,7 +96,6 @@ public class ParachutesUIController {
 
     /**
      * Create parachute.
-     *
      */
     public void createParachute() {
         try {
@@ -104,6 +105,11 @@ public class ParachutesUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());

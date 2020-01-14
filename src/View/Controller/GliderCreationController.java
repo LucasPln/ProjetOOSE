@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 /**
+ * The type Glider creation controller.
+ *
  * @author Hugo Niort
  */
 public class GliderCreationController {

@@ -65,10 +65,20 @@ public class Wincher extends Launcher {
         this.parachuteRenewal = parachuteRenewal;
     }
 
+    /**
+     * Gets max weight.
+     *
+     * @return the max weight
+     */
     public int getMaxWeight() {
         return maxWeight;
     }
 
+    /**
+     * Sets max weight.
+     *
+     * @param maxWeight the max weight
+     */
     public void setMaxWeight(int maxWeight) {
         this.maxWeight = maxWeight;
     }

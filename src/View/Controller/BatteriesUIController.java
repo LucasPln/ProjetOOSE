@@ -14,14 +14,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * The type Batteries ui controller.
+ *
  * @author Hugo Niort
  */
 public class BatteriesUIController {
+    /**
+     * The Grid batteries.
+     */
     public GridPane gridBatteries;
     private EquipmentFacade equipmentFacade;
-    
+
+    /**
+     * Instantiates a new Batteries ui controller.
+     */
     public BatteriesUIController() {this.equipmentFacade = new EquipmentFacade();}
 
+    /**
+     * Initialize.
+     */
     public void initialize() {
         ArrayList<Equipment> batteries = this.equipmentFacade.getAll("battery");
 
@@ -80,6 +91,11 @@ public class BatteriesUIController {
         }
     }
 
+    /**
+     * Create battery.
+     *
+     * @param actionEvent the action event
+     */
     public void createBattery(ActionEvent actionEvent) {
         try {
             Main.BatteryCreationView(Main.getPrimaryStage());
@@ -88,6 +104,11 @@ public class BatteriesUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());

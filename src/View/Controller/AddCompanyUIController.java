@@ -16,6 +16,9 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Add company ui controller.
+ */
 public class AddCompanyUIController {
 
     @FXML
@@ -31,18 +34,22 @@ public class AddCompanyUIController {
          */
         private CompanyFacade companyFacade;
 
-        /**
-         * Controller that instantiates the CompanyFacade.
-         */
-        public AddCompanyUIController(){
+    /**
+     * Controller that instantiates the CompanyFacade.
+     */
+    public AddCompanyUIController(){
             companyFacade = new CompanyFacade();
         }
 
-        /**
-         * Initializes the elements from the UI.
-         */
-        @FXML
+    /**
+     * Initializes the elements from the UI.
+     */
+    @FXML
         public void initialize() {}
+
+    /**
+     * Create company.
+     */
     public void createCompany() {
         String nCompany = nomCompany.getText();
         Company newCompany = new Company(nCompany);
@@ -63,12 +70,13 @@ public class AddCompanyUIController {
             alert.showAndWait();
         }
     }
+
     /**
-         * Switch the UI to the Home view.
-         *
-         * @param actionEvent the action event
-         */
-        public void ReturnView(ActionEvent actionEvent) {
+     * Switch the UI to the Home view.
+     *
+     * @param actionEvent the action event
+     */
+    public void ReturnView(ActionEvent actionEvent) {
             try {
                 Main.homeView(Main.getPrimaryStage());
             } catch (IOException e) {

@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 /**
+ * The type Dao sql glider.
+ *
  * @author Hugo Niort
  */
 public class DAOSqlGlider implements DAOGlider {

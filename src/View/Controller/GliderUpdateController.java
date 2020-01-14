@@ -15,6 +15,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 /**
+ * The type Glider update controller.
+ *
  * @author Hugo Niort
  */
 public class GliderUpdateController {

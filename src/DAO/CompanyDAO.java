@@ -17,7 +17,27 @@ public interface CompanyDAO {
      * @return the company
      */
     Company infos(int id);
+
+    /**
+     * Create company boolean.
+     *
+     * @param cpy the cpy
+     * @return the boolean
+     */
     Boolean createCompany(Company cpy);
+
+    /**
+     * Gets all companies.
+     *
+     * @return the all companies
+     */
     ArrayList<Company> getAllCompanies();
+
+    /**
+     * Delete company boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
     Boolean deleteCompany(int id);
 }

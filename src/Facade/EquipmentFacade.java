@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * The type Equipment facade.
+ *
  * @author Hugo Niort
  */
 public class EquipmentFacade {
@@ -165,18 +167,42 @@ public class EquipmentFacade {
         return true;
     }
 
+    /**
+     * Delete.
+     *
+     * @param type         the type
+     * @param idEquipement the id equipement
+     */
     public void delete(String type, int idEquipement) {
         this.abstractFactory.getDaoEquipement().deleteEquipment(type, idEquipement);
     }
 
+    /**
+     * Gets parachute.
+     *
+     * @param idEquipment the id equipment
+     * @return the parachute
+     */
     public Parachute getParachute(int idEquipment) {
         return this.abstractFactory.getDaoEquipement().getParachute(idEquipment);
     }
 
+    /**
+     * Gets gps.
+     *
+     * @param idEquipment the id equipment
+     * @return the gps
+     */
     public GPS getGPS(int idEquipment) {
         return this.abstractFactory.getDaoEquipement().getGPS(idEquipment);
     }
 
+    /**
+     * Gets battery.
+     *
+     * @param idEquipment the id equipment
+     * @return the battery
+     */
     public Battery getBattery(int idEquipment) {
         return this.abstractFactory.getDaoEquipement().getBattery(idEquipment);
     }

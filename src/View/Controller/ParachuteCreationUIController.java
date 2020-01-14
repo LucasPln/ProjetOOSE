@@ -10,17 +10,42 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 /**
+ * The type Parachute creation ui controller.
+ *
  * @author Hugo Niort
  */
 public class ParachuteCreationUIController {
+    /**
+     * The Package date input.
+     */
     public DatePicker packageDateInput;
+    /**
+     * The Renewal date input.
+     */
     public DatePicker renewalDateInput;
+    /**
+     * The Wording input.
+     */
     public TextField wordingInput;
+    /**
+     * The Equipment facade.
+     */
     EquipmentFacade equipmentFacade;
+    /**
+     * The Error label.
+     */
     public Label errorLabel;
 
+    /**
+     * Instantiates a new Parachute creation ui controller.
+     */
     public ParachuteCreationUIController() {this.equipmentFacade = new EquipmentFacade();}
 
+    /**
+     * Create parachute.
+     *
+     * @param actionEvent the action event
+     */
     public void createParachute(ActionEvent actionEvent) {
         if(wordingInput.getText().equals("") || renewalDateInput.getValue() == null || packageDateInput.getValue() == null) {
             errorLabel.setText("Input Error");
@@ -38,6 +63,11 @@ public class ParachuteCreationUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.parachutesView(Main.getPrimaryStage());

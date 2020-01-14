@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 /**
  * The type Read user ui controller.
+ *
  * @author ANDREU Paola
  */
 public class ReadUserUIController {
@@ -152,6 +153,8 @@ public class ReadUserUIController {
 
     /**
      * Init labels.
+     *
+     * @param role the role
      */
     public void initLabels(AbstractRole role){
         Label l1= new Label("Firstname");
@@ -189,6 +192,7 @@ public class ReadUserUIController {
         }
 
     }
+
     /**
      * Return view.
      *

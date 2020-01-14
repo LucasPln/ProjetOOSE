@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * The interface Dao equipement.
+ *
  * @author Hugo Niort
  */
 public interface DAOEquipement {
@@ -130,9 +132,27 @@ public interface DAOEquipement {
      */
     void updateGPS(int id, String wording, String installedVersion) throws SQLException;
 
+    /**
+     * Gets parachute.
+     *
+     * @param idEquipment the id equipment
+     * @return the parachute
+     */
     Parachute getParachute(int idEquipment);
 
+    /**
+     * Gets gps.
+     *
+     * @param idEquipment the id equipment
+     * @return the gps
+     */
     GPS getGPS(int idEquipment);
 
+    /**
+     * Gets battery.
+     *
+     * @param idEquipment the id equipment
+     * @return the battery
+     */
     Battery getBattery(int idEquipment);
 }

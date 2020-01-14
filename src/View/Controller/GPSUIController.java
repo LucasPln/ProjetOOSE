@@ -13,15 +13,30 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 /**
+ * The type Gpsui controller.
+ *
  * @author Hugo Niort
  */
 public class GPSUIController {
+    /**
+     * The Equipment facade.
+     */
     EquipmentFacade equipmentFacade;
+    /**
+     * The Grid gps.
+     */
     public GridPane gridGPS;
-    
+
+    /**
+     * Instantiates a new Gpsui controller.
+     */
     public GPSUIController() {this.equipmentFacade = new EquipmentFacade();}
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         ArrayList<Equipment> GPSs = this.equipmentFacade.getAll("gps");
@@ -75,6 +90,11 @@ public class GPSUIController {
         }
     }
 
+    /**
+     * Create gps.
+     *
+     * @param actionEvent the action event
+     */
     public void createGPS(ActionEvent actionEvent) {
         try {
             Main.GPSCreationView(Main.getPrimaryStage());
@@ -83,6 +103,11 @@ public class GPSUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());

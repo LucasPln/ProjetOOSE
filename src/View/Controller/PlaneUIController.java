@@ -12,6 +12,11 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Plane ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class PlaneUIController {
 
     @FXML
@@ -21,6 +26,9 @@ public class PlaneUIController {
     private LauncherFacade launcherFacade;
 
 
+    /**
+     * Instantiates a new Plane ui controller.
+     */
     public PlaneUIController() {
         this.launcherFacade = new LauncherFacade();
     }
@@ -74,6 +82,9 @@ public class PlaneUIController {
     }
 
 
+    /**
+     * Create plane.
+     */
     public void createPlane(){
 
         try {
@@ -86,6 +97,11 @@ public class PlaneUIController {
     }
 
 
+    /**
+     * Delete plane.
+     *
+     * @param idPlane the id plane
+     */
     public void deletePlane(String idPlane){
 
         this.launcherFacade.deletePlane(idPlane);
@@ -99,6 +115,11 @@ public class PlaneUIController {
     }
 
 
+    /**
+     * Update plane.
+     *
+     * @param idPlane the id plane
+     */
     public void updatePlane(String idPlane){
 
         try {
@@ -111,6 +132,9 @@ public class PlaneUIController {
     }
 
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.LaunchersView(Main.getPrimaryStage());

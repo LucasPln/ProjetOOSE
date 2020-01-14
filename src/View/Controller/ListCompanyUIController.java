@@ -18,6 +18,9 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type List company ui controller.
+ */
 public class ListCompanyUIController {
 
 
@@ -63,6 +66,12 @@ public class ListCompanyUIController {
             gridCompany.add(b1, 2, i + 1);
         }
     }
+
+    /**
+     * Add company.
+     *
+     * @param actionEvent the action event
+     */
     public void AddCompany(ActionEvent actionEvent) {
         try {
             Main.addCompanyView(Main.getPrimaryStage());
@@ -70,6 +79,12 @@ public class ListCompanyUIController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Delete company.
+     *
+     * @param id the id
+     */
     public void deleteCompany(int id){
        companyFacade.deleteCompany(id);
         try {
@@ -78,6 +93,7 @@ public class ListCompanyUIController {
             e.printStackTrace();
         }
     }
+
     /**
      * Switch the UI to the Home view.
      *

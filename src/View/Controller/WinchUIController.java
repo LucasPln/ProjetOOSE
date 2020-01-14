@@ -12,6 +12,11 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The type Winch ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class WinchUIController {
     @FXML
     private GridPane gridPlanes;
@@ -20,6 +25,9 @@ public class WinchUIController {
     private LauncherFacade launcherFacade;
 
 
+    /**
+     * Instantiates a new Winch ui controller.
+     */
     public WinchUIController() {
         this.launcherFacade = new LauncherFacade();
     }
@@ -73,6 +81,9 @@ public class WinchUIController {
     }
 
 
+    /**
+     * Create winch.
+     */
     public void createWinch(){
 
         try {
@@ -85,6 +96,11 @@ public class WinchUIController {
     }
 
 
+    /**
+     * Delete winch.
+     *
+     * @param idWinch the id winch
+     */
     public void deleteWinch(String idWinch){
 
 
@@ -101,6 +117,11 @@ public class WinchUIController {
     }
 
 
+    /**
+     * Update winch.
+     *
+     * @param idWinch the id winch
+     */
     public void updateWinch(String idWinch){
 
         try {
@@ -115,6 +136,9 @@ public class WinchUIController {
     }
 
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.LaunchersView(Main.getPrimaryStage());

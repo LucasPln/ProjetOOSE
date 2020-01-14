@@ -11,6 +11,7 @@ import java.io.IOException;
 /**
  * @author Hugo Niort
  */
+
 /**
  * The type Equipments ui controller.
  */
@@ -87,6 +88,11 @@ public class EquipmentsUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.homeView(Main.getPrimaryStage());

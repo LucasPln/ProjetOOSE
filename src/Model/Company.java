@@ -150,6 +150,12 @@ public class Company {
         this.idCompany = idCompany;
         this.name = name;
     }
+
+    /**
+     * Instantiates a new Company.
+     *
+     * @param name the name
+     */
     public Company(String name) {
         this.idCompany = idCompany;
         this.name = name;

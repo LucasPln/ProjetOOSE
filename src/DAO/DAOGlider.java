@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * The interface Dao glider.
+ *
  * @author Hugo Niort
  */
 public interface DAOGlider {

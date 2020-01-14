@@ -10,33 +10,67 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * The type Update plane ui controller.
+ *
+ * @author Lucas Paulin
+ */
 public class UpdatePlaneUIController {
 
     private LauncherFacade launcherFacade;
 
     private Plane plane;
 
+    /**
+     * The Registration field.
+     */
     public TextField registrationField;
 
+    /**
+     * The Max launch weight field.
+     */
     public TextField maxLaunchWeightField;
 
+    /**
+     * The Acquisition date field.
+     */
     public DatePicker acquisitionDateField;
 
+    /**
+     * The Renewal date field.
+     */
     public DatePicker renewalDateField;
 
+    /**
+     * The Span field.
+     */
     public TextField spanField;
 
+    /**
+     * The Max weight field.
+     */
     public TextField maxWeightField;
 
+    /**
+     * Instantiates a new Update plane ui controller.
+     */
     public UpdatePlaneUIController() {
         this.launcherFacade = new LauncherFacade();
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize(){
 
     }
 
+    /**
+     * Set infos.
+     *
+     * @param registPlane the regist plane
+     */
     public void setInfos(String registPlane){
 
         this.plane = this.launcherFacade.getPlane(registPlane);
@@ -52,6 +86,9 @@ public class UpdatePlaneUIController {
 
     }
 
+    /**
+     * Update plane.
+     */
     public void updatePlane(){
         String registration = this.registrationField.getText();
         int maxLaunchWeight = Integer.parseInt(this.maxLaunchWeightField.getText());
@@ -69,6 +106,9 @@ public class UpdatePlaneUIController {
         }
     }
 
+    /**
+     * Back.
+     */
     public void back(){
         try {
             Main.planesView(Main.getPrimaryStage());

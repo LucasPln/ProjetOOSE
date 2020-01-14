@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * The type Gliders ui controller.
+ *
  * @author Hugo Niort
  */
 public class GlidersUIController {
@@ -124,6 +126,11 @@ public class GlidersUIController {
         }
     }
 
+    /**
+     * Back.
+     *
+     * @param actionEvent the action event
+     */
     public void back(ActionEvent actionEvent) {
         try {
             Main.homeView(Main.getPrimaryStage());

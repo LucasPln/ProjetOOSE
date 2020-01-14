@@ -2,6 +2,7 @@ package Model;
 
 /**
  * The type Company member.
+ *
  * @author ANDREU Paola
  */
 public class CompanyMember extends AbstractRole{

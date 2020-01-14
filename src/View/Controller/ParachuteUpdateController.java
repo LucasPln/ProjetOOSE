@@ -13,20 +13,45 @@ import java.io.IOException;
 import java.sql.Date;
 
 /**
+ * The type Parachute update controller.
+ *
  * @author Hugo Niort
  */
 public class ParachuteUpdateController {
+    /**
+     * The Renewal date input.
+     */
     public DatePicker renewalDateInput;
+    /**
+     * The Package date input.
+     */
     public DatePicker packageDateInput;
+    /**
+     * The Wording input.
+     */
     public TextField wordingInput;
+    /**
+     * The Error label.
+     */
     public Label errorLabel;
+    /**
+     * The Equipment facade.
+     */
     EquipmentFacade equipmentFacade;
     private int idEquipment;
 
+    /**
+     * Instantiates a new Parachute update controller.
+     */
     public ParachuteUpdateController() {
         this.equipmentFacade = new EquipmentFacade();
     }
 
+    /**
+     * Update parachute.
+     *
+     * @param actionEvent the action event
+     */
     public void updateParachute(ActionEvent actionEvent) {
         if(wordingInput.getText().equals("") || renewalDateInput.getValue() == null || packageDateInput.getValue() == null) {
             errorLabel.setText("Input Error");
@@ -45,6 +70,11 @@ public class ParachuteUpdateController {
         }
     }
 
+    /**
+     * Sets infos.
+     *
+     * @param idEquipment the id equipment
+     */
     public void setInfos(int idEquipment) {
         this.idEquipment = idEquipment;
 
@@ -55,6 +85,9 @@ public class ParachuteUpdateController {
         packageDateInput.setValue(((Date)p.getPackageDate()).toLocalDate());
     }
 
+    /**
+     * Back.
+     */
     public void back() {
         try {
             Main.parachutesView(Main.getPrimaryStage());
