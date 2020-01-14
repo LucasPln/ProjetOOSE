@@ -46,7 +46,9 @@ public class CompanyFacade {
      */
     public ArrayList<Glider> getAllGlidersCompany(int idC) {return abstractFactory.getDaoGlider().getGlidersFromCompany(idC);}
 
-        //public ArrayList<Equipment> getAllEquipementCompany(int idC){return abstractFactory.getDaoEquipement().get}
+    public ArrayList<Equipment> getAllParachutesCompany(int idC){return abstractFactory.getDaoEquipement().getAllParachutesByCompanyId(idC);}
+    public ArrayList<Equipment> getAllGPSCompany(int idC){return abstractFactory.getDaoEquipement().getAllGpsByCompanyId(idC);}
+    public ArrayList<Equipment> getAllBatteriesCompany(int idC){return abstractFactory.getDaoEquipement().getAllBatteriesByCompanyId(idC);}
 
     }
 
