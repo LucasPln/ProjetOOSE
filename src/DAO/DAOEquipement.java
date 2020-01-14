@@ -129,4 +129,6 @@ public interface DAOEquipement {
      * @throws SQLException the sql exception
      */
     void updateGPS(int id, String wording, String installedVersion) throws SQLException;
+
+    Parachute getParachute(int idEquipment);
 }
