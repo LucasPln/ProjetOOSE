@@ -1,7 +1,6 @@
 package View.Controller;
 
 import Facade.LauncherFacade;
-import Model.Booking;
 import Model.Launcher;
 import Model.Plane;
 import View.Main.Main;
@@ -101,14 +100,14 @@ public class PlaneUIController {
 
 
     public void updatePlane(String idPlane){
-        /*
+
         try {
             Main.updatePlaneView(Main.getPrimaryStage(), idPlane);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
     }
 
 

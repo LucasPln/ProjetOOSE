@@ -318,4 +318,16 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/createPlane.fxml");
     }
 
+    public static void updatePlaneView(Stage stage, String registPlane) throws IOException {
+        loader = new FXMLLoader(Main.class.getResource("../UI/updatePlane.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("Flight Manager");
+        stage.setScene(new Scene(root));
+
+        UpdatePlaneUIController controller = loader.<UpdatePlaneUIController>getController();
+        controller.setInfos(registPlane);
+
+        stage.show();
+    }
+
 }
