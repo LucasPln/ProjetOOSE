@@ -43,17 +43,15 @@ public class HomeController {
     private Label labelUser;
 
     @FXML
-    private Button usersBtn;
+    private Button companiesBtn;
     @FXML
     private Button viewBookingButton;
 
-    /**
-     * The Add user button.
-     */
-    @FXML
-    public Button addUserButton;
-
     private LoginFacade loginFacade;
+    /**
+     * The launchers btn.
+     */
+    public Button launchersButton;
 
     /**
      * Initialize.
@@ -65,21 +63,31 @@ public class HomeController {
         labelUser.setText("Welcome "+ u.getFirstName()+" !");
 
         if(a instanceof Admin){
-            addUserButton.setVisible(true);
-            myCompanyBtn.setVisible(false);
-            glidersBtn.setVisible(true);
-        }else if(a instanceof CompanyMember){
-            addUserButton.setVisible(false);
-            glidersBtn.setVisible(true);
-            myCompanyBtn.setVisible(true);
-        }else if(a instanceof Monitor){
-            addUserButton.setVisible(false);
-            myCompanyBtn.setVisible(true);
-            glidersBtn.setVisible(true);
-        }else { // Licensed
-            addUserButton.setVisible(false);
             myCompanyBtn.setVisible(false);
             glidersBtn.setVisible(false);
+            companiesBtn.setVisible(true);
+            viewBookingButton.setVisible(false);
+            equipmentsButton.setVisible(false);
+            launchersButton.setVisible(false);
+        }else if(a instanceof CompanyMember){
+            glidersBtn.setVisible(true);
+            myCompanyBtn.setVisible(true);
+            viewBookingButton.setVisible(false);
+            companiesBtn.setVisible(false);
+
+        }else if(a instanceof Monitor){
+            myCompanyBtn.setVisible(true);
+            glidersBtn.setVisible(true);
+            viewBookingButton.setVisible(true);
+            companiesBtn.setVisible(false);
+
+        }else { // Licensed
+            myCompanyBtn.setVisible(false);
+            glidersBtn.setVisible(false);
+            viewBookingButton.setVisible(true);
+            companiesBtn.setVisible(false);
+            launchersButton.setVisible(false);
+
         }
     }
 
@@ -158,18 +166,6 @@ public class HomeController {
         }
     }
 
-    /**
-     * Add user.
-     *
-     * @param actionEvent the action event
-     */
-    public void addUser(ActionEvent actionEvent){
-        try {
-            Main.addUserView(Main.getPrimaryStage());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Gets equipments.
@@ -205,6 +201,20 @@ public class HomeController {
     public void getLaunchers(ActionEvent actionEvent) {
         try {
             Main.LaunchersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Gets companies.
+     *
+     * @param actionEvent the action event
+     */
+    public void getCompanies(ActionEvent actionEvent) {
+        try {
+            Main.LaunchersView(Main.getPrimaryStage()); //A CHANGER
         } catch (IOException e) {
             e.printStackTrace();
         }
