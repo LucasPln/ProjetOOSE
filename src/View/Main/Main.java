@@ -266,4 +266,8 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/users.fxml");
     }
 
+    public static void planesView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/plane.fxml");
+    }
+
 }
