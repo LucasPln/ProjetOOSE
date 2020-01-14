@@ -76,14 +76,14 @@ public class PlaneUIController {
 
 
     public void createPlane(){
-        /*
+
         try {
-            Main.bookingCreationView(Main.getPrimaryStage());
+            Main.planeCreationView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
     }
 
 
