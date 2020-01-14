@@ -214,7 +214,7 @@ public class HomeController {
      */
     public void getCompanies(ActionEvent actionEvent) {
         try {
-            Main.LaunchersView(Main.getPrimaryStage()); //A CHANGER
+            Main.listCompanyView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

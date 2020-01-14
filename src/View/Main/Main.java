@@ -232,7 +232,13 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/launchers.fxml");
     }
 
+    public static void listCompanyView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/listCompanyView.fxml");
+    }
 
+    public static void addCompanyView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/addCompany.fxml");
+    }
     /**
      * Parachutes view.
      *
