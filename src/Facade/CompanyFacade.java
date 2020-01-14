@@ -2,6 +2,7 @@ package Facade;
 
 import DAO.AbstractFactory;
 import Model.Company;
+import Model.Equipment;
 import Model.Glider;
 import Model.User;
 
@@ -17,6 +18,7 @@ public class CompanyFacade {
             this.abstractFactory = AbstractFactory.getInstance();
             this.abstractFactory.createCompanyDAO();
             this.abstractFactory.createGliderDAO();
+            this.abstractFactory.createEquipmentDAO();
             System.out.println("Company créé");
         }
 
@@ -25,6 +27,8 @@ public class CompanyFacade {
         }
 
         public ArrayList<Glider> getAllGlidersCompany(int idC) {return abstractFactory.getDaoGlider().getGlidersFromCompany(idC);}
+
+        //public ArrayList<Equipment> getAllEquipementCompany(int idC){return abstractFactory.getDaoEquipement().get}
 
     }
 
