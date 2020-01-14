@@ -2,6 +2,7 @@ package View.Controller;
 
 import Facade.EquipmentFacade;
 import View.Main.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -78,6 +79,14 @@ public class EquipmentsUIController {
     public void seeParachutes() {
         try {
             Main.parachutesView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void back(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

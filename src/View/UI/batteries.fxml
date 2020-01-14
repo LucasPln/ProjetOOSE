@@ -28,6 +28,7 @@
             </content>
         </ScrollPane>
         <Button layoutX="267.0" layoutY="348.0" mnemonicParsing="false" onAction="#createBattery" text="New" />
+      <Button layoutX="50.0" layoutY="348.0" mnemonicParsing="false" onAction="#back" text="Back" />
     </children>
 
 </AnchorPane>

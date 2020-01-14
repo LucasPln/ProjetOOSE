@@ -83,4 +83,12 @@ public class BatteriesUIController {
             e.printStackTrace();
         }
     }
+
+    public void back(ActionEvent actionEvent) {
+        try {
+            Main.EquipmentsView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

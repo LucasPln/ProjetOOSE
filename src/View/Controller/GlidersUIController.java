@@ -123,4 +123,12 @@ public class GlidersUIController {
             e.printStackTrace();
         }
     }
+
+    public void back(ActionEvent actionEvent) {
+        try {
+            Main.homeView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
