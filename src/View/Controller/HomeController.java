@@ -34,7 +34,7 @@ public class HomeController {
     public void initialize(){
         User u = LoginFacade.getInstance().getConnectedUser();
         AbstractRole a = u.getAbstractRole();
-        labelUser.setText("Welcome "+ u.getFirstName()+" !");
+        labelUser.setText("Welcome \n"+ u.getFirstName()+" !");
 
         Button logoutBtn = new Button();
         logoutBtn.setText("Log out");
