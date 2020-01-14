@@ -117,6 +117,12 @@ public class CompanyUIController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Go glider.
+     *
+     * @param actionEvent the action event
+     */
     public void goGlider(ActionEvent actionEvent) {
         try {
             Main.glidersView(Main.getPrimaryStage());
@@ -124,6 +130,12 @@ public class CompanyUIController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Go equipement.
+     *
+     * @param actionEvent the action event
+     */
     public void goEquipement(ActionEvent actionEvent) {
         try {
             Main.EquipmentsView(Main.getPrimaryStage());

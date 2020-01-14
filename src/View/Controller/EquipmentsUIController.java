@@ -15,7 +15,6 @@ import java.io.IOException;
 /**
  * The type Equipments ui controller.
  */
-
 public class EquipmentsUIController {
 
     /**

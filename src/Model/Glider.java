@@ -32,10 +32,18 @@ public class Glider {
         this.reviewDate = reviewDate;
     }
 
+    /**
+     * Instantiates a new Glider.
+     */
     public Glider(){
 
     }
 
+    /**
+     * Instantiates a new Glider.
+     *
+     * @param registrationGlider the registration glider
+     */
     public Glider(String registrationGlider){
         this.registrationGlider = registrationGlider;
     }

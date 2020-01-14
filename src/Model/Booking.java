@@ -155,10 +155,18 @@ public class Booking {
         this.glider = glider;
     }
 
+    /**
+     * Instantiates a new Booking.
+     *
+     * @param startDate the start date
+     */
     public Booking(Date startDate) {
         this.startDate = startDate;
     }
 
+    /**
+     * Instantiates a new Booking.
+     */
     public Booking() {
     }
 

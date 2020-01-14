@@ -45,10 +45,18 @@ public class User {
         this.password = password;
     }
 
+    /**
+     * Instantiates a new User.
+     */
     public User(){
 
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     */
     public User(String firstName){
         this.firstName = firstName;
     }
