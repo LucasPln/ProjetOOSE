@@ -334,4 +334,8 @@ public class Main extends Application {
         uploadView(stage, "Flight Manager", "../UI/winch.fxml");
     }
 
+    public static void createWinchView(Stage stage) throws IOException {
+        uploadView(stage, "Flight Manager", "../UI/createWinch.fxml");
+    }
+
 }

@@ -74,13 +74,13 @@ public class WinchUIController {
 
 
     public void createWinch(){
-/*
+
         try {
-            Main.planeCreationView(Main.getPrimaryStage());
+            Main.createWinchView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
-*/
+
 
     }
 
