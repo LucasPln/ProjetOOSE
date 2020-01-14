@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type Booking test.
+ *
+ * @author Lucas Paulin
  */
 class BookingTest {
 

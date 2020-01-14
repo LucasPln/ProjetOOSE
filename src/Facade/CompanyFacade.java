@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 /**
  * The type Company facade.
+ *
+ * @author Arnaud Maësboyer
  */
 public class CompanyFacade {
 

@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 /**
  * The type List company ui controller.
+ *
+ * @author Arnaud Maësboyer
  */
 public class ListCompanyUIController {
 

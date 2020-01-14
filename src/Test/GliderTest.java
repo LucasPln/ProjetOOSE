@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type Glider test.
+ *
+ * @author Hugo Niort
  */
 class GliderTest {
 

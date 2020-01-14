@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 /**
  * The type Company ui controller.
+ *
+ * @author Arnaud Maësboyer
  */
 public class CompanyUIController {
 

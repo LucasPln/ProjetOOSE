@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 /**
  * The interface Company dao.
+ *
+ * @author Arnaud Maësboyer
  */
 public interface CompanyDAO {
     /**

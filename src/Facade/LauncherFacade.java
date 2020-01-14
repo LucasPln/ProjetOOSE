@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * The type Launcher facade.
  *
- * @author Hugo Niort & Lucas Paulin
+ * @author Hugo Niort and Lucas Paulin
  */
 public class LauncherFacade {
     private AbstractFactory abstractFactory;

@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type User test.
+ *
+ * @author Paola Andreu
  */
 class UserTest {
 

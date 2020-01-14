@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * The interface Dao launcher.
  *
- * @author Hugo Niort & Lucas Paulin
+ * @author Hugo Niort and Lucas Paulin
  */
 public interface DAOLauncher {
 

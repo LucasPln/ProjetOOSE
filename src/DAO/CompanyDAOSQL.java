@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 /**
  * The type Company daosql.
+ *
+ * @author Arnaud Maësboyer
  */
 public class CompanyDAOSQL implements CompanyDAO {
     @Override

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 /**
  * The type Add company ui controller.
+ *
+ * @author Arnaud Maësboyer
  */
 public class AddCompanyUIController {
 

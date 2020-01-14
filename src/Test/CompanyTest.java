@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type Company test.
+ *
+ * @author Arnaud Maësboyer
  */
 class CompanyTest {
 

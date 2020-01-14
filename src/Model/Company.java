@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * The type Company.
+ *
+ * @author Arnaud Maësboyer
  */
 public class Company {
 
