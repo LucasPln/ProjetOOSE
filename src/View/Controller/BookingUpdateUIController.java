@@ -210,7 +210,6 @@ public class BookingUpdateUIController {
      * Used by the "Update" button.
      */
     public void updateBooking() {
-        System.out.println(launcherWinchField.getValue());
 
         if(startDateField.getValue() == null ||
                 endDateField.getValue() == null ||

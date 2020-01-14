@@ -182,49 +182,67 @@ public class AddBookingUIController {
      * Used by the "Create" button.
      */
     public void createBooking(){
-        Date startDate = java.sql.Date.valueOf(startDateField.getValue());
-        Date endDate = java.sql.Date.valueOf(endDateField.getValue());
-        double price = 0;
-        String state = "todo";
-        int idBattery = (Integer) batteryField.getValue();
-        int idGPS = (Integer) GPSField.getValue();
-        String registerLauncherPlane = null;
-        if(launcherPlaneField.getValue() != null && launcherPlaneField.getValue() != "---"){
-            registerLauncherPlane = (String) launcherPlaneField.getValue();
-        }
+        if(startDateField.getValue() == null ||
+            endDateField.getValue() == null ||
+            batteryField.getValue() == null ||
+            GPSField.getValue() == null ||
+            launchmanField.getValue() == null ||
+            flightManagerField.getValue() == null ||
+            gliderField.getValue() == null ||
+            (launcherPlaneField.getValue() == null && launcherWinchField.getValue() == null)) {
 
-        String registerLauncherWinch = null;
-        if(launcherWinchField.getValue() != null && launcherWinchField.getValue() != "---"){
-            registerLauncherWinch = (String) launcherWinchField.getValue();
-        }
-        int idLaunchman = (Integer) launchmanField.getValue();
-        int idCustomer = LoginFacade.getInstance().getConnectedUser().getId();
-        int idFlightManager = (Integer) flightManagerField.getValue();
-
-        int idDiploma = -1;
-        if(diplomaField.getValue() != null && diplomaField.getValue() != "---"){
-            idDiploma = (Integer) diplomaField.getValue();
-        }
-
-        String idGlider = (String) gliderField.getValue();
-
-        Booking newBooking = new Booking(startDate,endDate,price,state,idBattery,idGPS,registerLauncherPlane,registerLauncherWinch,idLaunchman,idCustomer,idFlightManager,idDiploma,idGlider);
-
-        boolean result = this.bookingFacade.createBooking(newBooking);
-
-        if (result){
-            try {
-                Main.bookingView(Main.getPrimaryStage());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERREUR");
-            alert.setContentText("Booking non créé");
+            alert.setContentText("Veuillez remplir tous les champs obligatoire !");
             alert.showAndWait();
+            
+        } else {
+            Date startDate = java.sql.Date.valueOf(startDateField.getValue());
+            Date endDate = java.sql.Date.valueOf(endDateField.getValue());
+            double price = 0;
+            String state = "todo";
+            int idBattery = (Integer) batteryField.getValue();
+            int idGPS = (Integer) GPSField.getValue();
+            String registerLauncherPlane = null;
+            if(launcherPlaneField.getValue() != null && launcherPlaneField.getValue() != "---"){
+                registerLauncherPlane = (String) launcherPlaneField.getValue();
+            }
+
+            String registerLauncherWinch = null;
+            if(launcherWinchField.getValue() != null && launcherWinchField.getValue() != "---"){
+                registerLauncherWinch = (String) launcherWinchField.getValue();
+            }
+            int idLaunchman = (Integer) launchmanField.getValue();
+            int idCustomer = LoginFacade.getInstance().getConnectedUser().getId();
+            int idFlightManager = (Integer) flightManagerField.getValue();
+
+            int idDiploma = -1;
+            if(diplomaField.getValue() != null && diplomaField.getValue() != "---"){
+                idDiploma = (Integer) diplomaField.getValue();
+            }
+
+            String idGlider = (String) gliderField.getValue();
+
+            Booking newBooking = new Booking(startDate,endDate,price,state,idBattery,idGPS,registerLauncherPlane,registerLauncherWinch,idLaunchman,idCustomer,idFlightManager,idDiploma,idGlider);
+
+            boolean result = this.bookingFacade.createBooking(newBooking);
+
+            if (result){
+                try {
+                    Main.bookingView(Main.getPrimaryStage());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERROR");
+                alert.setHeaderText("ERREUR");
+                alert.setContentText("Booking non créé");
+                alert.showAndWait();
+            }
         }
+
 
 
     }

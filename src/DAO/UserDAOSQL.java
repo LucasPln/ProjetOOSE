@@ -200,5 +200,62 @@ public class UserDAOSQL implements UserDAO {
         return false;
     }
 
+    @Override
+    public User getUser(int idUser, String role) {
+        User user = null;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM user WHERE idUser='" + idUser + "'");
+
+            if(rs.next()){
+                user = new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10)
+                );
+
+                AbstractRole abstractRole=null;
+                Statement stmt2=con.createStatement();
+                ResultSet rs2;
+                if (role.equals("Monitor")){
+                    rs2=stmt2.executeQuery("select * from monitor where idUser='"+user.getId()+"' ;");
+                    while (rs2.next()){
+                        abstractRole = new Monitor(rs2.getInt(1),rs2.getInt(2),rs2.getInt(3));
+                    }
+                }else if (role.equals("Licensed")){
+                    rs2=stmt2.executeQuery("select * from licensed where idUser='"+user.getId()+"' ;");
+                    while (rs2.next()){
+                        abstractRole = new Licensed(rs2.getInt(1),rs2.getInt(2));
+                    }
+
+                }else if(role.equals("Company Member")){
+                    rs2=stmt2.executeQuery("select * from companymember where idUser='"+user.getId()+"' ;");
+                    while (rs2.next()){
+                        abstractRole = new CompanyMember(rs2.getInt(1),rs2.getString(2),rs2.getInt(3),rs2.getInt(4));
+                    }
+                }else{//role.equals("Admin")
+                    rs2=stmt2.executeQuery("select * from admin where idUser='"+user.getId()+"' ;");
+                    while (rs2.next()){
+                        abstractRole = new Admin(rs2.getInt(1),rs2.getString(2));
+                    }
+                }
+                user.setAbstractRole(abstractRole);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
 
 }

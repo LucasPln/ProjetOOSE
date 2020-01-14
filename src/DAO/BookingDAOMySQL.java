@@ -66,19 +66,46 @@ public class BookingDAOMySQL implements BookingDAO {
      * @return true if booking has been created, false if not.
      */
     @Override
-    public boolean createBooking(Booking booking) {
+    public boolean createBooking(Booking booking, int idCompany) {
         int rs = -1;
         try {
             Connection con = FactoryDAOSQL.connection;
             Statement stmt=con.createStatement();
             if(booking.getDiploma() == -1){
-                rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
-                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"',"+booking.getLauncherPlane()+"," +booking.getLauncherWinch() +", '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',null, '"+ booking.getGlider()+"', 1)");
+                String sql = "INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"'";
+                if(booking.getLauncherPlane() == null) {
+                    sql += ","+booking.getLauncherPlane();
+                } else {
+                    sql += ",'"+booking.getLauncherPlane()+"'";
+                }
+
+                if(booking.getLauncherWinch() == null) {
+                    sql += ","+booking.getLauncherWinch();
+                } else {
+                    sql += ",'"+booking.getLauncherWinch()+"'";
+                }
+
+                sql += ",'"+ booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',null, '"+ booking.getGlider()+"', "+idCompany+")";
+                rs = stmt.executeUpdate(sql);
 
             } else {
-                rs = stmt.executeUpdate("INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
-                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"',"+booking.getLauncherPlane()+"," +booking.getLauncherWinch() +", '"+booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"','"+booking.getDiploma() +"', '"+ booking.getGlider()+"', 1)");
+                String sql = "INSERT INTO `booking`(`startDate`, `endDate`, `price`, `state`, `battery`, `gps`, `launcherPlane`, `launcherWinch`, `launchman`, `customer`, `flightManager`, `diploma`, `idGlider`, `company`) " +
+                        "VALUES ('"+booking.getStartDate()+"','"+booking.getEndDate()+"','"+booking.getPrice()+"','"+booking.getState()+"',"+booking.getBattery()+",'"+booking.getGps()+"'";
+                if(booking.getLauncherPlane() == null) {
+                    sql += ","+booking.getLauncherPlane();
+                } else {
+                    sql += ",'"+booking.getLauncherPlane()+"'";
+                }
 
+                if(booking.getLauncherWinch() == null) {
+                    sql += ","+booking.getLauncherWinch();
+                } else {
+                    sql += ",'"+booking.getLauncherWinch()+"'";
+                }
+
+                sql += ",'"+ booking.getLaunchman()+"','"+ booking.getCustomer()+"','"+booking.getFlightManager()+"',"+booking.getDiploma()+", '"+ booking.getGlider()+"', "+idCompany+")";
+                rs = stmt.executeUpdate(sql);
             }
 
             if(rs == 1) {
@@ -158,7 +185,7 @@ public class BookingDAOMySQL implements BookingDAO {
      * @return true if booking has been updated, false if not.
      */
     @Override
-    public boolean updateBooking(Booking booking) {
+    public boolean updateBooking(Booking booking, int idCompany) {
         int rs = -1;
         try {
             Connection con = FactoryDAOSQL.connection;
@@ -177,7 +204,7 @@ public class BookingDAOMySQL implements BookingDAO {
                 stmt.setInt(10, booking.getCustomer());
                 stmt.setInt(11, booking.getFlightManager());
                 stmt.setString(12, booking.getGlider());
-                stmt.setInt(13, booking.getCompany());
+                stmt.setInt(13, idCompany);
 
 
             } else {
@@ -195,7 +222,7 @@ public class BookingDAOMySQL implements BookingDAO {
                 stmt.setInt(11, booking.getFlightManager());
                 stmt.setInt(12, booking.getDiploma());
                 stmt.setString(13, booking.getGlider());
-                stmt.setInt(14, booking.getCompany());
+                stmt.setInt(14, idCompany);
 
             }
 

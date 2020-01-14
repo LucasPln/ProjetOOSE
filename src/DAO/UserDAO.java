@@ -66,5 +66,7 @@ public interface UserDAO {
      * @return the boolean
      */
     boolean delete(int idUser);
+
+    public User getUser(int idUser, String role);
 }
 

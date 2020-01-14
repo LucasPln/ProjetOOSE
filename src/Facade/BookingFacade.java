@@ -2,6 +2,7 @@ package Facade;
 
 import DAO.AbstractFactory;
 import Model.Booking;
+import Model.User;
 
 import java.util.ArrayList;
 
@@ -65,7 +66,9 @@ public class BookingFacade {
      * @return true if booking has been created, false if not.
      */
     public boolean createBooking(Booking booking){
-        return this.af.getBookingDAO().createBooking(booking);
+        User user = this.af.getUserDAO().getUser(booking.getFlightManager(), "Monitor");
+        int idCompany = user.getCompanyId();
+        return this.af.getBookingDAO().createBooking(booking, idCompany);
     }
 
 
@@ -85,6 +88,8 @@ public class BookingFacade {
      * @return true if booking has been updated, false if not.
      */
     public boolean updateBooking(Booking booking){
-        return this.af.getBookingDAO().updateBooking(booking);
+        User user = this.af.getUserDAO().getUser(booking.getFlightManager(), "Monitor");
+        int idCompany = user.getCompanyId();
+        return this.af.getBookingDAO().updateBooking(booking, idCompany);
     }
 }
