@@ -13,37 +13,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class listCompanyUIController {
-    /**
-     * Label from the UI, that print the name of the Company.
-     */
-    @FXML
-    private Label nomCompany;
 
-    /**
-     * "Return" button grom the UI.
-     */
-    @FXML
-    private Button returnBtn;
-
-    /**
-     * ListView from the UI, that print the list of gliders.
-     */
-    @FXML
-    private ListView listGlider;
 
     @FXML
-    private ListView listParachutes;
-
-    @FXML
-    private ListView listGPS;
-
-    @FXML
-    private ListView listBatteries;
+    private GridPane gridCompany;
 
 
     /**
@@ -63,10 +42,38 @@ public class listCompanyUIController {
      */
     @FXML
     public void initialize() {
+        ArrayList<Company> cpy = this.companyFacade.getAllCompanies();
+
+        for(int i = 0; i < cpy.size(); i++) {
+            gridCompany.addRow(0);
+
+            Label l1 = new Label(Integer.toString(cpy.get(i).getIdCompany()));
+            gridCompany.add(l1,0, i + 1);
+            GridPane.setHalignment(l1, javafx.geometry.HPos.CENTER);
+
+            Label l2 = new Label(cpy.get(i).getName());
+            gridCompany.add(l2,1, i + 1);
+            GridPane.setHalignment(l2, javafx.geometry.HPos.CENTER);
+
+            Button b1 = new Button("X");
+            int j = i;
+            b1.setOnAction(event -> {
+                deleteCompany(cpy.get(j).getIdCompany());
+            });
+            gridCompany.add(b1, 2, i + 1);
+        }
     }
     public void AddCompany(ActionEvent actionEvent) {
         try {
             Main.addCompanyView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deleteCompany(int id){
+       companyFacade.deleteCompany(id);
+        try {
+            Main.homeView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

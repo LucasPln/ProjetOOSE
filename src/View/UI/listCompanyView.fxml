@@ -4,8 +4,24 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller.listCompanyUIController">
-   <children>
+    
+    <children>
       <Button layoutX="327.0" layoutY="325.0" mnemonicParsing="false" onAction="#ReturnView" text="Retour" />
        <Button layoutX="400.0" layoutY="325.0" mnemonicParsing="false" onAction="#AddCompany" text="Ajouter une company" />
+      <GridPane fx:id="gridCompany" layoutX="106.0" layoutY="50.0" prefHeight="66.0" prefWidth="411.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+          <children>
+              <Label text="id Company" GridPane.halignment="CENTER" />
+              <Label text="Name" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+              <Label text="Action" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+          </children>
+      </GridPane>
    </children>
 </AnchorPane>
