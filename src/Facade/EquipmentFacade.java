@@ -1,10 +1,7 @@
 package Facade;
 
 import DAO.AbstractFactory;
-import Model.Battery;
-import Model.Equipment;
-import Model.GPS;
-import Model.User;
+import Model.*;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -166,5 +163,13 @@ public class EquipmentFacade {
             return false;
         }
         return true;
+    }
+
+    public void delete(String type, int idEquipement) {
+        this.abstractFactory.getDaoEquipement().deleteEquipment(type, idEquipement);
+    }
+
+    public Parachute getParachute(int idEquipment) {
+        return this.abstractFactory.getDaoEquipement().getParachute(idEquipment);
     }
 }

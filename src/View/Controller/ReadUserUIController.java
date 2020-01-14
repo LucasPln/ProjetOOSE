@@ -25,6 +25,8 @@ import java.util.ArrayList;
 public class ReadUserUIController {
     @FXML
     private GridPane gridUsers;
+    @FXML
+    private Button addUserButton;
 
     @FXML
     private ChoiceBox choiceBox;
@@ -42,6 +44,7 @@ public class ReadUserUIController {
      */
     @FXML
     public void initialize() {
+        this.addUserButton.setVisible(false);
         User user = LoginFacade.getInstance().getConnectedUser();
         AbstractRole r = user.getAbstractRole();
         ArrayList<User> users = this.readUserFacade.getUsersByRole("Monitor");
@@ -84,8 +87,12 @@ public class ReadUserUIController {
                 gridUsers.add(b1, 7, i + 1);
                 GridPane.setHalignment(b1, javafx.geometry.HPos.CENTER);
             }
-
-
+        }
+        if(r instanceof Admin) {
+            Label l8 = new Label("Delete");
+            gridUsers.add(l8, 7, 0);
+            GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
+            this.addUserButton.setVisible(true);
         }
     }
 
@@ -140,11 +147,7 @@ public class ReadUserUIController {
             }
 
         }
-        if(r instanceof Admin) {
-            Label l8 = new Label("Delete");
-            gridUsers.add(l8, 7, 0);
-            GridPane.setHalignment(l8, javafx.geometry.HPos.CENTER);
-        }
+
     }
 
     /**
@@ -209,6 +212,19 @@ public class ReadUserUIController {
         readUserFacade.deleteUser(id);
         try {
             Main.usersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Add user.
+     *
+     * @param actionEvent the action event
+     */
+    public void addUser(ActionEvent actionEvent){
+        try {
+            Main.addUserView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }

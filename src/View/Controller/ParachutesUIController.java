@@ -3,12 +3,14 @@ package View.Controller;
 import Facade.EquipmentFacade;
 import Model.Equipment;
 import Model.Parachute;
+import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -74,16 +76,31 @@ public class ParachutesUIController {
     }
 
     private void deleteParachute(int idEquipement) {
+        equipmentFacade.delete("parachute", idEquipement);
+        try {
+            Main.parachutesView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void updateParachute(int idEquipement) {
+        try {
+            Main.parachuteUpdate(Main.getPrimaryStage(), idEquipement);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Create parachute.
      *
-     * @param actionEvent the action event
      */
-    public void createParachute(ActionEvent actionEvent) {
+    public void createParachute() {
+        try {
+            Main.parachuteCreationView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

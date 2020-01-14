@@ -28,15 +28,16 @@
                </font></Label>
             <ButtonBar GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
               <buttons>
-                  <Button fx:id="myProfileBtn" mnemonicParsing="false" onAction="#getMyProfile" text="My Profile" />
                   <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logout" text="Log out" />
-                  <Button fx:id="viewBookingButton" mnemonicParsing="false" onAction="#getBooking" text="Booking" />
-                  <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#addUser" text="addUser" />
+                  <Button fx:id="myProfileBtn" mnemonicParsing="false" onAction="#getMyProfile" text="My Profile" />
                   <Button fx:id="equipmentsButton" mnemonicParsing="false" onAction="#getEquipments" text="Equipments" />
+                  <Button fx:id="viewBookingButton" mnemonicParsing="false" onAction="#getBooking" text="Booking" />
                   <Button fx:id="launchersButton" mnemonicParsing="false" onAction="#getLaunchers" text="Launchers" />
-                  <Button fx:id="myCompanyBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getCompany" text="my Company" />
-                  <Button fx:id="usersBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getUsers" text="users" />
-                <Button fx:id="glidersBtn" mnemonicParsing="false" onAction="#getGliders" text="Gliders" />
+                  <Button fx:id="myCompanyBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getCompany" text="My Company" />
+                  <Button fx:id="companiesBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getCompanies" text="Companies" />
+                  <Button fx:id="glidersBtn" mnemonicParsing="false" onAction="#getGliders" text="Gliders" />
+                  <Button fx:id="usersBtn" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#getUsers" text="Users" />
+
               </buttons>
                <GridPane.margin>
                   <Insets right="10.0" />

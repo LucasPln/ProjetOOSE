@@ -1,10 +1,12 @@
 package View.Controller;
 
 import Facade.LauncherFacade;
+import View.Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
 import java.sql.Date;
 
 /**
@@ -55,7 +57,11 @@ public class LaunchersUIController {
      * @param actionEvent the action event
      */
     public void seePlanes(ActionEvent actionEvent) {
-        System.out.println(launcherFacade.getAll("plane"));
+        try {
+            Main.planesView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

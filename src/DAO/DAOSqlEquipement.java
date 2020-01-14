@@ -225,6 +225,31 @@ public class DAOSqlEquipement implements DAOEquipement {
     }
 
     @Override
+    public Parachute getParachute(int idEquipment) {
+        Parachute parachute = null;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM parachute WHERE idParachute= " + idEquipment);
+
+            while(rs.next()){
+                parachute = new Parachute(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getDate(3),
+                        rs.getDate(4),
+                        rs.getInt(5)
+                );
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return parachute;
+    }
+
+    @Override
     public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
         GPS gps = null;
         ArrayList<Equipment> gpss = new ArrayList<Equipment>();

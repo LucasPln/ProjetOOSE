@@ -22,6 +22,8 @@
                             </items>
                         </ChoiceBox>
                         <Button mnemonicParsing="false"  text="return" onAction="#returnView" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#addUser" GridPane.columnIndex="2" GridPane.rowIndex="0" text="Add User" />
+
                     </children>
                 </GridPane>
                 <ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1" layoutY="71.0" prefHeight="257.0" prefWidth="600.0" AnchorPane.topAnchor="71.0">
