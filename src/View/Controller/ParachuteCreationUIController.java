@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+/**
+ * @author Hugo Niort
+ */
 public class ParachuteCreationUIController {
     public DatePicker packageDateInput;
     public DatePicker renewalDateInput;

@@ -1,3 +1,4 @@
+
 package View.Controller;
 
 import Facade.EquipmentFacade;
@@ -12,6 +13,9 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * @author Hugo Niort
+ */
 public class BatteriesUIController {
     public GridPane gridBatteries;
     private EquipmentFacade equipmentFacade;

@@ -8,7 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-
+/**
+ * @author Hugo Niort
+ */
 public class BatteryCreationUIController {
     public Label errorLabel;
     public TextField wordingInput;

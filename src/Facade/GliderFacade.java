@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
- * The type Glider facade.
+ * @author Hugo Niort
  */
 public class GliderFacade {
     private AbstractFactory abstractFactory;

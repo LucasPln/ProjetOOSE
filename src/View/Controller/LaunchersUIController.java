@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.Date;
 
 /**
- * The type Launchers ui controller.
+ * @author Hugo Niort
  */
 public class LaunchersUIController {
     /**

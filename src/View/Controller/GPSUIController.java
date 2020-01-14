@@ -13,7 +13,9 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**
+ * @author Hugo Niort
+ */
 public class GPSUIController {
     EquipmentFacade equipmentFacade;
     public GridPane gridGPS;

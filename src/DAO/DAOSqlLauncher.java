@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * The type Dao sql launcher.
+ * @author Hugo Niort
  */
 public class DAOSqlLauncher implements DAOLauncher {
     @Override

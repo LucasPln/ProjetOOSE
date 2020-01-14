@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * The type Gliders ui controller.
+ * @author Hugo Niort
  */
 public class GlidersUIController {
 

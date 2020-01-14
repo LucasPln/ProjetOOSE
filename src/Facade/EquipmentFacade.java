@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * The type Equipment facade.
+ * @author Hugo Niort
  */
 public class EquipmentFacade {
 

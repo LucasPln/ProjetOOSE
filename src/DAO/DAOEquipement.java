@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * The interface Dao equipement.
+ * @author Hugo Niort
  */
 public interface DAOEquipement {
 

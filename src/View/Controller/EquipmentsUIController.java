@@ -8,10 +8,13 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-
+/**
+ * @author Hugo Niort
+ */
 /**
  * The type Equipments ui controller.
  */
+
 public class EquipmentsUIController {
 
     /**

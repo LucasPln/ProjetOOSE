@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * The type Launcher facade.
+ * @author Hugo Niort
  */
 public class LauncherFacade {
     private AbstractFactory abstractFactory;

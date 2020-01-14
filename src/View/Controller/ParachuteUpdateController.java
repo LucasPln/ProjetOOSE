@@ -12,6 +12,9 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * @author Hugo Niort
+ */
 public class ParachuteUpdateController {
     public DatePicker renewalDateInput;
     public DatePicker packageDateInput;
