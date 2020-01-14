@@ -78,7 +78,7 @@ public class FactoryDAOSQL extends AbstractFactory {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:"+ConfigBDD.PORT+"/"+ConfigBDD.NAME+"?autoReconnect=true&useSSL=false",ConfigBDD.LOGIN,ConfigBDD.PASSWORD);
+            con = DriverManager.getConnection("jdbc:mysql://mysql-projetoose.alwaysdata.net:3306/projetoose_oose", ConfigBDD.LOGIN, ConfigBDD.PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
