@@ -117,5 +117,19 @@ public class CompanyUIController {
             e.printStackTrace();
         }
     }
+    public void goGlider(ActionEvent actionEvent) {
+        try {
+            Main.glidersView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void goEquipement(ActionEvent actionEvent) {
+        try {
+            Main.EquipmentsView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 

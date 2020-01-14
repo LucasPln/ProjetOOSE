@@ -16,5 +16,7 @@
       <ListView fx:id="listGPS" layoutY="167.0" prefHeight="66.0" prefWidth="258.0" />
       <Label layoutX="81.0" layoutY="242.0" text="Batteries List" />
       <ListView fx:id="listBatteries" layoutY="260.0" prefHeight="66.0" prefWidth="258.0" />
+      <Button layoutX="402.0" layoutY="281.0" mnemonicParsing="false" onAction="#goGlider" text="Edit Glider" />
+      <Button layoutX="77.0" layoutY="326.0" mnemonicParsing="false" onAction="#goEquipement" text="Edit Equipement" />
    </children>
 </AnchorPane>
