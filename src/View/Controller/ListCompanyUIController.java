@@ -18,7 +18,7 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class listCompanyUIController {
+public class ListCompanyUIController {
 
 
     @FXML
@@ -33,7 +33,7 @@ public class listCompanyUIController {
     /**
      * Controller that instantiates the CompanyFacade.
      */
-    public listCompanyUIController(){
+    public ListCompanyUIController(){
         companyFacade = new CompanyFacade();
     }
 
