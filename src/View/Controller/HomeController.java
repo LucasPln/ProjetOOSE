@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 
@@ -17,41 +18,14 @@ import java.io.IOException;
 public class HomeController {
 
     /**
-     * The Gliders btn.
+     * The GridPane buttons.
      */
-    public Button glidersBtn;
-    /**
-     * The My profile btn.
-     */
-    @FXML
-    public Button myProfileBtn;
-    /**
-     * The Logout btn.
-     */
-    @FXML
-    public Button logoutBtn;
-    /**
-     * The My company btn.
-     */
-    @FXML
-    public Button myCompanyBtn;
-    /**
-     * The Equipments button.
-     */
-    public Button equipmentsButton;
+    public GridPane gridButtons;
+
     @FXML
     private Label labelUser;
 
-    @FXML
-    private Button companiesBtn;
-    @FXML
-    private Button viewBookingButton;
-
     private LoginFacade loginFacade;
-    /**
-     * The launchers btn.
-     */
-    public Button launchersButton;
 
     /**
      * Initialize.
@@ -60,36 +34,92 @@ public class HomeController {
     public void initialize(){
         User u = LoginFacade.getInstance().getConnectedUser();
         AbstractRole a = u.getAbstractRole();
-        labelUser.setText("Welcome "+ u.getFirstName()+" !");
+        labelUser.setText("Welcome \n"+ u.getFirstName()+" !");
+
+        Button logoutBtn = new Button();
+        logoutBtn.setText("Log out");
+        logoutBtn.setOnAction(e->logout(e));
+        gridButtons.add(logoutBtn, 0, 0);
+        GridPane.setHalignment(logoutBtn, javafx.geometry.HPos.CENTER);
+
+        Button myProfileBtn = new Button();
+        myProfileBtn.setText("My Profile");
+        myProfileBtn.setOnAction(e->getMyProfile(e));
+        gridButtons.add(myProfileBtn, 0, 1);
+        GridPane.setHalignment(myProfileBtn, javafx.geometry.HPos.CENTER);
 
         if(a instanceof Admin){
-            myCompanyBtn.setVisible(false);
-            glidersBtn.setVisible(false);
-            companiesBtn.setVisible(true);
-            viewBookingButton.setVisible(false);
-            equipmentsButton.setVisible(false);
-            launchersButton.setVisible(false);
+            Button companiesBtn = new Button();
+            companiesBtn.setText("Companies");
+            companiesBtn.setOnAction(e->getCompanies(e));
+            gridButtons.add(companiesBtn, 0, 2);
+            GridPane.setHalignment(companiesBtn, javafx.geometry.HPos.CENTER);
+
+            Button usersBtn = new Button();
+            usersBtn.setText("Users");
+            usersBtn.setOnAction(e->getUsers(e));
+            GridPane.setHalignment(usersBtn, javafx.geometry.HPos.CENTER);
+            gridButtons.add(usersBtn, 0, 3);
+
         }else if(a instanceof CompanyMember){
-            glidersBtn.setVisible(true);
-            myCompanyBtn.setVisible(true);
-            viewBookingButton.setVisible(false);
-            companiesBtn.setVisible(false);
+            Button equipmentsButton = new Button();
+            equipmentsButton.setText("Equipments");
+            equipmentsButton.setOnAction(e->getEquipments(e));
+            gridButtons.add(equipmentsButton, 0, 2);
+            GridPane.setHalignment(equipmentsButton, javafx.geometry.HPos.CENTER);
+
+            Button launchersButton = new Button();
+            launchersButton.setText("Launchers");
+            launchersButton.setOnAction(e->getLaunchers(e));
+            gridButtons.add(launchersButton, 0, 3);
+            GridPane.setHalignment(launchersButton, javafx.geometry.HPos.CENTER);
+
+            Button glidersBtn = new Button();
+            glidersBtn.setText("Gliders");
+            glidersBtn.setOnAction(e->getGliders(e));
+            gridButtons.add(glidersBtn, 0, 4);
+            GridPane.setHalignment(glidersBtn, javafx.geometry.HPos.CENTER);
+
+            Button myCompanyBtn = new Button();
+            myCompanyBtn.setText("My Company");
+            myCompanyBtn.setOnAction(e->getCompany(e));
+            gridButtons.add(myCompanyBtn, 0, 5);
+            GridPane.setHalignment(myCompanyBtn, javafx.geometry.HPos.CENTER);
 
         }else if(a instanceof Monitor){
-            myCompanyBtn.setVisible(true);
-            glidersBtn.setVisible(true);
-            viewBookingButton.setVisible(true);
-            companiesBtn.setVisible(false);
+            Button equipmentsButton = new Button();
+            equipmentsButton.setText("Equipments");
+            equipmentsButton.setOnAction(e->getEquipments(e));
+            gridButtons.add(equipmentsButton, 0, 2);
+            GridPane.setHalignment(equipmentsButton, javafx.geometry.HPos.CENTER);
+
+            Button launchersButton = new Button();
+            launchersButton.setText("Launchers");
+            launchersButton.setOnAction(e->getLaunchers(e));
+            gridButtons.add(launchersButton, 0, 3);
+            GridPane.setHalignment(launchersButton, javafx.geometry.HPos.CENTER);
+
+            Button glidersBtn = new Button();
+            glidersBtn.setText("Gliders");
+            glidersBtn.setOnAction(e->getGliders(e));
+            gridButtons.add(glidersBtn, 0, 4);
+            GridPane.setHalignment(glidersBtn, javafx.geometry.HPos.CENTER);
+
+            Button myCompanyBtn = new Button();
+            myCompanyBtn.setText("My Company");
+            myCompanyBtn.setOnAction(e->getCompany(e));
+            gridButtons.add(myCompanyBtn, 0, 5);
+            GridPane.setHalignment(myCompanyBtn, javafx.geometry.HPos.CENTER);
 
         }else { // Licensed
-            myCompanyBtn.setVisible(false);
-            glidersBtn.setVisible(false);
-            viewBookingButton.setVisible(true);
-            companiesBtn.setVisible(false);
-            launchersButton.setVisible(false);
-
+            Button viewBookingButton = new Button();
+            viewBookingButton.setText("Bookings");
+            viewBookingButton.setOnAction(e->getBooking(e));
+            gridButtons.add(viewBookingButton, 0, 2);
+            GridPane.setHalignment(viewBookingButton, javafx.geometry.HPos.CENTER);
         }
     }
+
 
 
     /**

@@ -250,6 +250,30 @@ public class DAOSqlEquipement implements DAOEquipement {
     }
 
     @Override
+    public GPS getGPS(int idEquipment) {
+        GPS gps = null;
+        try {
+            Connection con = FactoryDAOSQL.connection;
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * FROM gps WHERE idGps= " + idEquipment);
+
+            while(rs.next()){
+                gps = new GPS(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4)
+                );
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return gps;
+    }
+
+    @Override
     public ArrayList<Equipment> getAllGpsByCompanyId(int idCompany) {
         GPS gps = null;
         ArrayList<Equipment> gpss = new ArrayList<Equipment>();
