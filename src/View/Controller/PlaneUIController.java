@@ -88,15 +88,15 @@ public class PlaneUIController {
 
 
     public void deletePlane(String idPlane){
-        /*
-        this.bf.deletePlane(idPlane);
+
+        this.launcherFacade.deletePlane(idPlane);
         try {
-            Main.planeView(Main.getPrimaryStage());
+            Main.planesView(Main.getPrimaryStage());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-         */
+
     }
 
 

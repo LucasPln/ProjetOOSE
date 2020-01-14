@@ -105,4 +105,6 @@ public interface DAOLauncher {
      * @throws SQLException the sql exception
      */
     void updatePlane(String registrationPlane, int maxLaunchWeight, Date acquisitionDate, Date renewalDate, int span, int maxWeight) throws SQLException;
+
+    void deletePlane(String idPlane);
 }
