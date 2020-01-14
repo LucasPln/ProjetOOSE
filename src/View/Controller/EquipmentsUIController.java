@@ -54,8 +54,11 @@ public class EquipmentsUIController {
      * Switch the UI to the GPS view
      */
     public void seeGPS() {
-        System.out.println(equipmentFacade.getAll("gps"));
-    }
+        try {
+            Main.GPSView(Main.getPrimaryStage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }    }
 
     /**
      * Switch the UI to the Battery view
