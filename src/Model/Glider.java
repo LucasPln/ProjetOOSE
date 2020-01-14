@@ -32,6 +32,14 @@ public class Glider {
         this.reviewDate = reviewDate;
     }
 
+    public Glider(){
+
+    }
+
+    public Glider(String registrationGlider){
+        this.registrationGlider = registrationGlider;
+    }
+
     /**
      * Get disponibilite.
      */

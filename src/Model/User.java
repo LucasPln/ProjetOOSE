@@ -45,6 +45,14 @@ public class User {
         this.password = password;
     }
 
+    public User(){
+
+    }
+
+    public User(String firstName){
+        this.firstName = firstName;
+    }
+
     /**
      * Get user user.
      *

@@ -155,6 +155,13 @@ public class Booking {
         this.glider = glider;
     }
 
+    public Booking(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Booking() {
+    }
+
     /**
      * Get the id of the booking.
      *
